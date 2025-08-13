@@ -1,16 +1,56 @@
 ---
+import Layout from "../layouts/Layout.astro";
 
+const videoId = "EDIGMHPDKsI";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="HackUDC — Accept the Challenge">
+  <main class="relative min-h-screen overflow-hidden">
+    <!-- Background YouTube video -->
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <iframe
+        src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&modestbranding=1&showinfo=0&rel=0&playsinline=1`}
+        title="HackUDC background video"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[56.25vw] min-w-[177.78vh] min-h-screen pointer-events-none"
+      ></iframe>
+      <!-- Dark tint + scanlines + vignette for a retro CRT vibe -->
+      <div class="absolute inset-0 bg-[#0a0011]/50"></div>
+      <div
+        class="absolute inset-0 opacity-60 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)_1px,transparent_1px,transparent_4px)] mix-blend-multiply"
+      >
+      </div>
+      <div
+        class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,0.6)_60%,rgba(0,0,0,0.97)_100%)]"
+      >
+      </div>
+    </div>
+
+    <!-- HUD elements -->
+    <div
+      class="absolute left-6 top-6 text-[0.8rem] leading-5 tracking-[0.25em] text-amber-300"
+    >
+      <div class="uppercase">FEBRUARY 2026</div>
+      <div class="text-amber-200">GPUL</div>
+    </div>
+    <div
+      class="pointer-events-none absolute right-6 top-6 text-xl tracking-[0.3em] text-amber-300 text-right"
+    >
+      OPEN SOURCE <br /> HACKATHON
+    </div>
+
+    <!-- Centered content -->
+    <section
+      class="relative z-10 flex min-h-screen flex-col items-center justify-center text-center"
+    >
+      <h1
+        class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-[0.25em] text-amber-300 drop-shadow-[0_6px_0_#7c3f00]"
+      >
+        HACKUDC
+      </h1>
+      <p class="mt-8 text-xl sm:text-2xl tracking-[0.35em] text-amber-100">
+        COMING SOON.
+      </p>
+    </section>
+  </main>
+</Layout>

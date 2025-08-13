@@ -1,0 +1,76 @@
+---
+import "../styles/global.css";
+
+import "@fontsource/roboto/100.css";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/roboto/900.css";
+
+interface Props {
+  title?: string;
+  light?: boolean;
+}
+
+const { title, light = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta
+      name="description"
+      content="Coming soon — February 2026. HackUDC is an open-source student hackathon by GPUL at the University of A Coruña."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hackudc.gpul.org/" />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="Coming soon — February 2026. HackUDC is an open-source student hackathon by GPUL at the University of A Coruña."
+    />
+    <meta property="og:image" content="https://hackudc.gpul.org/meta.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hackudc.gpul.org/" />
+    <meta property="twitter:title" content={title} />
+    <meta
+      property="twitter:description"
+      content="Coming soon — February 2026. HackUDC is an open-source student hackathon by GPUL at the University of A Coruña."
+    />
+    <meta
+      property="twitter:image"
+      content="https://hackudc.gpul.org/meta.png"
+    />
+  </head>
+  <body class={light ? "bg-white" : "bg-[#181818] text-white/80"}>
+    <slot />
+  </body>
+  <style is:global>
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+    @supports (-webkit-appearance: none) and (-webkit-backdrop-filter: none) {
+      select {
+        -webkit-appearance: none;
+      }
+      input[type="date"] {
+        -webkit-appearance: none;
+        height: 3rem;
+      }
+    }
+  </style>
+</html>
