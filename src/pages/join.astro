@@ -1,0 +1,304 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import retreatImage from "../assets/retreat.jpg";
+import fosdemImage from "../assets/fosdem.jpg";
+---
+
+<Layout title="Join the Crew — HackUDC">
+  <main class="relative min-h-screen bg-[#0a0011] text-white overflow-hidden">
+    <!-- Background effects -->
+    <div class="absolute inset-0 bg-[#181818]/90"></div>
+    <div
+      class="absolute inset-0 opacity-40 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)_1px,transparent_1px,transparent_4px)] mix-blend-multiply"
+    >
+    </div>
+    <div
+      class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,0.6)_60%,rgba(0,0,0,0.97)_100%)]"
+    >
+    </div>
+
+    <div class="relative z-10 container mx-auto px-6 py-16">
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <div class="inline-block relative">
+          <h1
+            class="text-4xl md:text-6xl lg:text-7xl font-black tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] mb-4"
+          >
+            JOIN THE CREW
+          </h1>
+          <div
+            class="absolute -top-4 -right-8 bg-red-500 text-white text-sm px-3 py-1 rounded-full font-bold tracking-wider animate-pulse transform rotate-12"
+          >
+            WE NEED YOU!
+          </div>
+        </div>
+        <p
+          class="text-xl md:text-2xl tracking-[0.3em] text-amber-100 mb-8 mt-8"
+        >
+          HELP ORGANIZE THE ULTIMATE OPEN SOURCE HACKATHON
+        </p>
+        <div class="w-32 h-1 bg-amber-300 mx-auto"></div>
+      </div>
+
+      <!-- Why Join Section -->
+      <section class="mb-20">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="text-3xl md:text-4xl font-black text-amber-300 tracking-[0.2em] text-center mb-12"
+          >
+            WHY JOIN GPUL & HACKUDC?
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div
+              class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-8"
+            >
+              <h3
+                class="text-xl font-bold text-amber-300 mb-4 tracking-[0.15em]"
+              >
+                🚀 CAREER ACCELERATION
+              </h3>
+              <p class="text-amber-100 leading-relaxed">
+                Alumni from GPUL consistently land positions at top tech
+                companies. The skills you'll gain organizing events, managing
+                teams, and building tech solutions are exactly what employers
+                are looking for.
+              </p>
+            </div>
+
+            <div
+              class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-8"
+            >
+              <h3
+                class="text-xl font-bold text-amber-300 mb-4 tracking-[0.15em]"
+              >
+                🌟 GREAT CONNECTIONS
+              </h3>
+              <p class="text-amber-100 leading-relaxed">
+                Work alongside passionate people in Galicia's tech community.
+                Meet industry professionals, startup founders, and companies
+                actively recruiting talent.
+              </p>
+            </div>
+
+            <div
+              class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-8"
+            >
+              <h3
+                class="text-xl font-bold text-amber-300 mb-4 tracking-[0.15em]"
+              >
+                ✈️ EPIC PERKS
+              </h3>
+              <p class="text-amber-100 leading-relaxed">
+                Team retreats in stunning locations, exclusive trip to FOSDEM
+                (Europe's largest open source conference) in Brussels, and
+                insider access to the entire event experience.
+              </p>
+            </div>
+
+            <div
+              class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-8"
+            >
+              <h3
+                class="text-xl font-bold text-amber-300 mb-4 tracking-[0.15em]"
+              >
+                💪 REAL IMPACT
+              </h3>
+              <p class="text-amber-100 leading-relaxed">
+                Shape an event that inspires 400+ developers and contributes to
+                the open source ecosystem. Your work will have lasting impact on
+                the tech community.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What We Need Section -->
+      <section class="mb-20">
+        <div class="max-w-5xl mx-auto">
+          <h2
+            class="text-3xl md:text-4xl font-black text-amber-300 tracking-[0.2em] text-center mb-12"
+          >
+            WHERE WE NEED YOUR TALENTS
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Social Media & Design -->
+            <div
+              class="bg-black/50 backdrop-blur-sm border border-amber-200/30 rounded-lg p-8"
+            >
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-4">🎨</span>
+                <h3 class="text-xl font-bold text-amber-300 tracking-[0.15em]">
+                  SOCIAL MEDIA & DESIGN
+                </h3>
+              </div>
+              <p class="text-amber-100 mb-4">
+                Create stunning visuals, manage our social presence, and craft
+                content that gets developers excited.
+              </p>
+              <div class="text-sm text-amber-200">
+                <span class="font-semibold">Perfect for:</span> Design students,
+                marketing enthusiasts, social media creators
+              </div>
+            </div>
+
+            <!-- Participant Experience -->
+            <div
+              class="bg-black/50 backdrop-blur-sm border border-amber-200/30 rounded-lg p-8"
+            >
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-4">🎯</span>
+                <h3 class="text-xl font-bold text-amber-300 tracking-[0.15em]">
+                  PARTICIPANT EXPERIENCE
+                </h3>
+              </div>
+              <p class="text-amber-100 mb-4">
+                Design activities, prizes, and dynamics that create
+                unforgettable moments. Especially valuable if you've been a
+                hackathon participant!
+              </p>
+              <div class="text-sm text-amber-200">
+                <span class="font-semibold">Perfect for:</span> Former participants,
+                event enthusiasts, community builders
+              </div>
+            </div>
+
+            <!-- Development & Tech -->
+            <div
+              class="bg-black/50 backdrop-blur-sm border border-amber-200/30 rounded-lg p-8"
+            >
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-4">💻</span>
+                <h3 class="text-xl font-bold text-amber-300 tracking-[0.15em]">
+                  DEVELOPMENT & TECH
+                </h3>
+              </div>
+              <p class="text-amber-100 mb-4">
+                Build websites, automate email workflows, create event
+                management apps, and develop cool tech solutions.
+              </p>
+              <div class="text-sm text-amber-200">
+                <span class="font-semibold">Perfect for:</span> Developers of all
+                levels, CS students, automation enthusiasts
+              </div>
+            </div>
+
+            <!-- Logistics -->
+            <div
+              class="bg-black/50 backdrop-blur-sm border border-amber-200/30 rounded-lg p-8"
+            >
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-4">📋</span>
+                <h3 class="text-xl font-bold text-amber-300 tracking-[0.15em]">
+                  LOGISTICS & OPERATIONS
+                </h3>
+              </div>
+              <p class="text-amber-100 mb-4">
+                Coordinate food for 450 people, manage merchandising, work with
+                vendors, and handle venue logistics. Make the magic happen!
+              </p>
+              <div class="text-sm text-amber-200">
+                <span class="font-semibold">Perfect for:</span> Project managers,
+                organized minds, business students, detail-oriented people
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Current Team Section -->
+      <section class="mb-20">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2
+            class="text-3xl md:text-4xl font-black text-amber-300 tracking-[0.2em] mb-12"
+          >
+            MEET YOUR FUTURE TEAMMATES
+          </h2>
+
+          <div
+            class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-8 mb-8"
+          >
+            <p class="text-amber-100 text-lg leading-relaxed mb-6">
+              You'll be working alongside passionate students, experienced
+              developers, industry professionals, and alumni who've gone on to
+              work at leading companies and founded top startups.
+            </p>
+
+            <!-- Team photos -->
+            <div class="grid md:grid-cols-2 gap-8 mt-8">
+              <div
+                class="bg-amber-300/10 border border-amber-300/20 rounded-lg p-6"
+              >
+                <h4 class="text-amber-300 font-bold mb-2 tracking-[0.1em]">
+                  TEAM RETREAT
+                </h4>
+                <div class="rounded-lg overflow-hidden">
+                  <Image
+                    src={retreatImage}
+                    alt="Team retreat - amazing team moments in a stunning location"
+                    class="w-full h-48 object-cover"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="bg-amber-300/10 border border-amber-300/20 rounded-lg p-6"
+              >
+                <h4 class="text-amber-300 font-bold mb-2 tracking-[0.1em]">
+                  FOSDEM BRUSSELS
+                </h4>
+                <div class="rounded-lg overflow-hidden">
+                  <Image
+                    src={fosdemImage}
+                    alt="FOSDEM Brussels - European open source conference adventure"
+                    class="w-full h-48 object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="text-center">
+        <div class="max-w-2xl mx-auto">
+          <h2
+            class="text-3xl md:text-4xl font-black text-amber-300 tracking-[0.2em] mb-8"
+          >
+            READY TO JOIN THE MISSION?
+          </h2>
+
+          <p class="text-amber-100 text-lg mb-8 leading-relaxed">
+            Whether you're a first-year student or a master's candidate, if you
+            code, design or organize, we have a place for you. Join a team
+            that's shaping the future of tech in Galicia.
+          </p>
+
+          <a
+            href="#"
+            class="inline-block group relative px-12 py-6 bg-transparent border-2 border-amber-300 text-amber-300 font-bold tracking-[0.2em] uppercase text-lg hover:bg-amber-300 hover:text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:scale-105"
+          >
+            <span class="relative z-10">APPLY NOW</span>
+            <div
+              class="absolute inset-0 bg-amber-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+            >
+            </div>
+          </a>
+
+          <div class="mt-8">
+            <a
+              href="/"
+              class="text-amber-300 hover:text-amber-200 transition-colors tracking-[0.1em] text-lg"
+            >
+              ← BACK TO MAIN
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>
