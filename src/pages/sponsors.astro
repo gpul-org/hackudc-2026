@@ -1,5 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+// Import images
+import participantsClassImage from "../assets/sponsors/participants_class.jpg";
+import networkingImage from "../assets/sponsors/networking.jpg";
+import panoramicImage from "../assets/sponsors/panoramic_2025.jpg";
+import judgingMentoringImage from "../assets/sponsors/judging_mentoring.jpg";
+import sponsorParticipantHelpImage from "../assets/sponsors/sponsor_participant_help.jpg";
+import workshopImage from "../assets/sponsors/workshop.jpg";
+import sponsorBrandShowcaseImage from "../assets/sponsors/sponsor_brand_showcase.jpg";
+import sponsorsAwardCeremonyImage from "../assets/sponsors/sponsors_award_ceremony.jpg";
 ---
 
 <Layout title="Sponsors — HackUDC">
@@ -337,7 +348,7 @@ import Layout from "../layouts/Layout.astro";
           <!-- Event Images -->
           <div class="grid md:grid-cols-2 gap-6 mb-6">
             <div class="relative overflow-hidden rounded-lg border border-amber-300/30 h-80">
-              <img src="/sponsors/participants_class.jpg" alt="Hacking in action" class="w-full h-full object-cover" />
+              <Image src={participantsClassImage} alt="Hacking in action" class="w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
                 <div>
                   <p class="text-amber-300 text-lg font-bold">HACKING IN ACTION</p>
@@ -346,7 +357,7 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
             <div class="relative overflow-hidden rounded-lg border border-amber-300/30 h-80">
-              <img src="/sponsors/networking.jpg" alt="Networking" class="w-full h-full object-cover" />
+              <Image src={networkingImage} alt="Networking" class="w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
                 <div>
                   <p class="text-amber-300 text-lg font-bold">NETWORKING</p>
@@ -358,7 +369,7 @@ import Layout from "../layouts/Layout.astro";
 
           <!-- Panoramic Last Edition Image -->
           <div class="relative overflow-hidden rounded-lg border border-amber-300/30">
-            <img src="/sponsors/panoramic_2025.jpg" alt="HackUDC 2025 - All participants" class="w-full h-auto" />
+            <Image src={panoramicImage} alt="HackUDC 2025 - All participants" class="w-full h-auto" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8">
               <div class="text-center w-full">
                 <p class="text-amber-300 text-lg font-bold tracking-[0.2em]">LAST EDITION HIGHLIGHTS</p>
@@ -502,7 +513,7 @@ import Layout from "../layouts/Layout.astro";
           <!-- Challenge Examples Images -->
           <div class="grid md:grid-cols-3 gap-4">
             <div class="relative overflow-hidden rounded-lg border border-amber-300/20 md:col-span-2 h-80">
-              <img src="/sponsors/judging_mentoring.jpg" alt="Judging and mentorship" class="w-full h-full object-cover" />
+              <Image src={judgingMentoringImage} alt="Judging and mentorship" class="w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
                 <div>
                   <p class="text-amber-300 text-base font-bold">JUDGING & MENTORSHIP</p>
@@ -511,7 +522,7 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
             <div class="relative overflow-hidden rounded-lg border border-amber-300/20 h-80">
-              <img src="/sponsors/sponsor_participant_help.jpg" alt="Team collaboration" class="w-full h-full object-cover object-center" />
+              <Image src={sponsorParticipantHelpImage} alt="Team collaboration" class="w-full h-full object-cover object-center" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
                 <div>
                   <p class="text-amber-300 text-base font-bold">TEAM WORK</p>
@@ -584,7 +595,7 @@ import Layout from "../layouts/Layout.astro";
           <!-- Success Stories Gallery -->
           <div class="grid md:grid-cols-3 gap-6 mb-12">
             <div class="md:col-span-2 relative overflow-hidden rounded-lg border border-amber-300/30 h-96">
-              <img src="/sponsors/workshop.jpg" alt="Workshop session" class="w-full h-full object-cover" />
+              <Image src={workshopImage} alt="Workshop session" class="w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-8">
                 <div>
                   <p class="text-amber-300 text-2xl font-bold">WORKSHOPS & LEARNING</p>
@@ -593,7 +604,7 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
             <div class="relative overflow-hidden rounded-lg border border-amber-300/30 h-96">
-              <img src="/sponsors/sponsor_brand_showcase.jpg" alt="Sponsor showcase" class="w-full h-full object-cover object-center" />
+              <Image src={sponsorBrandShowcaseImage} alt="Sponsor showcase" class="w-full h-full object-cover object-center" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-6">
                 <div class="text-center w-full">
                   <p class="text-amber-300 text-xl font-bold">BRAND PRESENCE</p>
@@ -611,7 +622,7 @@ import Layout from "../layouts/Layout.astro";
           </div>
 
           <div class="relative overflow-hidden rounded-lg border border-amber-300/20 h-100">
-            <img src="/sponsors/sponsors_award_ceremony.jpg" alt="Awards ceremony" class="w-full h-full object-cover" />
+            <Image src={sponsorsAwardCeremonyImage} alt="Awards ceremony" class="w-full h-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-8">
               <div class="w-full">
                 <p class="text-amber-300 text-2xl font-bold text-center mb-2">AWARDS & RECOGNITION</p>
