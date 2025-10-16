@@ -1,0 +1,62 @@
+---
+import { faInstagram, faLinkedin, faTelegram, faTwitch, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+const socials = [
+  {
+    title: 'Instagram',
+    href: 'https://www.instagram.com/gpul_',
+    icon: faInstagram,
+  },
+  {
+    title: 'Twitter',
+    href: 'https://x.com/gpul_',
+    icon: faTwitter,
+  },
+  {
+    title: 'Twitch',
+    href: 'https://www.twitch.tv/gpul_/',
+    icon: faTwitch,
+  },
+  {
+    title: 'Telegram',
+    href: 'https://t.me/+PrK44xhqJ9eP9ZUf',
+    icon: faTelegram,
+  },
+  {
+    title: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/gpul/',
+    icon: faLinkedin,
+  },
+]
+---
+
+<footer class="pb-5">
+  <div class="mx-auto flex w-full max-w-screen-lg flex-col items-center justify-between p-4 sm:flex-row">
+    <div class="flex items-center">
+      <img src="https://gpul.org/assets/images/logos/logo_gpul.png" alt="GPUL Logo" class="h-12" />
+      <p class="text-sm">
+        Página web desarrollada por
+        <a href="https://gpul.org" class="text-green-500 hover:underline"> GPUL </a>
+      </p>
+    </div>
+    <div class="flex flex-col items-center gap-4 sm:flex-row sm:items-start">
+      <div class="flex gap-4">
+        {
+          socials.map((s) => (
+            <a href={s.href} title={s.title} class="transition duration-150 hover:text-green-500">
+              <FontAwesomeIcon icon={s.icon} className="h-5" />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col items-center justify-center gap-2 text-sm text-white/40 sm:flex-row">
+    <a href="/terminos" class="hover:text-green-600 hover:underline"> Términos y condiciones </a>
+    <span class="max-sm:hidden"> | </span>
+    <a href="/privacidad" class="hover:text-green-600 hover:underline"> Política de privacidad </a>
+    <span class="max-sm:hidden"> | </span>
+    <a href="/conducta" class="hover:text-green-600 hover:underline"> Código de conducta </a>
+  </div>
+</footer>
