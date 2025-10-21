@@ -13,43 +13,55 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout title={frontmatter.title}>
-  <div class="flex min-h-screen flex-col relative z-20">
-    <div class="mx-auto mt-8 w-full max-w-screen-lg px-4 sm:px-6">
-      <a
-        href="/"
-        class="inline-flex items-center gap-2 rounded-lg border-2 border-amber-200 px-6 py-3 font-bold uppercase tracking-[0.2em] text-amber-200 transition-all duration-300 hover:scale-105 hover:bg-amber-200 hover:text-black hover:shadow-[0_0_20px_rgba(251,191,36,0.3)]"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-        </svg>
-        Back to home
-      </a>
+  <main class="relative min-h-screen overflow-hidden">
+    <!-- Global filter effects applied to entire page - positioned between video and content -->
+    <div class="absolute inset-0 bg-[#0a0011]/50 pointer-events-none z-0"></div>
+    <div
+      class="absolute inset-0 opacity-60 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)_1px,transparent_1px,transparent_4px)] mix-blend-multiply pointer-events-none z-0"
+    >
     </div>
     <div
-      class="prose prose-invert mx-auto my-12 max-w-screen-md grow px-4 sm:px-6"
+      class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,0.6)_60%,rgba(0,0,0,0.97)_100%)] z-0"
     >
-      <h1
-        class="mb-8 text-4xl font-black uppercase tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] sm:text-5xl"
-      >
-        {frontmatter.title}
-      </h1>
-      <slot />
     </div>
-    <Footer />
-  </div>
-</Layout>
 
-<style is:global>
+    <!-- Page content with higher z-index to be above filters -->
+    <div class="flex min-h-screen flex-col relative z-20">
+      <div class="mx-auto mt-8 w-full max-w-screen-lg px-4 sm:px-6">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 rounded-lg border-2 border-amber-200 px-6 py-3 font-bold uppercase tracking-[0.2em] text-amber-200 transition-all duration-300 hover:scale-105 hover:bg-amber-200 hover:text-black hover:shadow-[0_0_20px_rgba(251,191,36,0.3)]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Back to home
+        </a>
+      </div>
+      <div
+        class="prose prose-invert mx-auto my-12 max-w-screen-md grow px-4 sm:px-6"
+      >
+        <h1
+          class="mb-8 text-4xl font-black uppercase tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] sm:text-5xl"
+        >
+          {frontmatter.title}
+        </h1>
+        <slot />
+      </div>
+      <Footer />
+    </div>
+  </main>
+</Layout><style is:global>
   .prose {
     color: rgb(229, 231, 235);
   }
