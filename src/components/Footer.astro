@@ -43,18 +43,16 @@ const socials = [
 ---
 
 <footer class="pb-5">
-  <div
-    class="mx-auto flex w-full max-w-screen-lg flex-col items-center justify-between p-4 sm:flex-row"
-  >
+  <div class="mx-auto flex w-full max-w-screen-lg flex-col items-center justify-between p-4 sm:flex-row">
     <div class="flex items-center">
       <Image
         src={LogoGPUL}
         alt="Logo GPUL"
-        class="h-30"
+        class="h-15 w-15 mr-4"
       />
       <p class="text-sm">
         Web page developed by
-        <a href="https://gpul.org" class="text-green-500 hover:underline">
+        <a href="https://gpul.org" class="text-amber-300 hover:underline">
           GPUL
         </a>
       </p>
@@ -66,7 +64,7 @@ const socials = [
             <a
               href={s.href}
               title={s.title}
-              class="transition duration-150 hover:text-green-500"
+              class="transition duration-150 hover:text-amber-300"
             >
               <FontAwesomeIcon icon={s.icon} className="h-5" />
             </a>
@@ -78,15 +76,15 @@ const socials = [
   <div
     class="flex flex-col items-center justify-center gap-2 text-sm text-white/40 sm:flex-row"
   >
-    <a href="/terminos" class="hover:text-green-600 hover:underline">
+    <a href="/terminos" class="hover:text-amber-300 hover:underline">
       Terms and conditions
     </a>
     <span class="max-sm:hidden"> | </span>
-    <a href="/privacidad" class="hover:text-green-600 hover:underline">
+    <a href="/privacidad" class="hover:text-amber-300 hover:underline">
       Privacy policy
     </a>
     <span class="max-sm:hidden"> | </span>
-    <a href="/conducta" class="hover:text-green-600 hover:underline">
+    <a href="/conducta" class="hover:text-amber-300 hover:underline">
       Code of conduct
     </a>
   </div>
