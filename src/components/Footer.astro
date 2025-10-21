@@ -42,14 +42,12 @@ const socials = [
 ];
 ---
 
-<footer class="pb-5">
-  <div class="mx-auto flex w-full max-w-screen-lg flex-col items-center justify-between p-4 sm:flex-row">
+<footer class="pb-6">
+  <div
+    class="mx-auto flex w-full max-w-screen-lg flex-col items-center justify-between px-6 py-6 sm:flex-row sm:px-8"
+  >
     <div class="flex items-center">
-      <Image
-        src={LogoGPUL}
-        alt="Logo GPUL"
-        class="h-15 w-15 mr-4"
-      />
+      <Image src={LogoGPUL} alt="Logo GPUL" class="h-15 w-15 mr-4" />
       <p class="text-sm">
         Web page developed by
         <a href="https://gpul.org" class="text-amber-300 hover:underline">
@@ -57,7 +55,9 @@ const socials = [
         </a>
       </p>
     </div>
-    <div class="flex flex-col items-center gap-4 sm:flex-row sm:items-start">
+    <div
+      class="mt-8 flex flex-col items-center gap-4 sm:mt-0 sm:flex-row sm:items-start"
+    >
       <div class="flex gap-4">
         {
           socials.map((s) => (
@@ -74,7 +74,7 @@ const socials = [
     </div>
   </div>
   <div
-    class="flex flex-col items-center justify-center gap-2 text-sm text-white/40 sm:flex-row"
+    class="flex flex-col items-center justify-center gap-2 px-6 text-sm text-white/40 sm:flex-row sm:px-8"
   >
     <a href="/terms" class="hover:text-amber-300 hover:underline">
       Terms and conditions
