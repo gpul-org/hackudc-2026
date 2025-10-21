@@ -13,7 +13,7 @@ const questions = [
   {
     title: "What does HackUDC include?",
     description:
-      "HackUDC is completely free for participants. WiFi and workspaces are provided, as well as breakfasts, lunches, dinners, and snacks throughout the event. Don't forget to include any dietary restrictions when registering."
+      "HackUDC is completely free for participants. WiFi and workspaces are provided, as well as breakfasts, lunches, dinners, and snacks throughout the event. Don't forget to include any dietary restrictions when registering.",
   },
   {
     title: "Where can I rest?",
@@ -38,12 +38,12 @@ const questions = [
   {
     title: "Who can participate?",
     description:
-      "Students or recent graduates (up to 1 year after graduation) from universities, vocational training programs, high schools, or other educational backgrounds are all welcome."
+      "Students or recent graduates (up to 1 year after graduation) from universities, vocational training programs, high schools, or other educational backgrounds are all welcome.",
   },
   {
     title: "How can I register?",
-      description:
-        "Registration is not yet open, but you can join the waitlist on our landing page to be the first to know when it becomes available. We'll also announce it on our website and social media channels once registration opens.",
+    description:
+      "Registration is not yet open, but you can join the waitlist on our landing page to be the first to know when it becomes available. We'll also announce it on our website and social media channels once registration opens.",
     //   "Registration is now open! To register, you will need to submit your application through the registration form found in the landing page of this website. We will send you a confirmation once your application is accepted.",
   },
   {
@@ -83,52 +83,209 @@ const questions = [
 ];
 ---
 
-<h1
-  id="sponsor-info"
-  class="uppercase text-center md:text-5xl tracking-[0.3em] text-amber-300 mb-10 mt-20"
->
-  FAQs
-</h1>
+<section class="px-4 sm:px-6 py-12 sm:py-20" aria-labelledby="faq-heading">
+  <div class="max-w-6xl mx-auto">
+    <h1
+      id="faq-heading"
+      class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-center tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] mb-4"
+    >
+      FAQs
+    </h1>
 
-<h2
-  id="sponsor-info"
-  class="uppercase text-center md:text-3xl tracking-[0.3em] text-amber-300"
->
-  Have questions? We've got answers.
-</h2>
-<h3 class="mt-2 text-center text-gray-300 sm:text-xl md:text-2xl">
-  The most common questions grouped in our FAQ
-</h3>
-<div class="m-20 grid grid-cols-1 gap-x-14 md:grid-cols-2">
-  <div>
-    {
-      questions.map((q, i) => {
-        if (i > questions.length / 2) return null;
-        return (
-          <details class="my-4">
-            <summary class="cursor-pointer text-xl">{q.title}</summary>
-            <p class="mt-1">{q.description}</p>
-          </details>
-        );
-      })
-    }
+    <h2
+      class="text-xl sm:text-2xl md:text-3xl font-bold uppercase text-center tracking-[0.2em] text-amber-300 mb-3"
+    >
+      Have questions? We've got answers.
+    </h2>
+    <p class="text-center text-amber-100 text-base sm:text-lg md:text-xl mb-12">
+      The most common questions grouped in our FAQ
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-x-12">
+      <div class="space-y-4">
+        {
+          questions.map((q, i) => {
+            if (i > questions.length / 2) return null;
+            return (
+              <details class="faq-item group bg-transparent border-2 border-amber-200 rounded-lg p-4 transition-all duration-300">
+                <summary
+                  class="cursor-pointer text-base sm:text-lg font-bold text-amber-200 list-none flex items-start justify-between"
+                  aria-label={q.title}
+                >
+                  <span class="pr-4">{q.title}</span>
+                  <svg
+                    class="w-5 h-5 shrink-0 mt-0.5 transform transition-transform duration-300 group-open:rotate-180"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </summary>
+                <div class="faq-content overflow-hidden">
+                  <p class="mt-3 text-sm sm:text-base text-amber-100 leading-relaxed">
+                    {q.description}
+                  </p>
+                </div>
+              </details>
+            );
+          })
+        }
+      </div>
+      <div class="space-y-4">
+        {
+          questions.map((q, i) => {
+            if (i < questions.length / 2 + 1) return null;
+            return (
+              <details class="faq-item group bg-transparent border-2 border-amber-200 rounded-lg p-4 transition-all duration-300">
+                <summary
+                  class="cursor-pointer text-base sm:text-lg font-bold text-amber-200 list-none flex items-start justify-between"
+                  aria-label={q.title}
+                >
+                  <span class="pr-4">{q.title}</span>
+                  <svg
+                    class="w-5 h-5 shrink-0 mt-0.5 transform transition-transform duration-300 group-open:rotate-180"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </summary>
+                <div class="faq-content overflow-hidden">
+                  <p class="mt-3 text-sm sm:text-base text-amber-100 leading-relaxed">
+                    {q.description}
+                  </p>
+                </div>
+              </details>
+            );
+          })
+        }
+      </div>
+    </div>
+
+    <div class="mt-12 text-center max-w-3xl mx-auto">
+      <p class="text-base sm:text-lg md:text-xl text-amber-300 leading-relaxed">
+        If you have any other questions, feel free to contact us via social
+        media or at <a
+          href="mailto:hackudc@gpul.org"
+          class="text-amber-200 hover:text-amber-100 underline transition-colors"
+          >hackudc@gpul.org</a
+        >.
+      </p>
+    </div>
   </div>
-  <div>
-    {
-      questions.map((q, i) => {
-        if (i < questions.length / 2 + 1) return null;
-        return (
-          <details class="my-4">
-            <summary class="cursor-pointer text-xl">{q.title}</summary>
-            <p class="mt-1">{q.description}</p>
-          </details>
-        );
-      })
+</section>
+
+<script>
+  // Auto-close other FAQ items when one is opened
+  document.addEventListener("DOMContentLoaded", () => {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const summary = item.querySelector("summary");
+      const content = item.querySelector(".faq-content") as HTMLElement;
+
+      // Set initial state
+      if (!item.hasAttribute("open") && content) {
+        content.style.maxHeight = "0px";
+        content.style.opacity = "0";
+      }
+
+      summary?.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if (!content) return;
+
+        const isOpen = item.hasAttribute("open");
+
+        // Close all other items
+        faqItems.forEach((otherItem) => {
+          if (otherItem !== item && otherItem.hasAttribute("open")) {
+            const otherContent = otherItem.querySelector(
+              ".faq-content"
+            ) as HTMLElement;
+            if (otherContent) {
+              otherContent.style.maxHeight = "0px";
+              otherContent.style.opacity = "0";
+            }
+            setTimeout(() => {
+              otherItem.removeAttribute("open");
+            }, 300);
+          }
+        });
+
+        // Toggle current item
+        if (isOpen) {
+          // Close
+          content.style.maxHeight = "0px";
+          content.style.opacity = "0";
+          setTimeout(() => {
+            item.removeAttribute("open");
+          }, 300);
+        } else {
+          // Open
+          item.setAttribute("open", "");
+          // Get the natural height
+          content.style.maxHeight = "none";
+          const height = content.scrollHeight;
+          content.style.maxHeight = "0px";
+
+          // Trigger reflow
+          setTimeout(() => {
+            content.style.maxHeight = height + "px";
+            content.style.opacity = "1";
+          }, 10);
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .faq-content {
+    transition:
+      max-height 300ms ease-in-out,
+      opacity 300ms ease-in-out;
+  }
+
+  /* Remove default marker on some browsers (obviamente safari) */
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::marker {
+    display: none;
+  }
+
+  /* Semi-transparent background for opened FAQ items */
+  .faq-item[open] {
+    background-color: rgba(245, 203, 46, 0.1);
+  }
+
+  /* Focus visible for keyboard navigation */
+  .faq-item summary:focus-visible {
+    outline: 2px solid rgb(253, 230, 138);
+    outline-offset: 2px;
+  }
+
+  /* Full background on hover (mouse only) */
+  @media (hover: hover) and (pointer: fine) {
+    .faq-item:hover {
+      background-color: rgb(253, 230, 138);
     }
-  </div>
-</div>
-<h3
-  class="mt-8 mb-20 px-10 text-center text-amber-300 sm:px-32 sm:text-lg md:px-52 md:text-xl"
->
-  If you have any other questions, feel free to contact us via social media or at <a href="mailto:hackudc@gpul.org" class="underline">hackudc@gpul.org</a>.
-</h3>
+
+    .faq-item:hover summary,
+    .faq-item:hover p {
+      color: black;
+    }
+  }
+</style>
