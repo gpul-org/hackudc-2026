@@ -81,6 +81,9 @@ const questions = [
       "Yes. Mentors will be available throughout the event to answer any questions you may have. If you would like to participate as a mentor, you can fill out the form linked below the participant registration. For any questions, email us at hackudc@gpul.org!",
   },
 ];
+
+// Split point for two columns. Use ceil so left column gets the extra item when odd.
+const mid = Math.ceil(questions.length / 2);
 ---
 
 <section class="px-4 sm:px-6 py-12 sm:py-20" aria-labelledby="faq-heading">
@@ -105,7 +108,8 @@ const questions = [
       <div class="space-y-4">
         {
           questions.map((q, i) => {
-            if (i > questions.length / 2) return null;
+            // Left column: items [0, mid)
+            if (i >= mid) return null;
             return (
               <details class="faq-item group bg-transparent border-2 border-amber-200 rounded-lg p-4 transition-all duration-300">
                 <summary
@@ -139,7 +143,8 @@ const questions = [
       <div class="space-y-4">
         {
           questions.map((q, i) => {
-            if (i < questions.length / 2 + 1) return null;
+            // Right column: items [mid, end)
+            if (i < mid) return null;
             return (
               <details class="faq-item group bg-transparent border-2 border-amber-200 rounded-lg p-4 transition-all duration-300">
                 <summary
