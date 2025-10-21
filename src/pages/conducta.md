@@ -21,7 +21,7 @@ Event organizers will be pleased to assist participants in contacting campus sec
 
 We anticipate that participants will adhere to these regulations in all hackathon venues, online interactions related to the event, social gatherings associated with the hackathon, and hackathon-provided transportation.
 
-### Procedimientos de Denuncia
+### Reporting Procedures
 
 If you feel uncomfortable or believe there may have been a potential violation of the Code of Conduct, please report it immediately using one of the following methods. All reporters have the right to remain anonymous.
 

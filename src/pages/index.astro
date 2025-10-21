@@ -10,12 +10,20 @@ import ShowStart from "../components/ShowStart.astro";
 
 <Layout title="HackUDC — Accept the Challenge">
   <main class="relative min-h-screen overflow-hidden">
-    <!-- Background effects matching the site aesthetic -->
-    <ShowStart />
-    <ShowSponsors />
-    <ShowCollaborators />
-    <FAQ />
+    <!-- Global filter effects applied to entire page - positioned between video and content -->
+    <div class="absolute inset-0 bg-[#0a0011]/50 pointer-events-none z-0"></div>
+    <div class="absolute inset-0 opacity-60 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)_1px,transparent_1px,transparent_4px)] mix-blend-multiply pointer-events-none z-0"></div>
+    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,0.6)_60%,rgba(0,0,0,0.97)_100%)] z-0"></div>
+    
+    <!-- Page content with higher z-index to be above filters -->
+    <div class="relative z-20">
+      <ShowStart />
+      <ShowSponsors />
+      <ShowCollaborators />
+      <FAQ />
+      <Footer />
+    </div>
   </main>
 </Layout>
 
-<Footer />
+
