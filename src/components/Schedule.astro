@@ -220,8 +220,8 @@ function isTagObject(tag: string | ScheduleTag): tag is ScheduleTag {
     left: calc(var(--time-col-width) + (var(--gap) / 2));
     width: var(--dot-size);
     height: var(--dot-size);
-    background: #ef4444;
-    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
+    background: #f59e0b; 
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
     transform: translate(-50%, 0);
     z-index: 1;
   }
@@ -233,6 +233,23 @@ function isTagObject(tag: string | ScheduleTag): tag is ScheduleTag {
     justify-content: space-between;
     min-width: var(--time-col-width);
     align-self: stretch;
+    position: relative;
+  }
+
+  /* Highlighted connector from start to end (extends the start dot outline) */
+  .calendar-list > li[data-has-end="true"] .time-col::after {
+    content: "";
+    position: absolute;
+    top: calc(1.2rem + (var(--dot-size) / 2) - 0.5rem);
+    bottom: calc(1.4rem + (var(--dot-size) / 2) - 1rem);
+    /* horizontally align to the timeline/dots center */
+    left: calc(100% + (var(--gap) / 2));
+    transform: translateX(-50%);
+    width: 10px; 
+    background: rgba(252, 211, 77, 0.22); 
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .calendar-list time {
@@ -244,12 +261,25 @@ function isTagObject(tag: string | ScheduleTag): tag is ScheduleTag {
     text-align: right;
   }
 
-  .calendar-list time:not(.end-time) {
-    padding-top: 0.6rem;
+  /* Keep time labels always aligned to dot centers */
+  .calendar-list > li .time-col time {
+    position: absolute;
+    right: 0;
+  }
+
+  /* Start time: vertically centered with start dot */
+  .calendar-list > li .time-col time:not(.end-time) {
+    top: calc(1.2rem - 0.5rem + var(--dot-size) / 2);
+    transform: translateY(-50%);
+    padding-top: 0;
   }
 
   .calendar-list time.end-time {
-    color: #fca5a5;
+    /*color: #f59e0b;*/
+    top: calc(
+      100% - (1.4rem + var(--dot-size) / 2) + 1rem
+    );
+    transform: translateY(-50%);
   }
 
   /* EVENT CARDS (Shared Styles) */
@@ -363,7 +393,7 @@ function isTagObject(tag: string | ScheduleTag): tag is ScheduleTag {
     opacity: 0.85;
   }
 
-/* DESCRIPTION CONTENT */
+  /* DESCRIPTION CONTENT */
   .calendar-content {
     overflow: hidden;
     transition:
