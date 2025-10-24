@@ -1,0 +1,323 @@
+---
+import { Image } from "astro:assets";
+
+// Images:
+import image_carousel_1 from "../assets/sponsors/networking.jpg";
+
+---
+
+<section
+  class="mt-40 mb-20 max-w-whatever mx-auto px-4 flex flex-col items-center justify-center h-full z-10"
+>
+  <h1
+    id="faq-heading"
+    class="p-10 text-3xl sm:text-4xl md:text-5xl font-black uppercase text-center tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] mb-4"
+  >
+    What you need to know
+  </h1>
+
+  <section class="p-2 md:p-20">
+    <div class="w-full mx-auto px-1 md:px-6">
+      <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div
+          class="relative h-64 overflow-hidden rounded-lg md:h-96 p-2 md:p-8 font-black text-amber-300"
+        >
+          <!-- Item 1 -->
+          <div
+            class="block duration-700 ease-in-out"
+            data-carousel-item="active"
+          >
+            <div class="items-center justify-center h-full">
+              <p
+                class="flex text-base sm:text-lg md:text-xl text-center w-full px-1"
+              >
+                Get ready for some exciting new challenges at one of the biggest
+                open osurce hackathons in Spain, the fourth edition of HACKUDC,
+                the largest to date!
+              </p>
+              
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="flex items-center justify-center h-full">
+              <p
+                class="text-base sm:text-lg md:text-xl text-center w-full px-1"
+              >
+                TEXTO 2
+              </p>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="flex items-center justify-center h-full">
+              <p
+                class="text-base sm:text-lg md:text-xl text-center w-full px-1"
+              >
+                TEXTO 3
+              </p>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="flex items-center justify-center h-full">
+              <p
+                class="text-base sm:text-lg md:text-xl text-center w-full px-1"
+              >
+                TEXTO 4
+              </p>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="flex items-center justify-center h-full">
+              <p
+                class="text-base sm:text-lg md:text-xl text-center w-full px-1"
+              >
+                TEXTO 5
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Slider indicators -->
+        <div
+          class="absolute z-30 flex -translate-x-1/2 bottom-3 md:bottom-5 left-1/2 space-x-2 md:space-x-3 rtl:space-x-reverse"
+        >
+          <button
+            type="button"
+            class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-amber-300"
+            aria-current="true"
+            aria-label="Slide 1"
+            data-carousel-slide-to="0"></button>
+          <button
+            type="button"
+            class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/50 hover:bg-white/70"
+            aria-current="false"
+            aria-label="Slide 2"
+            data-carousel-slide-to="1"></button>
+          <button
+            type="button"
+            class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/50 hover:bg-white/70"
+            aria-current="false"
+            aria-label="Slide 3"
+            data-carousel-slide-to="2"></button>
+          <button
+            type="button"
+            class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/50 hover:bg-white/70"
+            aria-current="false"
+            aria-label="Slide 4"
+            data-carousel-slide-to="3"></button>
+          <button
+            type="button"
+            class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/50 hover:bg-white/70"
+            aria-current="false"
+            aria-label="Slide 5"
+            data-carousel-slide-to="4"></button>
+        </div>
+        <!-- Slider controls -->
+        <button
+          type="button"
+          class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-2 md:px-4 cursor-pointer group focus:outline-none"
+          data-carousel-prev
+        >
+          <span
+            class="inline-flex items-center justify-center w-6 h-6 md:w-8 md:h-8 group-hover:scale-110 transition-all duration-300"
+          >
+            <svg
+              class="w-5 h-5 text-amber-300 group-hover:text-amber-200 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M15 19l-7-7 7-7"></path>
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-2 md:px-4 cursor-pointer group focus:outline-none"
+          data-carousel-next
+        >
+          <span
+            class="inline-flex items-center justify-center w-6 h-6 md:w-8 md:h-8 group-hover:scale-110 transition-all duration-300"
+          >
+            <svg
+              class="w-5 h-5 text-amber-300 group-hover:text-amber-200 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Números de impacto -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+        <div class="text-center group">
+          <div
+            class="text-5xl md:text-6xl font-black text-amber-300 mb-2 group-hover:scale-110 transition-transform duration-300"
+          >
+            400+
+          </div>
+          <div
+            class="text-xs md:text-sm text-amber-100 tracking-[0.2em] uppercase group-hover:text-amber-200 transition-colors"
+          >
+            Participants
+          </div>
+        </div>
+
+        <div class="text-center group">
+          <div
+            class="text-5xl md:text-6xl font-black text-amber-300 mb-2 group-hover:scale-110 transition-transform duration-300"
+          >
+            36H
+          </div>
+          <div
+            class="text-xs md:text-sm text-amber-100 tracking-[0.2em] uppercase group-hover:text-amber-200 transition-colors"
+          >
+            Of Hacking
+          </div>
+        </div>
+
+        <div class="text-center group">
+          <div
+            class="text-5xl md:text-6xl font-black text-amber-300 mb-2 group-hover:scale-110 transition-transform duration-300"
+          >
+            90
+          </div>
+          <div
+            class="text-xs md:text-sm text-amber-100 tracking-[0.2em] uppercase group-hover:text-amber-200 transition-colors"
+          >
+            Projects
+          </div>
+        </div>
+
+        <div class="text-center group">
+          <div
+            class="text-5xl md:text-6xl font-black text-amber-300 mb-2 group-hover:scale-110 transition-transform duration-300"
+          >
+            100%
+          </div>
+          <div
+            class="text-xs md:text-sm text-amber-100 tracking-[0.2em] uppercase group-hover:text-amber-200 transition-colors"
+          >
+            Open source
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Custom carousel implementation
+    document.addEventListener("DOMContentLoaded", function () {
+      const carousel = document.getElementById("default-carousel");
+      if (!carousel) return;
+
+      const items = carousel.querySelectorAll("[data-carousel-item]");
+      const prevButton = carousel.querySelector("[data-carousel-prev]");
+      const nextButton = carousel.querySelector("[data-carousel-next]");
+      const indicators = carousel.querySelectorAll("[data-carousel-slide-to]");
+
+      let currentIndex = 0;
+      let intervalId;
+
+      function showSlide(index) {
+        // Hide all items
+        items.forEach((item, i) => {
+          if (i === index) {
+            item.classList.remove("hidden");
+            item.classList.add("block");
+          } else {
+            item.classList.remove("block");
+            item.classList.add("hidden");
+          }
+        });
+
+        // Update indicators
+        indicators.forEach((indicator, i) => {
+          if (i === index) {
+            indicator.classList.remove("bg-white/50");
+            indicator.classList.add("bg-amber-300");
+            indicator.setAttribute("aria-current", "true");
+          } else {
+            indicator.classList.remove("bg-amber-300");
+            indicator.classList.add("bg-white/50");
+            indicator.setAttribute("aria-current", "false");
+          }
+        });
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % items.length;
+        showSlide(currentIndex);
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        showSlide(currentIndex);
+      }
+
+      function startAutoSlide() {
+        intervalId = setInterval(nextSlide, 5000);
+      }
+
+      function stopAutoSlide() {
+        if (intervalId) {
+          clearInterval(intervalId);
+        }
+      }
+
+      // Event listeners
+      if (nextButton) {
+        nextButton.addEventListener("click", () => {
+          stopAutoSlide();
+          nextSlide();
+          startAutoSlide();
+        });
+      }
+
+      if (prevButton) {
+        prevButton.addEventListener("click", () => {
+          stopAutoSlide();
+          prevSlide();
+          startAutoSlide();
+        });
+      }
+
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => {
+          stopAutoSlide();
+          currentIndex = index;
+          showSlide(currentIndex);
+          startAutoSlide();
+        });
+      });
+
+      // Pause on hover
+      carousel.addEventListener("mouseenter", stopAutoSlide);
+      carousel.addEventListener("mouseleave", startAutoSlide);
+
+      // Initialize
+      showSlide(0);
+      startAutoSlide();
+    });
+  </script>
+</section>
