@@ -1,0 +1,501 @@
+---
+import type { ScheduleDay, ScheduleTag } from "../data/schedule";
+
+interface Props {
+  days: ScheduleDay[];
+}
+
+const { days } = Astro.props as Props;
+
+/**
+ * Converts markdown-style links in description text to HTML anchor tags
+ * Example: [text](url) -> <a href="url">text 🔗</a>
+ */
+function parseDescription(text: string): string {
+  return text.replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener noreferrer" class="desc-link">$1 🔗</a>'
+  );
+}
+
+/**
+ * Check if a tag is a ScheduleTag object (with optional URL)
+ */
+function isTagObject(tag: string | ScheduleTag): tag is ScheduleTag {
+  return typeof tag === "object" && "label" in tag;
+}
+---
+
+<section class="schedule">
+  {
+    days.map((day) => (
+      <div class="day" data-date={day.isoDate}>
+        <h2 class="day-heading">{day.dateLabel}</h2>
+
+        <ul class="calendar-list" role="list">
+          {day.events.map((event) => (
+            <li data-has-end={event.endTime ? "true" : "false"}>
+              {/* Time column - shows start and optional end time */}
+              <div class="time-col">
+                <time datetime={event.datetime}>{event.time}</time>
+                {event.endTime && (
+                  <time class="end-time" datetime={event.datetime}>
+                    {event.endTime}
+                  </time>
+                )}
+              </div>
+
+              {/* Event card - expandable if has description, static otherwise */}
+              {event.description ? (
+                <details class="calendar-item group">
+                  <summary class="calendar-summary" aria-label={event.title}>
+                    <div class="calendar-header">
+                      <h4 class="event-title">
+                        {event.title}
+                        {event.tags?.map((tag) => {
+                          if (isTagObject(tag)) {
+                            return tag.url ? (
+                              <a
+                                href={tag.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="calendar-badge calendar-badge-link"
+                                onclick="event.stopPropagation();"
+                              >
+                                {tag.label}
+                              </a>
+                            ) : (
+                              <span class="calendar-badge">{tag.label}</span>
+                            );
+                          }
+                          return <span class="calendar-badge">{tag}</span>;
+                        })}
+                      </h4>
+                      {(event.location || event.speakers) && (
+                        <p class="event-meta">
+                          {event.location}
+                          {event.location && event.speakers && " · "}
+                          {event.speakers}
+                        </p>
+                      )}
+                    </div>
+                    <svg
+                      class="expand-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </summary>
+
+                  <div class="calendar-content">
+                    <p
+                      class="description-text"
+                      set:html={parseDescription(event.description)}
+                    />
+                  </div>
+                </details>
+              ) : (
+                <div class="calendar-item-static">
+                  <h4 class="event-title">
+                    {event.title}
+                    {event.tags?.map((tag) => {
+                      if (isTagObject(tag)) {
+                        return tag.url ? (
+                          <a
+                            href={tag.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="calendar-badge calendar-badge-link"
+                            onclick="event.stopPropagation();"
+                          >
+                            {tag.label}
+                          </a>
+                        ) : (
+                          <span class="calendar-badge">{tag.label}</span>
+                        );
+                      }
+                      return <span class="calendar-badge">{tag}</span>;
+                    })}
+                  </h4>
+                  {(event.location || event.speakers) && (
+                    <p class="event-meta">
+                      {event.location}
+                      {event.location && event.speakers && " · "}
+                      {event.speakers}
+                    </p>
+                  )}
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</section>
+
+<style>
+  /* SCHEDULE LAYOUT */
+  .schedule {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  /* DAY SECTION */
+  .day-heading {
+    margin: 1rem 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #fcd34d;
+  }
+
+  /* CALENDAR LIST & TIMELINE */
+  .calendar-list {
+    --time-col-width: 4.5rem;
+    --gap: 1.5rem;
+
+    /* Timeline styling */
+    --line-color: rgba(252, 211, 77, 0.28);
+    --dot-color: #fcd34d;
+    --dot-size: 10px;
+
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* Vertical timeline line */
+  .calendar-list::before {
+    content: "";
+    position: absolute;
+    top: 0.75rem;
+    bottom: 0.75rem;
+    left: calc(var(--time-col-width) + (var(--gap) / 2));
+    width: 2px;
+    background: linear-gradient(to bottom, var(--line-color), transparent 30%),
+      linear-gradient(var(--line-color), var(--line-color));
+    opacity: 0.8;
+    transform: translateX(-1px);
+  }
+
+  /* Individual event item */
+  .calendar-list > li {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--time-col-width) 1fr;
+    gap: var(--gap);
+    align-items: start;
+    padding: 0.5rem 0 1rem 0;
+  }
+
+  /* Start time dot */
+  .calendar-list > li::before {
+    content: "";
+    position: absolute;
+    top: 1.2rem;
+    left: calc(var(--time-col-width) + (var(--gap) / 2));
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: 9999px;
+    background: var(--dot-color);
+    box-shadow: 0 0 0 4px rgba(252, 211, 77, 0.15);
+    transform: translate(-50%, 0);
+    z-index: 1;
+  }
+
+  /* End time dot, only shown when event has endTime */
+  .calendar-list > li[data-has-end="true"]::after {
+    content: "";
+    position: absolute;
+    bottom: 1.4rem;
+    left: calc(var(--time-col-width) + (var(--gap) / 2));
+    width: var(--dot-size);
+    height: var(--dot-size);
+    background: rgb(239 68 68); 
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
+    transform: translate(-50%, 0);
+    z-index: 1;
+  }
+
+  /* TIME COLUMN */
+  .time-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: var(--time-col-width);
+    align-self: stretch;
+    position: relative;
+  }
+
+  /* Highlighted connector from start to end (extends the start dot outline) */
+  .calendar-list > li[data-has-end="true"] .time-col::after {
+    content: "";
+    position: absolute;
+    top: calc(1.2rem + (var(--dot-size) / 2) - 0.5rem);
+    bottom: calc(1.4rem + (var(--dot-size) / 2) - 1rem);
+    /* horizontally align to the timeline/dots center */
+    left: calc(100% + (var(--gap) / 2));
+    transform: translateX(-50%);
+    width: 10px; 
+    background: rgba(252, 211, 77, 0.22); 
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .calendar-list time {
+    display: block;
+    color: #fde68a;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    text-align: right;
+  }
+
+  /* Keep time labels always aligned to dot centers */
+  .calendar-list > li .time-col time {
+    position: absolute;
+    right: 0;
+  }
+
+  /* Start time: vertically centered with start dot */
+  .calendar-list > li .time-col time:not(.end-time) {
+    top: calc(1.2rem - 0.5rem + var(--dot-size) / 2);
+    transform: translateY(-50%);
+    padding-top: 0;
+  }
+
+  .calendar-list time.end-time {
+    /*color: #f59e0b;*/
+    top: calc(
+      100% - (1.4rem + var(--dot-size) / 2) + 1rem
+    );
+    transform: translateY(-50%);
+  }
+
+  /* EVENT CARDS (Shared Styles) */
+  .calendar-item,
+  .calendar-item-static {
+    background-color: transparent;
+    border: 2px solid #fcd34d;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: all 300ms ease;
+  }
+
+  @media (hover: hover) {
+    .calendar-item:hover,
+    .calendar-item-static:hover {
+      background-color: rgba(253, 230, 138, 0.3);
+    }
+  }
+
+  /* EXPANDABLE EVENT CARD */
+  .calendar-summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fcd34d;
+  }
+
+  /* Remove default details marker */
+  .calendar-item summary::-webkit-details-marker,
+  .calendar-item summary::marker {
+    display: none;
+  }
+
+  .calendar-summary:focus-visible {
+    outline: 2px solid rgb(253, 230, 138);
+    outline-offset: 2px;
+  }
+
+  .calendar-header {
+    padding-right: 1rem;
+    flex: 1;
+  }
+
+  .expand-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+    transform: rotate(0deg);
+    transition: transform 300ms ease;
+  }
+
+  .calendar-item[open] {
+    background-color: rgba(245, 203, 46, 0.1);
+  }
+
+  .calendar-item[open] .expand-icon {
+    transform: rotate(180deg);
+  }
+
+  /* EVENT CONTENT */
+  .event-title {
+    display: inline;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fcd34d;
+  }
+
+  .event-meta {
+    color: rgb(209, 213, 219);
+    font-size: 0.95rem;
+    margin: 0.25rem 0 0 0;
+  }
+
+  /* TAG BADGES */
+  .calendar-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    padding: 0.15rem 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 999px;
+    border: 1px solid rgba(252, 211, 77, 0.22);
+    background: rgba(252, 211, 77, 0.08);
+    color: currentColor;
+    text-transform: uppercase;
+  }
+
+  a.calendar-badge-link {
+    text-decoration: none;
+    transition: opacity 150ms ease;
+  }
+
+  a.calendar-badge-link::after {
+    content: "🔗";
+    margin-left: 0.25rem;
+    font-size: 0.65rem;
+    opacity: 0.8;
+  }
+
+  a.calendar-badge-link:hover {
+    opacity: 0.85;
+  }
+
+  /* DESCRIPTION CONTENT */
+  .calendar-content {
+    overflow: hidden;
+    transition:
+      max-height 300ms ease-in-out,
+      opacity 300ms ease-in-out;
+  }
+
+  .description-text {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.625;
+    color: #fef3c7;
+  }
+
+  .description-text :global(a) {
+    color: #fcd34d !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: all 150ms ease;
+  }
+
+  .description-text :global(a:hover) {
+    color: #fde68a !important;
+  }
+
+  /* BREAKPOINTS */
+  @media (min-width: 640px) {
+    .day-heading {
+      font-size: 1.5rem;
+    }
+
+    .calendar-list {
+      --time-col-width: 5.5rem;
+      --gap: 2rem;
+    }
+
+    .calendar-summary,
+    .event-title {
+      font-size: 1.125rem;
+    }
+
+    .description-text {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .day-heading {
+      font-size: 1.875rem;
+    }
+
+    .calendar-list {
+      --time-col-width: 6rem;
+      --gap: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .calendar-list {
+      --time-col-width: 7rem;
+      --gap: 3rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const expandableItems = document.querySelectorAll(".calendar-item");
+
+    expandableItems.forEach((item) => {
+      const summary = item.querySelector("summary");
+      const content = item.querySelector(".calendar-content") as HTMLElement;
+
+      // Initialize collapsed state
+      if (!item.hasAttribute("open") && content) {
+        content.style.maxHeight = "0px";
+        content.style.opacity = "0";
+      }
+
+      // Handle expand/collapse animation
+      summary?.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!content) return;
+
+        const isOpen = item.hasAttribute("open");
+
+        if (isOpen) {
+          content.style.maxHeight = "0px";
+          content.style.opacity = "0";
+          setTimeout(() => item.removeAttribute("open"), 300);
+        } else {
+          item.setAttribute("open", "");
+          content.style.maxHeight = "none";
+          const height = content.scrollHeight;
+          content.style.maxHeight = "0px";
+
+          setTimeout(() => {
+            content.style.maxHeight = height + "px";
+            content.style.opacity = "1";
+          }, 10);
+        }
+      });
+    });
+  });
+</script>
