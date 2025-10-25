@@ -1,0 +1,985 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+// Import images
+import participantsClassImage from "../../assets/sponsors/participants_class.jpg";
+import networkingImage from "../../assets/sponsors/networking.jpg";
+import panoramicImage from "../../assets/sponsors/panoramic_2025.jpg";
+import judgingMentoringImage from "../../assets/sponsors/judging_mentoring.jpg";
+import sponsorParticipantHelpImage from "../../assets/sponsors/sponsor_participant_help.jpg";
+import workshopImage from "../../assets/sponsors/workshop.jpg";
+import sponsorBrandShowcaseImage from "../../assets/sponsors/sponsor_brand_showcase.jpg";
+import sponsorsAwardCeremonyImage from "../../assets/sponsors/sponsors_award_ceremony.jpg";
+---
+
+<Layout title="Sponsors — HackUDC">
+  <main class="relative min-h-screen bg-[#0a0011] text-white overflow-hidden">
+    <!-- Background effects matching the site aesthetic -->
+    <div class="absolute inset-0 bg-[#181818]/90"></div>
+    <div
+      class="absolute inset-0 opacity-40 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)_1px,transparent_1px,transparent_4px)] mix-blend-multiply"
+    >
+    </div>
+    <div
+      class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,0.6)_60%,rgba(0,0,0,0.97)_100%)]"
+    >
+    </div>
+
+    <div class="relative z-10 container mx-auto px-6 py-16">
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <h1
+          class="text-4xl md:text-6xl lg:text-7xl font-black tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] mb-4"
+        >
+          CONVÍRTETE EN PATROCINADOR
+        </h1>
+        <p
+          class="text-xl md:text-2xl tracking-[0.3em] text-amber-100 mb-8 mt-8"
+        >
+          COLABORA CO MAIOR HACKATHON DE GALICIA
+        </p>
+        <div class="w-32 h-1 bg-amber-300 mx-auto"></div>
+      </div>
+
+      <!-- Why Sponsor Section -->
+      <section class="mb-20">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="text-3xl md:text-4xl font-black text-amber-300 tracking-[0.2em] text-center mb-12"
+          >
+            POR QUE PATROCINAR HACKUDC?
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div
+              class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-8 hover:border-amber-300/50 transition-all duration-300"
+            >
+              <h3
+                class="text-xl font-bold text-amber-300 mb-4 tracking-[0.15em]"
+              >
+                🎯 FONTE DE TALENTO
+              </h3>
+              <p class="text-amber-100 leading-relaxed">
+                Conecta con máis de 400 desenvolvedores apaixonados e
+                estudantes. O teu novo empleado estrela pode estar aquí.
+              </p>
+            </div>
+
+            <div
+              class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-8 hover:border-amber-300/50 transition-all duration-300"
+            >
+              <h3
+                class="text-xl font-bold text-amber-300 mb-4 tracking-[0.15em]"
+              >
+                🚀 VISIBILIDADe DE MARCA
+              </h3>
+              <p class="text-amber-100 leading-relaxed">
+                Posiciona a túa empresa ao fronte da innovación e o
+                desenvolvemento de software libre en Galicia.
+              </p>
+            </div>
+
+            <div
+              class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-8 hover:border-amber-300/50 transition-all duration-300"
+            >
+              <h3
+                class="text-xl font-bold text-amber-300 mb-4 tracking-[0.15em]"
+              >
+                💡 ACCESO A INNOVACIÓN
+              </h3>
+              <p class="text-amber-100 leading-relaxed">
+                Sé testigo de proxectos de estado da arte e solucións creativas
+                que se desenvolven durante o evento.
+              </p>
+            </div>
+
+            <div
+              class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-8 hover:border-amber-300/50 transition-all duration-300"
+            >
+              <h3
+                class="text-xl font-bold text-amber-300 mb-4 tracking-[0.15em]"
+              >
+                🤝 IMPACTO NA COMUNIDADE
+              </h3>
+              <p class="text-amber-100 leading-relaxed">
+                Apoia o crecemento do ecosistema tecnolóxico e a comunidade do
+                software libre na nosa rexión.
+              </p>
+            </div>
+          </div>
+
+          <!-- Impact Numbers -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-black text-amber-300">
+                400+
+              </div>
+              <div class="text-sm text-amber-100 tracking-wider mt-2">
+                PARTICIPANTES
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-black text-amber-300">
+                36H
+              </div>
+              <div class="text-sm text-amber-100 tracking-wider mt-2">
+                DE HACKING
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-black text-amber-300">
+                90+
+              </div>
+              <div class="text-sm text-amber-100 tracking-wider mt-2">
+                PROXECTOS
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-black text-amber-300">
+                100%
+              </div>
+              <div class="text-sm text-amber-100 tracking-wider mt-2">
+                SOFTWARE LIBRE
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sponsorship Tiers Section -->
+      <section class="mb-20">
+        <div class="max-w-5xl mx-auto">
+          <h2
+            class="text-3xl md:text-4xl font-black text-amber-300 tracking-[0.2em] text-center mb-12"
+          >
+            OPCIÓNS DE PATROCINIO
+          </h2>
+
+          <!-- Exclusive ROOT Tier - SOLD OUT -->
+          <div class="max-w-4xl mx-auto mb-8">
+            <div
+              class="relative bg-black/40 backdrop-blur-sm border-2 border-amber-300/50 rounded-lg p-8 opacity-75"
+            >
+              <div
+                class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-6 py-1 rounded-full text-sm font-bold tracking-wider"
+              >
+                VENDIDO
+              </div>
+              <div class="text-center mb-6">
+                <h3
+                  class="text-3xl font-black text-amber-300/70 tracking-[0.2em] mb-2 line-through"
+                >
+                  ROOT
+                </h3>
+                <span class="text-4xl font-bold text-amber-100/50 line-through"
+                  >€6,000</span
+                >
+                <span class="text-xs text-amber-200/50"> + IVA</span>
+              </div>
+
+              <div class="space-y-3 text-amber-100/50 text-sm text-center">
+                <p>
+                  ★ Máxima visibilidade - Logo ao lado de HackUDC en todos os
+                  lados
+                </p>
+                <p>★ Proposta de retos prioritaria</p>
+                <p>★ Stand doble con prioridade durante o evento</p>
+                <p>★ Taller ou charla de 2 horas</p>
+                <p>★ 6 pases para o evento</p>
+                <p>★ Teu merchandising nos packs de benvida</p>
+                <p>★ Acceso completo aos CV dos participantes</p>
+              </div>
+
+              <div class="mt-6 text-center">
+                <span class="text-sm text-amber-200/70 italic"
+                  >Non o perdas o ano que ven - Resérvao cedo!</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Admin Tier - FEATURED -->
+          <div class="max-w-4xl mx-auto mb-12">
+            <div
+              class="relative bg-black/60 backdrop-blur-sm border-2 border-amber-300 rounded-lg p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_30px_rgba(251,191,36,0.5)] shadow-[0_0_15px_rgba(251,191,36,0.2)]"
+            >
+              <div
+                class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-amber-300 text-black px-6 py-1 rounded-full text-sm font-bold tracking-wider animate-pulse"
+              >
+                MELLOR VALOR - PRAZAS LIMITADAS
+              </div>
+              <div class="text-center mb-6">
+                <h3
+                  class="text-3xl font-black text-amber-300 tracking-[0.2em] mb-2"
+                >
+                  ADMIN
+                </h3>
+                <span class="text-4xl font-bold text-amber-100">€3,000</span>
+                <span class="text-xs text-amber-200"> + IVA</span>
+                <p class="text-sm text-amber-200 mt-2 italic">
+                  Solo 6 dispoñibles - inclúe proposición de reto
+                </p>
+              </div>
+
+              <div class="space-y-3 text-amber-100 text-sm text-center">
+                <p class="font-semibold text-amber-300">
+                  ✓ Propón un reto do mundo real aos equipos
+                </p>
+                <p>✓ Logo grande na web e cartelería do evento</p>
+                <p>✓ Stand durante todo o evento</p>
+                <p>✓ Charla técnica ou taller de 1 hora</p>
+                <p>✓ Teu merchandising nos packs de benvida</p>
+                <p>✓ 4 pases para o evento</p>
+                <p>✓ Acceso completo aos CV dos participantes</p>
+              </div>
+
+              <div
+                class="mt-6 p-3 bg-amber-300/10 rounded-lg border border-amber-300/30"
+              >
+                <p class="text-amber-300 text-sm font-bold text-center">
+                  💡 Ideal para empresas que buscan contratar e innovar
+                </p>
+              </div>
+
+              <div class="mt-6 text-center">
+                <a
+                  href="https://nocodb.gpul.org/dashboard/#/nc/form/a8cea75c-ba77-4a09-91ba-abd4530066ee"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block px-6 py-2 bg-amber-300 text-black font-bold tracking-[0.1em] uppercase text-sm hover:bg-amber-200 transition-all duration-300 hover:scale-105"
+                  data-umami-event="sponsor-apply-click"
+                >
+                  CONSÍGUEO
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Other Support Options -->
+          <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- User/Basic Sponsor -->
+            <div
+              class="bg-black/50 backdrop-blur-sm border border-amber-100/30 rounded-lg p-6"
+            >
+              <h3
+                class="text-xl font-black text-amber-300 tracking-[0.2em] text-center mb-4"
+              >
+                USER
+              </h3>
+              <div class="text-center mb-4">
+                <span class="text-2xl font-bold text-amber-100">€1,000</span>
+                <span class="text-xs text-amber-200"> + IVA</span>
+              </div>
+
+              <ul class="space-y-2 text-amber-100 text-sm">
+                <li>• Logo na web e cartelería do evento</li>
+                <li>• Logo en todo o material promocional</li>
+                <li>• Incluído en posters e anuncios</li>
+                <li>• Mencións en redes sociais</li>
+                <li>• Agradecemento en todas as ceremonias</li>
+              </ul>
+
+              <div class="mt-4 text-center">
+                <p class="text-amber-200 text-xs italic">
+                  Apoia ao evento sen propoñer un reto
+                </p>
+              </div>
+
+              <div class="mt-4 text-center">
+                <a
+                  href="https://nocodb.gpul.org/dashboard/#/nc/form/a8cea75c-ba77-4a09-91ba-abd4530066ee"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block px-6 py-2 bg-amber-300 text-black font-bold tracking-[0.1em] uppercase text-sm hover:bg-amber-200 transition-all duration-300 hover:scale-105"
+                >
+                  CONSÍGUEO
+                </a>
+              </div>
+            </div>
+
+            <!-- Collaborator -->
+            <div
+              class="bg-black/50 backdrop-blur-sm border border-amber-100/30 rounded-lg p-6"
+            >
+              <h3
+                class="text-xl font-black text-amber-300 tracking-[0.2em] text-center mb-4"
+              >
+                COLABORADOR
+              </h3>
+              <div class="text-center mb-4">
+                <span class="text-2xl font-bold text-amber-100">En especie</span
+                >
+                <span class="text-xs text-amber-200 block"
+                  >Servizos e productos</span
+                >
+              </div>
+
+              <ul class="space-y-2 text-amber-100 text-sm">
+                <li>• Provee comida/bebidas/suministros</li>
+                <li>• Inclusión do logo</li>
+                <li>• Mencións en redes sociais</li>
+                <li>• Agradecemento en todas as ceremonias</li>
+              </ul>
+
+              <div class="mt-4 text-center">
+                <p class="text-amber-200 text-xs italic">
+                  Axuda a facer o evento increíble
+                </p>
+              </div>
+
+              <div class="mt-4 text-center">
+                <a
+                  href="mailto:hackudc@gpul.org?subject=HackUDC%202026%20In-Kind%20Sponsorship"
+                  class="inline-block px-6 py-2 bg-amber-300 text-black font-bold tracking-[0.1em] uppercase text-sm hover:bg-amber-200 transition-all duration-300 hover:scale-105"
+                >
+                  CONTACTA AHORA
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Custom Terms Section -->
+          <div
+            class="mt-12 max-w-4xl mx-auto p-6 bg-amber-300/10 backdrop-blur-sm border border-amber-300/40 rounded-lg"
+          >
+            <h3
+              class="text-xl font-bold text-amber-300 tracking-[0.15em] text-center mb-3"
+            >
+              FALEMOS!
+            </h3>
+            <p class="text-amber-100 text-center leading-relaxed">
+              <span class="font-semibold"
+                >Non atopas un paquete que se adapte ás túas necesidades?</span
+              ><br />
+              Somos flexibles e estamos abertos a crear plans de patrocinio personalizados.<br
+              />
+              Se tes un presuposto distintos, requisitos específicos ou ideas únicas
+              para colaborar<br />
+              <span class="text-amber-300 font-bold"
+                >Encantaríanos comentalo e ver cómo podemos traballar xuntos!</span
+              >
+            </p>
+          </div>
+
+          <div class="mt-8 text-center">
+            <p class="text-amber-100 text-lg">
+              Todos os patrocinadores reciben agradecementos e axudan a formar o
+              futuro tecnolóxico de Galicia
+            </p>
+            <p class="text-amber-200 text-sm mt-4 italic">
+              Os precios que se mostran non inclúen IVA.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Participant Profile Section -->
+      <section class="mb-20">
+        <div class="max-w-5xl mx-auto">
+          <h2
+            class="text-3xl md:text-4xl font-black text-amber-300 tracking-[0.2em] text-center mb-12"
+          >
+            A QUEN COÑECERÁS
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div
+              class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-8"
+            >
+              <h3
+                class="text-xl font-bold text-amber-300 mb-6 tracking-[0.15em]"
+              >
+                DEMOGRAFÍA DOS PARTICIPANTES
+              </h3>
+              <div class="space-y-4 text-amber-100">
+                <div class="flex justify-between items-center">
+                  <span class="text-sm">Idade Media</span>
+                  <span class="font-bold text-amber-300">20-21 anos</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm">Nivel de Educación</span>
+                  <span class="font-bold text-amber-300">86% Graduados</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm">Alcance Xeográfico</span>
+                  <span class="font-bold text-amber-300"
+                    >6 países, 75 cidades</span
+                  >
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm">Universidades Top</span>
+                  <span class="font-bold text-amber-300">UDC, USC, UPC</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-8"
+            >
+              <h3
+                class="text-xl font-bold text-amber-300 mb-6 tracking-[0.15em]"
+              >
+                FONTE DE TALENTO DIVERSO
+              </h3>
+              <div class="space-y-4 text-amber-100">
+                <p class="text-sm leading-relaxed">
+                  Coñece aos participantes de todos os campos tecnolóxicos:
+                </p>
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                  <div class="border-l-2 border-amber-300/50 pl-3">
+                    <span class="font-semibold text-amber-300"
+                      >Enxeñaría de Computadores</span
+                    >
+                  </div>
+                  <div class="border-l-2 border-amber-300/50 pl-3">
+                    <span class="font-semibold text-amber-300"
+                      >Ciencia de Datos</span
+                    >
+                  </div>
+                  <div class="border-l-2 border-amber-300/50 pl-3">
+                    <span class="font-semibold text-amber-300"
+                      >Intelixencia Artificial</span
+                    >
+                  </div>
+                  <div class="border-l-2 border-amber-300/50 pl-3">
+                    <span class="font-semibold text-amber-300"
+                      >Ciberseguridade</span
+                    >
+                  </div>
+                  <div class="border-l-2 border-amber-300/50 pl-3">
+                    <span class="font-semibold text-amber-300"
+                      >Enxeñaría do Software</span
+                    >
+                  </div>
+                  <div class="border-l-2 border-amber-300/50 pl-3">
+                    <span class="font-semibold text-amber-300">Matemáticas</span
+                    >
+                  </div>
+                </div>
+                <p class="text-xs text-amber-200 italic mt-4">
+                  Ademáis de estudantes de Telecomunicacións, Física e campos
+                  emerxentes
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mb-8">
+            <p class="text-amber-100 text-lg">
+              Conecta con estudantes apaixonados de todos os cursos - desde
+              primeiro ata candidatos a doctorado.
+            </p>
+          </div>
+
+          <!-- Event Images -->
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div
+              class="relative overflow-hidden rounded-lg border border-amber-300/30 h-80"
+            >
+              <Image
+                src={participantsClassImage}
+                alt="Hacking in action"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6"
+              >
+                <div>
+                  <p class="text-amber-300 text-lg font-bold">EN ACCIÓN</p>
+                  <p class="text-amber-200 text-sm">
+                    Máis de 400 participantes colaborando
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="relative overflow-hidden rounded-lg border border-amber-300/30 h-80"
+            >
+              <Image
+                src={networkingImage}
+                alt="Networking"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6"
+              >
+                <div>
+                  <p class="text-amber-300 text-lg font-bold">NETWORKING</p>
+                  <p class="text-amber-200 text-sm">Conecta co talento</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panoramic Last Edition Image -->
+          <div
+            class="relative overflow-hidden rounded-lg border border-amber-300/30"
+          >
+            <Image
+              src={panoramicImage}
+              alt="HackUDC 2025 - All participants"
+              class="w-full h-auto"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8"
+            >
+              <div class="text-center w-full">
+                <p class="text-amber-300 text-lg font-bold tracking-[0.2em]">
+                  DESTACADO DA ÚLTIMA EDICIÓN
+                </p>
+                <p class="text-amber-200 text-sm mt-2">
+                  Máis de 300 participantes de 6 países reuníronse para
+                  traballar durante 36 horas
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Event Schedule Section -->
+      <section class="mb-20">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="text-3xl md:text-4xl font-black text-amber-300 tracking-[0.2em] text-center mb-12"
+          >
+            PROGRAMA DO EVENTO
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Day 1 -->
+            <div
+              class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-6"
+            >
+              <h3
+                class="text-xl font-bold text-amber-300 tracking-[0.15em] mb-4 text-center"
+              >
+                DÍA 1 - VENRES
+              </h3>
+              <div class="space-y-3 text-amber-100 text-sm">
+                <div class="border-l-2 border-amber-300/50 pl-4">
+                  <p class="font-semibold">Rexistro e pack de benvida</p>
+                  <p class="text-xs text-amber-200">
+                    Os participantes reciben o merchandising dos patrocinadores
+                  </p>
+                </div>
+                <div class="border-l-2 border-amber-300/50 pl-4">
+                  <p class="font-semibold">Ceremonia de apertura</p>
+                  <p class="text-xs text-amber-200">
+                    Presentación e retos de patrocinadores
+                  </p>
+                </div>
+                <div class="border-l-2 border-amber-300/50 pl-4">
+                  <p class="font-semibold">Empeza o hacking</p>
+                  <p class="text-xs text-amber-200">36 horas de innovación</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div
+              class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-6"
+            >
+              <h3
+                class="text-xl font-bold text-amber-300 tracking-[0.15em] mb-4 text-center"
+              >
+                DÍA 2 - SÁBADO
+              </h3>
+              <div class="space-y-3 text-amber-100 text-sm">
+                <div class="border-l-2 border-amber-300/50 pl-4">
+                  <p class="font-semibold">Hacking Continuo</p>
+                  <p class="text-xs text-amber-200">
+                    Os equipos traballan nos seus proyectos
+                  </p>
+                </div>
+                <div class="border-l-2 border-amber-300/50 pl-4">
+                  <p class="font-semibold">Actividades de patrocinadores</p>
+                  <p class="text-xs text-amber-200">
+                    Talleres, charlas e networking
+                  </p>
+                </div>
+                <div class="border-l-2 border-amber-300/50 pl-4">
+                  <p class="font-semibold">Eventos secundarios</p>
+                  <p class="text-xs text-amber-200">CTF, juegos e máis</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div
+              class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-6"
+            >
+              <h3
+                class="text-xl font-bold text-amber-300 tracking-[0.15em] mb-4 text-center"
+              >
+                DÍA 3 - DOMINGO
+              </h3>
+              <div class="space-y-3 text-amber-100 text-sm">
+                <div class="border-l-2 border-amber-300/50 pl-4">
+                  <p class="font-semibold">Presentación de proxectos</p>
+                  <p class="text-xs text-amber-200">Toques finais e envío</p>
+                </div>
+                <div class="border-l-2 border-amber-300/50 pl-4">
+                  <p class="font-semibold">Demo e valoración</p>
+                  <p class="text-xs text-amber-200">
+                    Os equipos presentan ante os patrocinadores
+                  </p>
+                </div>
+                <div class="border-l-2 border-amber-300/50 pl-4">
+                  <p class="font-semibold">Ceremonia de premios</p>
+                  <p class="text-xs text-amber-200">
+                    Os patrocinadores dan os seus premios
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <p class="text-amber-200 text-sm italic">
+              As fechas exactas publicaránse próximamente
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Challenge Proposal Section -->
+      <section class="mb-20">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="text-3xl md:text-4xl font-black text-amber-300 tracking-[0.2em] text-center mb-12"
+          >
+            PROPÓN UN RETO
+          </h2>
+
+          <div
+            class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-8 mb-8"
+          >
+            <h3 class="text-xl font-bold text-amber-300 mb-4 tracking-[0.15em]">
+              QUE SIGNIFICA?
+            </h3>
+            <p class="text-amber-100 leading-relaxed mb-6">
+              Como patrocinador ROOT o ADMIN, podes propoñer un reto para que os
+              equipos o resolvan. Esta é a túa oportunidade para conseguir
+              soluciones innovadoras a problemas reais de negocio identificando
+              ao mellor talento.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div
+                class="bg-amber-300/10 border border-amber-300/20 rounded-lg p-4"
+              >
+                <h4 class="text-amber-300 font-bold mb-2">
+                  As túas Responsabilidades
+                </h4>
+                <ul class="text-amber-100 text-sm space-y-2">
+                  <li>• Definir un reto claro e interesante</li>
+                  <li>• Presentar en la ceremonia de apertura</li>
+                  <li>• Proveer ayuda técnica</li>
+                  <li>• Xulgar os proxectos finais</li>
+                  <li>• Regalar un mínimo de 400€ en premios</li>
+                </ul>
+              </div>
+
+              <div
+                class="bg-amber-300/10 border border-amber-300/20 rounded-lg p-4"
+              >
+                <h4 class="text-amber-300 font-bold mb-2">Qué Gañas?</h4>
+                <ul class="text-amber-100 text-sm space-y-2">
+                  <li>• Tempo no escenario para presentar a túa empresa</li>
+                  <li>• Interacción directa cos equipos</li>
+                  <li>• Solucións innovadoras ao teu reto</li>
+                  <li>• Acceso prioritario aos equipos ganñdores</li>
+                  <li>• Mellor visibilidade de marca</li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="mt-6 p-4 bg-amber-300/5 rounded-lg border border-amber-300/10"
+            >
+              <p class="text-amber-200 text-sm italic text-center">
+                A organización revisará as propostas de reto para asegurar que
+                están aliñadas cos valores do evento e a dificultade técnica.
+                Daráse o apoio organizacional necesario.
+              </p>
+            </div>
+          </div>
+
+          <!-- Challenge Examples Images -->
+          <div class="grid md:grid-cols-3 gap-4">
+            <div
+              class="relative overflow-hidden rounded-lg border border-amber-300/20 md:col-span-2 h-80"
+            >
+              <Image
+                src={judgingMentoringImage}
+                alt="Judging and mentorship"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6"
+              >
+                <div>
+                  <p class="text-amber-300 text-base font-bold">
+                    VALORACIÓN E AXUDA
+                  </p>
+                  <p class="text-amber-200 text-sm mt-1">
+                    Os patrocinadores evalúan os proxectos e guían aos equipos
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="relative overflow-hidden rounded-lg border border-amber-300/20 h-80"
+            >
+              <Image
+                src={sponsorParticipantHelpImage}
+                alt="Team collaboration"
+                class="w-full h-full object-cover object-center"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6"
+              >
+                <div>
+                  <p class="text-amber-300 text-base font-bold">
+                    TRABALLO EN EQUIPO
+                  </p>
+                  <p class="text-amber-200 text-sm mt-1">
+                    Colaboración en acción
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What You Get Section -->
+      <section class="mb-20">
+        <div class="max-w-5xl mx-auto">
+          <h2
+            class="text-3xl md:text-4xl font-black text-amber-300 tracking-[0.2em] text-center mb-12"
+          >
+            O QUE LEVAS
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div
+              class="bg-amber-300/10 border border-amber-300/20 rounded-lg p-6 text-center"
+            >
+              <div class="text-4xl mb-4">📢</div>
+              <h4 class="text-amber-300 font-bold tracking-[0.1em] mb-2">
+                VISIBILIDADE
+              </h4>
+              <p class="text-amber-100 text-sm">
+                Visibilidade de marca e alcance de márketing
+              </p>
+            </div>
+
+            <div
+              class="bg-amber-300/10 border border-amber-300/20 rounded-lg p-6 text-center"
+            >
+              <div class="text-4xl mb-4">🎯</div>
+              <h4 class="text-amber-300 font-bold tracking-[0.1em] mb-2">
+                RECLUTAMENTO
+              </h4>
+              <p class="text-amber-100 text-sm">
+                Acceso ao mellor talento y aos CVs
+              </p>
+            </div>
+
+            <div
+              class="bg-amber-300/10 border border-amber-300/20 rounded-lg p-6 text-center"
+            >
+              <div class="text-4xl mb-4">🤝</div>
+              <h4 class="text-amber-300 font-bold tracking-[0.1em] mb-2">
+                PARTICIPACIÓN
+              </h4>
+              <p class="text-amber-100 text-sm">
+                Talleres, charlas e proposta de retos
+              </p>
+            </div>
+
+            <div
+              class="bg-amber-300/10 border border-amber-300/20 rounded-lg p-6 text-center"
+            >
+              <div class="text-4xl mb-4">🏆</div>
+              <h4 class="text-amber-300 font-bold tracking-[0.1em] mb-2">
+                RETOS
+              </h4>
+              <p class="text-amber-100 text-sm">
+                Propón retos reais para que os resolvan os equipos
+              </p>
+            </div>
+
+            <div
+              class="bg-amber-300/10 border border-amber-300/20 rounded-lg p-6 text-center"
+            >
+              <div class="text-4xl mb-4">🎪</div>
+              <h4 class="text-amber-300 font-bold tracking-[0.1em] mb-2">
+                PRESENCIA
+              </h4>
+              <p class="text-amber-100 text-sm">
+                Stand no evento e oportunidades de merchandising
+              </p>
+            </div>
+
+            <div
+              class="bg-amber-300/10 border border-amber-300/20 rounded-lg p-6 text-center"
+            >
+              <div class="text-4xl mb-4">🌟</div>
+              <h4 class="text-amber-300 font-bold tracking-[0.1em] mb-2">
+                NETWORKING
+              </h4>
+              <p class="text-amber-100 text-sm">
+                Conecta con estudantes, profesionais e innovadores
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Success Stories -->
+      <section class="mb-20">
+        <div class="max-w-5xl mx-auto text-center">
+          <h2
+            class="text-3xl md:text-4xl font-black text-amber-300 tracking-[0.2em] mb-12"
+          >
+            A EXPERIENCIA HACKUDC
+          </h2>
+
+          <!-- Success Stories Gallery -->
+          <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div
+              class="md:col-span-2 relative overflow-hidden rounded-lg border border-amber-300/30 h-96"
+            >
+              <Image
+                src={workshopImage}
+                alt="Workshop session"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-8"
+              >
+                <div>
+                  <p class="text-amber-300 text-2xl font-bold">
+                    TALLERES E EDUCACIÓN
+                  </p>
+                  <p class="text-amber-200 text-base mt-2">
+                    Experiencia compartindo sesións con expertos da industria
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="relative overflow-hidden rounded-lg border border-amber-300/30 h-96"
+            >
+              <Image
+                src={sponsorBrandShowcaseImage}
+                alt="Sponsor showcase"
+                class="w-full h-full object-cover object-center"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-6"
+              >
+                <div class="text-center w-full">
+                  <p class="text-amber-300 text-xl font-bold">
+                    PRESENCIA DE MARCA
+                  </p>
+                  <p class="text-amber-200 text-sm mt-2">Visibilidade máxima</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-black/40 backdrop-blur-sm border border-amber-300/30 rounded-lg p-8 mb-8"
+          >
+            <blockquote
+              class="text-amber-100 text-xl italic leading-relaxed mb-6"
+            >
+              "Cando a industria se une coa innovación, ocorre maxia. Únete a
+              nós creadon o evento tecnolóxico con maior impacto de Galicia,
+              onde os estudantes se convirten en innovadores e as ideas se
+              volven realidade"
+            </blockquote>
+          </div>
+        </div>
+
+        <div
+          class="relative overflow-hidden rounded-lg border border-amber-300/20 h-100"
+        >
+          <Image
+            src={sponsorsAwardCeremonyImage}
+            alt="Awards ceremony"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-8"
+          >
+            <div class="w-full">
+              <p class="text-amber-300 text-2xl font-bold text-center mb-2">
+                PREMIOS E RECOÑECEMENTO
+              </p>
+              <p class="text-amber-200 text-base text-center">
+                Celebra a innovación coos equipos gañadores e premios de
+                patrocinadores
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Call to Action -->
+    <section class="text-center relative z-10">
+      <div class="max-w-2xl mx-auto">
+        <h2
+          class="text-3xl md:text-4xl font-black text-amber-300 tracking-[0.2em] mb-8"
+        >
+          CON GANAS DE PATROCINAR?
+        </h2>
+
+        <p class="text-amber-100 text-lg leading-relaxed mb-8">
+          Únete a nós para dar forma ao futuro da tecnoloxía en Galicia.
+          Colabora con HackUDC 2026 e3 conecta coa próxima xeración de talento.
+        </p>
+
+        <a
+          href="https://nocodb.gpul.org/dashboard/#/nc/form/a8cea75c-ba77-4a09-91ba-abd4530066ee"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block group relative px-12 py-6 bg-transparent border-2 border-amber-300 text-amber-300 font-bold tracking-[0.2em] uppercase text-lg hover:bg-amber-300 hover:text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:scale-105 mb-8"
+        >
+          <span class="relative z-10">Cubre o formulario de patrocinio</span>
+          <div
+            class="absolute inset-0 bg-amber-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+          >
+          </div>
+        </a>
+
+        <div class="mt-6">
+          <p class="text-amber-100/70 text-sm">
+            Ou contacta directamente con nós en:
+            <a
+              href="mailto:hackudc@gpul.org?subject=HackUDC%202026%20Sponsorship"
+              class="text-amber-300 hover:text-amber-200 transition-colors"
+            >
+              hackudc@gpul.org
+            </a>
+          </p>
+        </div>
+
+        <div class="mt-8 mb-20">
+          <a
+            href="/"
+            class="text-amber-300 hover:text-amber-200 transition-colors tracking-[0.1em] text-lg"
+          >
+            ← VOLVER AO INICIO
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
