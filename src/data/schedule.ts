@@ -42,7 +42,7 @@ export const schedule: ScheduleDay[] = [
     dateLabel: "Friday, Feb 27",
     isoDate: "2026-02-27",
     events: [
-      {
+      /*{
         time: "09:00",
         endTime: "10:00",
         datetime: "2026-02-27T09:00",
@@ -77,12 +77,14 @@ export const schedule: ScheduleDay[] = [
         location: "Cafeteria",
         description: "Vegetarian and gluten-free options provided.",
       },
+      */
     ],
   },
   {
     dateLabel: "Saturday, Feb 28",
     isoDate: "2026-02-28",
     events: [
+      /*
       {
         time: "09:30",
         endTime: "10:30",
@@ -110,12 +112,14 @@ export const schedule: ScheduleDay[] = [
         title: "Dinner & Social",
         location: "Cafeteria → Lounge",
       },
+      */
     ],
   },
   {
     dateLabel: "Sunday, Mar 1",
     isoDate: "2026-03-01",
     events: [
+      /*
       {
         time: "09:00",
         datetime: "2026-03-01T09:00",
@@ -141,6 +145,7 @@ export const schedule: ScheduleDay[] = [
         title: "Awards & Closing",
         location: "Main Stage",
       },
+      */
     ],
   },
 ];
