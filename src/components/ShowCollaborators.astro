@@ -1,55 +1,55 @@
 ---
 import { Image } from "astro:assets";
 
-//Images:
+// Images:
 import logoAMTEGA from "../assets/collaborators/amtega.svg";
 import logoFIC from "../assets/collaborators/fic.svg";
 import logoUDC from "../assets/collaborators/udc.svg";
+
+// Base styles
+const cardBase =
+  "mx-auto flex flex-col justify-center overflow-hidden rounded-lg p-3 sm:p-4 transition-transform duration-300 hover:scale-105";
 ---
 
-<section class="p-10">
+<section
+  class="mt-20 sm:mt-32 md:mt-40 mb-12 sm:mb-16 md:mb-20 max-w-whatever mx-auto px-4 flex flex-col items-center justify-center h-full z-10"
+>
   <h1
-    id="sponsor-info"
-    class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-center tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] mb-4"
+    id="collaborators-heading"
+    class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-center tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] mb-6 sm:mb-6 md:mb-8"
   >
     Collaborators
   </h1>
 
-      <div
-        class="mt-15 grid grid-cols-1 gap-8 px-3 sm:grid-cols-2 md:grid-cols-3"
-      >
-        <a href="https://udc.gal">
-          <div
-            class="flex h-32 flex-col justify-center overflow-hidden rounded-lg p-2 text-center"
-          >
-            <Image
-              src={logoUDC}
-              alt="Logo UDC"
-              class="h-full w-full object-contain"
-            />
-          </div>
-        </a>
-        <a href="https://fic.udc.es">
-          <div
-            class="flex h-32 flex-col justify-center overflow-hidden rounded-lg p-2 text-center"
-          >
-            <Image
-              src={logoFIC}
-              alt="Logo FIC"
-              class="h-full w-full object-contain"
-            />
-          </div>
-        </a>
-        <a href="https://amtega.xunta.gal/">
-          <div
-            class="flex h-32 flex-col justify-center overflow-hidden rounded-lg p-2 text-center"
-          >
-            <Image
-              src={logoAMTEGA}
-              alt="Logo AMTEGA"
-              class="h-full w-full object-contain"
-            />
-          </div>
-        </a>
+  <div
+    class="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 px-3 w-full max-w-5xl"
+  >
+    <a href="https://udc.gal" class="w-full">
+      <div class={`${cardBase} aspect-[5/3] w-full max-w-[320px]`}>
+        <Image
+          src={logoUDC}
+          alt="Logo UDC"
+          class="h-full w-full object-contain"
+        />
       </div>
-    </section>
+    </a>
+    <a href="https://fic.udc.es" class="w-full">
+      <div class={`${cardBase} aspect-[5/3] w-full max-w-[320px]`}>
+        <Image
+          src={logoFIC}
+          alt="Logo FIC"
+          class="h-full w-full object-contain"
+        />
+      </div>
+    </a>
+    <a href="https://amtega.xunta.gal/" class="w-full">
+      <div class={`${cardBase} aspect-[5/3] w-full max-w-[320px]`}>
+        <Image
+          src={logoAMTEGA}
+          alt="Logo AMTEGA"
+          class="h-full w-full object-contain"
+        />
+      </div>
+    </a>
+  </div>
+</section>
