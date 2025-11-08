@@ -7,6 +7,33 @@ import ShowSponsors from "../components/ShowSponsors.astro";
 import ShowCollaborators from "../components/ShowCollaborators.astro";
 import ShowStart from "../components/ShowStart.astro";
 import Footer from "../components/Footer.astro";
+import ImageGallery from "../components/ImageGallery.astro";
+
+// Import images for the gallery
+import participantsClassImage from "../assets/sponsors/participants_class.jpg";
+import networkingImage from "../assets/sponsors/networking.jpg";
+import panoramicImage from "../assets/sponsors/panoramic_2025.jpg";
+import judgingMentoringImage from "../assets/sponsors/judging_mentoring.jpg";
+import sponsorParticipantHelpImage from "../assets/sponsors/sponsor_participant_help.jpg";
+import workshopImage from "../assets/sponsors/workshop.jpg";
+import sponsorBrandShowcaseImage from "../assets/sponsors/sponsor_brand_showcase.jpg";
+import sponsorsAwardCeremonyImage from "../assets/sponsors/sponsors_award_ceremony.jpg";
+
+import fosdemImg from "../assets/fosdem.jpg";
+import retreatImg from "../assets/retreat.jpg";
+
+const galleryImages = [
+  { src: fosdemImg.src, alt: "FOSDEM Event" },
+  { src: retreatImg.src, alt: "Team Retreat" },
+  { src: participantsClassImage.src, alt: "Participants in a class session" },
+  { src: networkingImage.src, alt: "Attendees networking during the event" },
+  { src: panoramicImage.src, alt: "Panoramic view of HackUDC 2025" },
+  { src: judgingMentoringImage.src, alt: "Judging and mentoring session" },
+  { src: sponsorParticipantHelpImage.src, alt: "Sponsor assisting participants" },
+  { src: workshopImage.src, alt: "Workshop in progress" },
+  { src: sponsorBrandShowcaseImage.src, alt: "Sponsor brand showcase area" },
+  { src: sponsorsAwardCeremonyImage.src, alt: "Sponsors at the award ceremony" }
+];
 ---
 
 <Layout title="HackUDC — Accept the Challenge">
@@ -27,6 +54,7 @@ import Footer from "../components/Footer.astro";
       <ShowSponsors />
       <ShowCollaborators />
       <FAQ />
+      <ImageGallery images={galleryImages} />
       <Footer />
     </div>
   </main>
