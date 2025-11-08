@@ -1,0 +1,564 @@
+---
+// ImageGallery.astro
+// Usage inside an Astro page/component:
+// import ImageGallery from "../components/ImageGallery.astro";
+//
+// // If you import images with Astro's asset import, use '.src' for the URL:
+// import exampleImg from "../assets/example.jpg";
+// const images = [ { src: exampleImg.src, alt: "Example" } ];
+//
+// <ImageGallery images={images} autoPlayInterval={4000} />
+//
+// Props:
+// - images: { src: string; alt: string }[]  (required) — array of image objects.
+// - autoPlayInterval?: number (ms) — default 5000. Set to 0 to disable autoplay.
+//
+// Notes:
+// - Pass raw string URLs for 'src'. When using Astro image imports, use the '.src' property.
+// - The component runs a small client-side carousel script to clone and animate slides.
+// - Provide 'alt' text for accessibility.
+
+export interface Props {
+  images: { src: string | { src: string; [k: string]: any }; alt: string }[];
+  autoPlayInterval?: number;
+}
+
+const { images, autoPlayInterval = 5000 } = Astro.props;
+
+// Normalize image imports. Allow passing either a string URL or Astro ImageMetadata.
+const resolvedImages = (images || []).map((image) => {
+  const raw = image?.src ?? "";
+  const src = typeof raw === "string" ? raw : (raw?.src ?? raw?.default ?? "");
+  return { src, alt: image?.alt ?? "" };
+});
+---
+
+<section
+  id="image-gallery-container"
+  class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative"
+  style="isolation: isolate;"
+>
+  <h2
+    class="relative z-20 text-3xl sm:text-4xl md:text-5xl font-black uppercase text-center tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] mb-12 sm:mb-16"
+  >
+    Gallery
+  </h2>
+
+  <div class="relative">
+    <!-- Ambient background centered on carousel track, overflows in all directions -->
+    <div
+      class="absolute pointer-events-none z-0"
+      style="left: 50%; top: 50%; transform: translate(-50%, -50%); width: 200%; height: 120%;"
+    >
+      <div id="ambient-background" class="ambient-container">
+        <div class="ambient-overlay"></div>
+      </div>
+    </div>
+
+    <!-- Gallery track container with controlled height -->
+    <div
+      class="relative z-10 min-h-[240px] sm:min-h-[320px] md:min-h-[440px] lg:min-h-[540px] flex items-center"
+    >
+      <div
+        class="gallery-track flex gap-3 sm:gap-4 md:gap-6 transition-transform duration-500 ease-out relative w-full"
+        id="gallery-track"
+        style="will-change: transform;"
+      >
+        {
+          resolvedImages.map((image, index) => (
+            <div class="gallery-item flex-shrink-0 transition-all duration-500">
+              <div class="relative group p-1 rounded-xl">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  class="gallery-img h-[200px] sm:h-[280px] md:h-[400px] lg:h-[500px] w-auto object-cover rounded-lg transition-opacity duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 border-2 border-amber-200 rounded-xl opacity-40 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                <div class="absolute inset-0 bg-gradient-to-br from-amber-300/5 via-transparent to-amber-300/10 rounded-xl pointer-events-none" />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Navigation buttons positioned relative to track container -->
+      <button
+        type="button"
+        class="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border-2 border-amber-200 bg-amber-300/10 backdrop-blur-sm transition-all duration-300 flex items-center justify-center hover:bg-amber-300/30 hover:border-amber-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(252,211,77,0.3)]"
+        id="gallery-prev"
+        aria-label="Previous image"
+      >
+        <svg
+          class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-amber-200"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <button
+        type="button"
+        class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border-2 border-amber-200 bg-amber-300/10 backdrop-blur-sm transition-all duration-300 flex items-center justify-center hover:bg-amber-300/30 hover:border-amber-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(252,211,77,0.3)]"
+        id="gallery-next"
+        aria-label="Next image"
+      >
+        <svg
+          class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-amber-200"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ambient-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.3);
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    opacity: 0;
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 0.3) 40%,
+        rgba(0, 0, 0, 0.8) 70%,
+        rgba(0, 0, 0, 1) 100%
+      ),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
+    background-position: center;
+    background-size: 120%;
+    filter: blur(60px) saturate(1.2);
+    transition:
+      opacity 1.3s ease-out,
+      background-size 0.66s ease-in;
+  }
+
+  .ambient-container.active {
+    opacity: 0.4;
+    background-size: 100%;
+    transition: opacity 0.33s ease-in;
+  }
+
+  .ambient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-position: 100% 100%;
+    background-size: 250%;
+    filter: brightness(1.1) saturate(0);
+    mix-blend-mode: overlay;
+    will-change: opacity, background-position;
+    animation: shift-background 60s infinite linear alternate;
+    animation-play-state: paused;
+    transition: opacity 0.66s ease-in;
+  }
+
+  .ambient-container.active .ambient-overlay {
+    opacity: 0.15;
+    animation-play-state: running;
+    transition: opacity 1.3s ease-in 1.3s;
+  }
+
+  .gallery-img {
+    opacity: 0.65;
+  }
+
+  /* Mobile and small screens constraints */
+  @media (max-width: 768px) {
+    .gallery-img {
+      max-width: 88vw;
+    }
+    /* Ultra-wide images: clamp more aggressively on mobile and small screens */
+    .gallery-item.wide .gallery-img {
+      max-width: 72vw;
+    }
+    /* Increase ambient strength on small screens so the background glow is visible */
+    .ambient-container.active {
+      opacity: 0.5;
+    }
+    .ambient-container .ambient-overlay {
+      opacity: 0.25;
+    }
+  }
+
+  /* Medium screens: prevent images from taking full viewport width */
+  @media (min-width: 769px) and (max-width: 1200px) {
+    .gallery-img {
+      max-width: 75vw;
+    }
+    .gallery-item.wide .gallery-img {
+      max-width: 60vw;
+    }
+  }
+
+  /* Large screens: still cap to avoid excessive width */
+  @media (min-width: 1201px) {
+    .gallery-img {
+      max-width: 65vw;
+    }
+    .gallery-item.wide .gallery-img {
+      max-width: 50vw;
+    }
+  }
+
+  .gallery-item.active .gallery-img {
+    opacity: 1;
+  }
+
+  @keyframes shift-background {
+    0% {
+      background-position: 0% 50%;
+      background-size: 250%;
+    }
+    25% {
+      background-position: 60% 20%;
+      background-size: 300%;
+    }
+    50% {
+      background-position: 100% 50%;
+      background-size: 320%;
+    }
+    75% {
+      background-position: 40% 100%;
+      background-size: 220%;
+    }
+    100% {
+      background-position: 20% 50%;
+      background-size: 300%;
+    }
+  }
+</style>
+
+<script type="module" define:vars={{ autoPlayInterval }}>
+  /* carousel script */
+  class ImageGalleryCarousel {
+    constructor(containerId, options = {}) {
+      this.container = document.querySelector(`#${containerId}`);
+      if (!this.container) return;
+
+      this.track = this.container.querySelector("#gallery-track");
+      this.prevBtn = this.container.querySelector("#gallery-prev");
+      this.nextBtn = this.container.querySelector("#gallery-next");
+      this.ambientBg = this.container.querySelector("#ambient-background");
+
+      if (!this.track || !this.ambientBg) return;
+
+      this.autoPlayInterval = options.autoPlayInterval || 5000;
+      this.autoPlayTimer = null;
+      this.isInViewport = false;
+      this.currentIndex = 0;
+      this.isTransitioning = false;
+      this.pendingReset = null; // index to reset to after transition (for seamless loop)
+      this.TRANSITION_MS = 500; // keep in sync with CSS transition duration
+
+      this.init();
+    }
+
+    init() {
+      this.cloneImages();
+      this.setupEventListeners();
+      this.setupIntersectionObserver();
+      this.waitForImagesAndStart();
+    }
+
+    cloneImages() {
+      const items = Array.from(this.track.children);
+      this.imageCount = items.length;
+      if (!this.imageCount) return;
+
+      // Prepend clones (reverse order) and append clones so we have
+      // a seamless infinite carousel without index math.
+      for (let i = items.length - 1; i >= 0; i--) {
+        this.track.insertBefore(
+          items[i].cloneNode(true),
+          this.track.firstChild
+        );
+      }
+      for (let i = 0; i < items.length; i++) {
+        this.track.appendChild(items[i].cloneNode(true));
+      }
+
+      this.allItems = Array.from(this.track.children);
+      this.currentIndex = this.imageCount; // start at the first original
+    }
+
+    setupEventListeners() {
+      this.prevBtn?.addEventListener("click", () => this.handlePrev());
+      this.nextBtn?.addEventListener("click", () => this.handleNext());
+      window.addEventListener("resize", () => this.updatePosition(false));
+
+      // Re-center on breakpoint change (mobile <-> desktop)
+      const mq = window.matchMedia("(max-width: 639.98px)");
+      mq.addEventListener?.("change", () => this.updatePosition(false));
+      mq.addListener?.(() => this.updatePosition(false)); // Safari fallback
+
+      this.track.addEventListener("transitionend", (e) => {
+        // only react to the transform transition on the track
+        if (e.target !== this.track || !/transform$/.test(e.propertyName || ""))
+          return;
+
+        if (this.pendingReset != null) {
+          // jump to the reset index without animation
+          this.track.style.transition = "none";
+          this.currentIndex = this.pendingReset;
+          // force a reflow so the browser applies the non-animated transform before we
+          // clear the pending flag
+          void this.track.offsetWidth;
+          const offset = this.calculateOffset(this.currentIndex);
+          // use translate3d for GPU acceleration
+          this.track.style.transform = `translate3d(${offset}px,0,0)`;
+
+          // update active classes and ambient background for the new index
+          this.allItems.forEach((item, idx) => {
+            const isActive = idx === this.currentIndex;
+            item.classList.toggle("active", isActive);
+            item.style.transform = isActive ? "scale(1.05)" : "scale(0.95)";
+          });
+          this.updateAmbientBackground();
+
+          this.pendingReset = null;
+        }
+
+        this.isTransitioning = false;
+      });
+    }
+
+    applyPendingResetIfAny() {
+      if (this.pendingReset == null || !this.track) return;
+      // Apply the pending reset synchronously so user interactions don't get
+      // blocked waiting for the previous transitionend.
+      this.track.style.transition = "none";
+      this.currentIndex = this.pendingReset;
+      void this.track.offsetWidth;
+      const offset = this.calculateOffset(this.currentIndex);
+      this.track.style.transform = `translate3d(${offset}px,0,0)`;
+      this.allItems.forEach((item, idx) => {
+        const isActive = idx === this.currentIndex;
+        item.classList.toggle("active", isActive);
+        item.style.transform = isActive ? "scale(1.05)" : "scale(0.95)";
+      });
+      this.updateAmbientBackground();
+      this.pendingReset = null;
+      this.isTransitioning = false;
+    }
+
+    setupIntersectionObserver() {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            this.isInViewport = entry.isIntersecting;
+            if (this.isInViewport) this.startAutoPlay();
+            else this.stopAutoPlay();
+          });
+        },
+        { threshold: 0.3 }
+      );
+
+      observer.observe(this.container);
+    }
+
+    getGapSize() {
+      if (!this.track) return 0;
+      const style = window.getComputedStyle(this.track);
+      return parseFloat(style.gap) || 0;
+    }
+
+    calculateOffset(index) {
+      if (!this.track?.parentElement) return 0;
+
+      const containerWidth = this.track.parentElement.clientWidth;
+      const gap = this.getGapSize();
+      let offset = containerWidth / 2;
+
+      for (let i = 0; i < index; i++) {
+        const item = this.allItems[i];
+        if (item) offset -= item.offsetWidth + gap;
+      }
+
+      const currentItem = this.allItems[index];
+      if (currentItem) offset -= currentItem.offsetWidth / 2;
+
+      return offset;
+    }
+
+    updateAmbientBackground() {
+      const currentItem = this.allItems[this.currentIndex];
+      const img = currentItem?.querySelector("img");
+      if (!img?.src || !this.ambientBg) return;
+      const overlay = this.ambientBg.querySelector(".ambient-overlay");
+
+      // If the image isn't fully loaded yet, wait for it. (ambient background might fail otherwise)
+      if (!img.complete || !img.naturalWidth) {
+        const onLoad = () => this.updateAmbientBackground();
+        img.addEventListener("load", onLoad, { once: true });
+        img.addEventListener("error", onLoad, { once: true });
+        return;
+      }
+
+      // Clear active state then set background images synchronously once the
+      // image is ready. Force a reflow before adding the active class.
+      this.ambientBg.classList.remove("active");
+
+      const url = `url("${img.src}")`;
+      this.ambientBg.style.backgroundImage = [
+        "linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 1) 90%)",
+        "linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%)",
+        url,
+      ].join(",\n");
+
+      if (overlay) {
+        overlay.style.backgroundImage = url;
+        overlay.style.backgroundRepeat = "no-repeat";
+        overlay.style.backgroundPosition = "center";
+        overlay.style.backgroundSize = "cover";
+      }
+
+      // Force layout so the browser computes the new background before
+      // we fade it in. Then add the active class to trigger the CSS
+      // transition for opacity/background-size.
+      void this.ambientBg.offsetWidth;
+      this.ambientBg.classList.add("active");
+    }
+
+    updatePosition(animate = true) {
+      if (!this.track) return;
+      const offset = this.calculateOffset(this.currentIndex);
+
+      this.track.style.transition = animate
+        ? "transform 0.5s ease-out"
+        : "none";
+
+        this.track.style.transform = `translate3d(${offset}px,0,0)`;
+
+      this.allItems.forEach((item, idx) => {
+        const isActive = idx === this.currentIndex;
+        item.classList.toggle("active", isActive);
+        item.style.transform = isActive ? "scale(1.05)" : "scale(0.95)";
+      });
+
+      this.updateAmbientBackground();
+    }
+
+    goToNext() {
+      // If a wrap-around reset was scheduled but not yet applied, apply it
+      // immediately so the user can continue navigating without waiting.
+      if (this.pendingReset != null) this.applyPendingResetIfAny();
+      if (this.isTransitioning) return;
+      this.isTransitioning = true;
+      this.currentIndex++;
+      this.updatePosition(true);
+
+      if (this.currentIndex >= this.imageCount * 2) {
+        // schedule a non-animated reset after the transition finishes
+        this.pendingReset = this.imageCount;
+      }
+    }
+
+    goToPrev() {
+      // If a wrap-around reset was scheduled but not yet applied, apply it
+      // immediately so the user can continue navigating without waiting.
+      if (this.pendingReset != null) this.applyPendingResetIfAny();
+      if (this.isTransitioning) return;
+      this.isTransitioning = true;
+      this.currentIndex--;
+      this.updatePosition(true);
+
+      if (this.currentIndex < this.imageCount) {
+        // schedule a non-animated reset after the transition finishes
+        this.pendingReset = this.imageCount * 2 - 1;
+      }
+    }
+
+    handleNext() {
+      this.goToNext();
+      this.restartAutoPlay();
+    }
+
+    handlePrev() {
+      this.goToPrev();
+      this.restartAutoPlay();
+    }
+
+    startAutoPlay() {
+      this.stopAutoPlay();
+      if (this.autoPlayInterval > 0 && this.isInViewport) {
+        this.autoPlayTimer = setInterval(
+          () => this.goToNext(),
+          this.autoPlayInterval
+        );
+      }
+    }
+
+    stopAutoPlay() {
+      if (this.autoPlayTimer) {
+        clearInterval(this.autoPlayTimer);
+        this.autoPlayTimer = null;
+      }
+    }
+
+    restartAutoPlay() {
+      this.stopAutoPlay();
+      this.startAutoPlay();
+    }
+
+    classifyWideImages() {
+      if (!this.allItems) return;
+      this.allItems.forEach((item) => {
+        const img = item.querySelector("img");
+        if (!(img instanceof HTMLImageElement)) return;
+        const w = img.naturalWidth;
+        const h = img.naturalHeight;
+        if (!w || !h) return;
+        item.classList.toggle("wide", w / h > 2.1);
+      });
+    }
+
+    waitForImagesAndStart() {
+      const images = Array.from(this.track.querySelectorAll("img"));
+      Promise.all(
+        images.map((img) =>
+          img.complete
+            ? Promise.resolve()
+            : new Promise((resolve) => {
+                img.onload = () => resolve(null);
+                img.onerror = () => resolve(null);
+              })
+        )
+      ).then(() => {
+        // Classify images (wide/normal), then position and start autoplay
+        this.classifyWideImages();
+        this.updatePosition(false);
+        this.startAutoPlay();
+      });
+    }
+  }
+
+  // Instantiate when DOM is ready
+  if (typeof window !== "undefined") {
+    document.addEventListener("DOMContentLoaded", () => {
+      new ImageGalleryCarousel("image-gallery-container", { autoPlayInterval });
+    });
+  }
+</script>
