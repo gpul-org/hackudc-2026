@@ -8,7 +8,7 @@ import logoUDC from "../assets/collaborators/udc.svg";
 
 // Base styles
 const cardBase =
-  "mx-auto flex flex-col justify-center overflow-hidden rounded-lg p-3 sm:p-4 transition-transform duration-300 hover:scale-105";
+  "mx-auto flex flex-col justify-center overflow-hidden rounded-lg transition-transform duration-300 hover:scale-105";
 ---
 
 <section
@@ -22,32 +22,32 @@ const cardBase =
   </h1>
 
   <div
-    class="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 px-3 w-full max-w-5xl"
+    class="mt-4 sm:mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 px-3 w-full max-w-5xl"
   >
-    <a href="https://udc.gal" class="w-full">
-      <div class={`${cardBase} aspect-[5/3] w-full max-w-[360px]`}>
+    <a href="https://udc.gal" target="_blank" class="w-full">
+      <div class={`${cardBase} aspect-[5/3] w-full max-w-[240px]`}>
         <Image
           src={logoUDC}
           alt="Logo UDC"
-          class="max-h-[110px] w-full object-contain"
+          class="mx-auto max-h-[120px] sm:max-h-[100px] object-contain"
         />
       </div>
     </a>
-    <a href="https://fic.udc.es" class="w-full">
-      <div class={`${cardBase} aspect-[5/3] w-full max-w-[280px]`}>
+    <a href="https://fic.udc.es" target="_blank" class="w-full">
+      <div class={`${cardBase} aspect-[5/3] w-full max-w-[240px]`}>
         <Image
           src={logoFIC}
           alt="Logo FIC"
-          class="max-h-[90px] w-full object-contain"
+          class="mx-auto max-h-[120px] sm:max-h-[90px] object-contain"
         />
       </div>
     </a>
-    <a href="https://amtega.xunta.gal/" class="w-full">
-      <div class={`${cardBase} aspect-[5/3] w-full max-w-[320px]`}>
+    <a href="https://amtega.xunta.gal/" target="_blank" class="w-full">
+      <div class={`${cardBase} sm:p-2 aspect-[5/3] w-full max-w-[240px]`}>
         <Image
           src={logoAMTEGA}
           alt="Logo AMTEGA"
-          class="max-h-[100px] w-full object-contain"
+          class="mx-auto max-h-[80px] sm:max-h-[100px] object-contain"
         />
       </div>
     </a>
