@@ -3,20 +3,20 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import EventSchedule from "../components/Schedule.astro";
 import { schedule as scheduleData } from "../data/schedule";
+import patternSvg from "../assets/pattern.svg";
 ---
 
 <Layout title="Event Schedule">
   <main class="relative min-h-screen overflow-hidden">
-    <!-- Global filter -->
-    <div class="absolute inset-0 bg-[#0a0011]/50 pointer-events-none z-0"></div>
+    <!-- Tiled SVG pattern background -->
     <div
-      class="absolute inset-0 opacity-60 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)_1px,transparent_1px,transparent_4px)] mix-blend-multiply pointer-events-none z-0"
+      class="absolute inset-0 pointer-events-none z-0 opacity-80"
+      style={`background-image: url(${patternSvg.src}); background-repeat: repeat; background-size: 304px 304px;`}
     >
     </div>
-    <div
-      class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,0.6)_60%,rgba(0,0,0,0.97)_100%)] z-0"
-    >
-    </div>
+    <div class="absolute inset-0 bg-[#0a0011]/80 pointer-events-none z-0"></div>
+    <div class="absolute inset-0 pointer-events-none z-0" style="background: radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0.97) 100%);"></div>
+  
 
     <div class="flex min-h-screen flex-col relative z-20">
       <div class="mx-auto mt-8 w-full max-w-screen-lg px-4 sm:px-6">
