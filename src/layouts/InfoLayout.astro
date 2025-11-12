@@ -10,20 +10,20 @@ interface Props {
 const { frontmatter } = Astro.props;
 
 import Footer from "../components/Footer.astro";
+import patternSvg from "../assets/pattern.svg";
 ---
 
 <Layout title={frontmatter.title}>
   <main class="relative min-h-screen overflow-hidden">
-    <!-- Global filter effects applied to entire page - positioned between video and content -->
-    <div class="absolute inset-0 bg-[#0a0011]/50 pointer-events-none z-0"></div>
+    <!-- Tiled SVG pattern background -->
     <div
-      class="absolute inset-0 opacity-60 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)_1px,transparent_1px,transparent_4px)] mix-blend-multiply pointer-events-none z-0"
+      class="absolute inset-0 pointer-events-none z-0 opacity-80"
+      style={`background-image: url(${patternSvg.src}); background-repeat: repeat; background-size: 304px 304px;`}
     >
     </div>
-    <div
-      class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,0.6)_60%,rgba(0,0,0,0.97)_100%)] z-0"
-    >
-    </div>
+    <div class="absolute inset-0 bg-[#0a0011]/80 pointer-events-none z-0"></div>
+    <div class="absolute inset-0 pointer-events-none z-0" style="background: radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0.97) 100%);"></div>
+  
 
     <!-- Page content with higher z-index to be above filters -->
     <div class="flex min-h-screen flex-col relative z-20">
@@ -45,7 +45,7 @@ import Footer from "../components/Footer.astro";
               stroke-width="2"
               d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
           </svg>
-          Back to home
+          Home
         </a>
       </div>
       <div
