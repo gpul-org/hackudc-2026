@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/InfoLayout.astro
+layout: ../layouts/InfoLayout.astro
 title: General Information
 ---
 
@@ -9,7 +9,7 @@ A hackathon is a short duration event where students from various academic disci
 
 The event will be held at the Facultade de Informatica at UDC.
 
->Facultade de Informática, Campus de Elviña S/N, 15071 A Coruña.
+> Facultade de Informática, Campus de Elviña S/N, 15071 A Coruña.
 
 <iframe
   width="100%"

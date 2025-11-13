@@ -8,9 +8,10 @@ Una _hackathon_ es un evento de corta duración en el que estudiantes de distint
 El objetivo de una _hackaton_ es fomentar la innovación, facilitar el aprendizaje, y generar soluciones prácticas a problemas reales mediante retos específicos.
 
 ## Ubicación
+
 El evento tendrá lugar en la Facultad de Informática de la Universidade da Coruña (UDC).
 
->Facultade de Informática, Campus de Elviña S/N, 15071 A Coruña.
+> Facultade de Informática, Campus de Elviña S/N, 15071 A Coruña.
 
 <iframe
   width="100%"
@@ -21,6 +22,7 @@ El evento tendrá lugar en la Facultad de Informática de la Universidade da Cor
 ></iframe>
 
 ## Transporte
+
 Para llegar al campus se puede utilizar la <a href="https://tranviascoruna.com/en/routes-and-timetables/" target="_blank" rel="noopener noreferrer">línea UDC</a> de la compañía de tranvías da Coruña.
 
 El **viernes** hay autobuses hasta las 23:00h **cada seis minutos**, y el **sábado** a partir de las ocho de la mañana cada **40 minutos**.
