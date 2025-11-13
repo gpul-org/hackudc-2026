@@ -1,7 +1,21 @@
 ---
 // base styles
 const cardBase =
-  "mx-auto flex flex-col justify-center overflow-hidden text-center text-amber-300 rounded-lg bg-amber-300/20 backdrop-blur-sm border-2 border-white hover:scale-105 sm:hover:scale-110 hover:bg-yellow-300 hover:text-black hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.8)] transition-all duration-300";
+  "relative mx-auto flex flex-col items-center justify-center overflow-hidden text-center text-amber-300 rounded-lg bg-amber-300/20 backdrop-blur-sm border-2 border-white hover:scale-105 sm:hover:scale-110 hover:bg-yellow-300 hover:text-black hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.8)] transition-all duration-300";
+
+const cautionTape =
+  "pointer-events-none absolute left-1/2 top-1/2 z-10 flex h-16 w-[170%] -translate-x-1/2 -translate-y-1/2 -rotate-12 items-center justify-center bg-[repeating-linear-gradient(135deg,#facc15_0_18px,#111827_18px_36px)] border-y-2 border-black shadow-[0_14px_22px_rgba(0,0,0,0.45)]";
+
+const cautionTapeText =
+  "pointer-events-none flex w-full items-center justify-around gap-10 text-sm font-extrabold uppercase tracking-[0.5em] text-slate-900/90 sm:text-lg md:text-xl";
+
+const comingSoonOverlay =
+  "pointer-events-none absolute left-1/2 top-1/2 z-20 flex w-[125%] -translate-x-1/2 -translate-y-1/2 -rotate-12 items-center justify-center";
+
+const comingSoonOverlayText =
+  "flex items-center justify-center gap-6 rounded-md bg-amber-300 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.55em] text-black shadow-[0_10px_20px_rgba(0,0,0,0.45)] sm:px-4 sm:py-1.5 sm:text-base md:text-lg lg:text-xl";
+
+const srOnlyText = "sr-only";
 
 const tierHeading =
   "mt-10 sm:mt-12 md:mt-16 text-center font-mono tracking-wider text-lg sm:text-xl md:text-2xl text-amber-300";
@@ -30,7 +44,14 @@ const tierHeading =
     <div
       class={`${cardBase} aspect-[5/3] w-full max-w-[400px] mt-4 sm:mt-6 p-3 sm:p-4 text-lg sm:text-xl`}
     >
-      COMING SOON...
+      <span class={srOnlyText}></span>
+      <span aria-hidden="true" class={cautionTape}>
+        <span class={cautionTapeText}>
+        </span>
+      </span>
+      <span aria-hidden="true" class={comingSoonOverlay}>
+        <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
+      </span>
     </div>
   </a>
 
@@ -43,28 +64,51 @@ const tierHeading =
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[320px] p-3 sm:p-4 text-base sm:text-lg md:text-xl`}
       >
-        COMING SOON...
+        <span class={srOnlyText}>Coming soon</span>
+        <span aria-hidden="true" class={cautionTape}>
+        </span>
+        <span aria-hidden="true" class={comingSoonOverlay}>
+          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
+        </span>
       </div>
     </a>
     <a href="#" class="w-full">
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[320px] p-3 sm:p-4 text-base sm:text-lg md:text-xl`}
       >
-        COMING SOON...
+        <span class={srOnlyText}>Coming soon</span>
+        <span aria-hidden="true" class={cautionTape}>
+          
+        </span>
+        <span aria-hidden="true" class={comingSoonOverlay}>
+          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
+        </span>
       </div>
     </a>
     <a href="#" class="w-full">
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[320px] p-3 sm:p-4 text-base sm:text-lg md:text-xl`}
       >
-        COMING SOON...
+        <span class={srOnlyText}>Coming soon</span>
+        <span aria-hidden="true" class={cautionTape}>
+          
+        </span>
+        <span aria-hidden="true" class={comingSoonOverlay}>
+          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
+        </span>
       </div>
     </a>
     <a href="#" class="w-full">
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[320px] p-3 sm:p-4 text-base sm:text-lg md:text-xl`}
       >
-        COMING SOON...
+        <span class={srOnlyText}>Coming soon</span>
+        <span aria-hidden="true" class={cautionTape}>
+          
+        </span>
+        <span aria-hidden="true" class={comingSoonOverlay}>
+          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
+        </span>
       </div>
     </a>
   </div>
@@ -72,27 +116,45 @@ const tierHeading =
   <!-- User -->
   <h3 id="sponsors-user" class={tierHeading}>user</h3>
   <div
-    class="mt-4 sm:mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 px-3 w-full max-w-5xl"
+    class="mt-4 sm:mt-6 flex flex-col gap-3 sm:grid sm:grid-cols-3 sm:gap-4 md:gap-6 lg:gap-8 px-3 w-full max-w-5xl"
   >
     <a href="#" class="w-full">
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[240px] p-2 sm:p-3 text-sm sm:text-base md:text-lg lg:text-xl`}
       >
-        COMING SOON...
+        <span class={srOnlyText}>Coming soon</span>
+        <span aria-hidden="true" class={cautionTape}>
+          
+        </span>
+        <span aria-hidden="true" class={comingSoonOverlay}>
+          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
+        </span>
       </div>
     </a>
     <a href="#" class="w-full">
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[240px] p-2 sm:p-3 text-sm sm:text-base md:text-lg lg:text-xl`}
       >
-        COMING SOON...
+        <span class={srOnlyText}>Coming soon</span>
+        <span aria-hidden="true" class={cautionTape}>
+          
+        </span>
+        <span aria-hidden="true" class={comingSoonOverlay}>
+          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
+        </span>
       </div>
     </a>
     <a href="#" class="w-full">
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[240px] p-2 sm:p-3 text-sm sm:text-base md:text-lg lg:text-xl`}
       >
-        COMING SOON...
+        <span class={srOnlyText}>Coming soon</span>
+        <span aria-hidden="true" class={cautionTape}>
+          
+        </span>
+        <span aria-hidden="true" class={comingSoonOverlay}>
+          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
+        </span>
       </div>
     </a>
   </div>
