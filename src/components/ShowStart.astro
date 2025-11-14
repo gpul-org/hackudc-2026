@@ -116,5 +116,39 @@ import { Image } from "astro:assets";
         </div>
       </a>
     </div>
+
+    <!-- Animated Down Arrow -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="text-amber-300 opacity-70 hover:opacity-100 transition-opacity duration-300 arrow-float"
+      >
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
   </section>
 </section>
+
+<style>
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+  }
+
+  .arrow-float {
+    animation: float 2.5s ease-in-out infinite;
+  }
+</style>
