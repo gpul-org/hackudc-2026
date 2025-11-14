@@ -15,7 +15,7 @@ By registering for and participating in the Event, participants accept these T&C
 - **Participant**: Any person who, upon accepting these T&C, registers for and takes part in the Event in any of the established modalities.
 - **Sponsor**: A collaborating entity that, depending on its sponsorship tier, may propose challenges and/or grant specific prizes to Participants.
 - **Challenges**: Technical projects or tasks set by the Organizer and/or Sponsors, to be developed exclusively during the Event.
-- **General Prize**: A prize awarded by the Organizer to the best free software project, based on the criteria detailed in [Premio CIXUG](http://premio.cixug.gal).
+- **General Prize**: A prize awarded by the Organizer to the best free software project, based on the criteria detailed in [Premio GPUL](http://premio.gpul.org).
 - **DevPost**: The platform used for project submission and management, whose link will be communicated to Participants during the Event.
 
 ---
@@ -58,12 +58,12 @@ The Event aims to promote free software development, creativity, and innovation 
 ---
 
 ## 6. Code of Conduct
-All Participants are expected to act respectfully and professionally throughout the Event. Any inappropriate behavior may result in immediate disqualification and a ban from future editions. The full Code of Conduct can be consulted in the [code of conduct](/conducta) section at hackudc.gpul.org.
+All Participants are expected to act respectfully and professionally throughout the Event. Any inappropriate behavior may result in immediate disqualification and a ban from future editions. The full Code of Conduct can be consulted in the [code of conduct](/conduct) section at hackudc.gpul.org.
 
 ---
 
 ## 7. Data Protection and Image Rights
-See [privacy policy](/privacidad).
+See [privacy policy](/privacy).
 
 ---
 
@@ -91,4 +91,4 @@ This agreement is governed by Spanish law. Any dispute shall be submitted to the
 
 ---
 
-**Last Review:** October 21, 2025.
+**Last Review:** November 14, 2025.
