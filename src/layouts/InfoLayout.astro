@@ -4,12 +4,14 @@ import Layout from "./Layout.astro";
 interface Props {
   frontmatter: {
     title: string;
+    alternates?: Record<string, string>;
   };
 }
 
 const { frontmatter } = Astro.props;
 
 import Footer from "../components/Footer.astro";
+import LanguageSwitcher from "../components/LanguageSwitcher.astro";
 import patternSvg from "../assets/pattern.svg";
 ---
 
@@ -22,12 +24,17 @@ import patternSvg from "../assets/pattern.svg";
     >
     </div>
     <div class="absolute inset-0 bg-[#0a0011]/80 pointer-events-none z-0"></div>
-    <div class="absolute inset-0 pointer-events-none z-0" style="background: radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0.97) 100%);"></div>
-  
+    <div
+      class="absolute inset-0 pointer-events-none z-0"
+      style="background: radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0.97) 100%);"
+    >
+    </div>
 
     <!-- Page content with higher z-index to be above filters -->
     <div class="flex min-h-screen flex-col relative z-20">
-      <div class="mx-auto mt-8 w-full max-w-screen-lg px-4 sm:px-6">
+      <div
+        class="mx-auto mt-8 w-full max-w-screen-lg px-4 sm:px-6 flex justify-between items-center gap-4 flex-wrap"
+      >
         <a
           href="/"
           class="inline-flex items-center gap-2 rounded-lg border-2 border-amber-200 px-6 py-3 font-bold uppercase tracking-[0.2em] text-amber-200 transition-all duration-300 hover:scale-105 hover:bg-amber-200 hover:text-black hover:shadow-[0_0_20px_rgba(251,191,36,0.3)]"
@@ -47,6 +54,7 @@ import patternSvg from "../assets/pattern.svg";
           </svg>
           Home
         </a>
+        <LanguageSwitcher alternates={frontmatter.alternates} />
       </div>
       <div
         class="prose prose-invert mx-auto my-12 max-w-screen-md grow px-4 sm:px-6"

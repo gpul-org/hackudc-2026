@@ -1,13 +1,15 @@
 ---
 layout: ../layouts/MarkdownLayout.astro
 title: HackUDC 2026 — Privacy Policy
+alternates:
+  es: /es/privacidad
 ---
 
 In accordance with current regulations on the protection of personal data, you are informed of the following aspects:
 
 ## Data Controller
 
-The *Asociación Grupo de Programadores y Usuarios de Linux* (hereinafter, "GPUL"), with NIF G15659220 and registered address at the *Facultad de Informática, Campus de Elviña S/N, 15007, A Coruña*, is the Data Controller for your personal data.
+The _Asociación Grupo de Programadores y Usuarios de Linux_ (hereinafter, "GPUL"), with NIF G15659220 and registered address at the _Facultad de Informática, Campus de Elviña S/N, 15007, A Coruña_, is the Data Controller for your personal data.
 
 You may contact GPUL at the postal address indicated above or via the following email address for any inquiries, requests, or clarifications related to the processing of your personal data: **hackudc@gpul.org**.
 
@@ -23,16 +25,16 @@ GPUL will process the following personal data:
 
 ### Personal data collected when registering as a Participant:
 
-- **Identification data:** Name, surname(s), city of residence, images or videos of yourself, and a link to a personal website.  
-- **Contact data:** Email address and phone number.  
-- **Personal characteristics:** Date of birth and T-shirt size.  
-- **Academic and professional data:** CV, proof of student status, graduation year, university/school, current studies, and links to online professional profiles (GitHub, LinkedIn, Devpost).  
+- **Identification data:** Name, surname(s), city of residence, images or videos of yourself, and a link to a personal website.
+- **Contact data:** Email address and phone number.
+- **Personal characteristics:** Date of birth and T-shirt size.
+- **Academic and professional data:** CV, proof of student status, graduation year, university/school, current studies, and links to online professional profiles (GitHub, LinkedIn, Devpost).
 - **Health data:** Allergies and food intolerances.
 
 ### Personal data collected when registering as a Sponsor:
 
-- **Identification data:** Name, surname(s), and images or videos of the contact person or employee of the Sponsor.  
-- **Business contact data:** Corporate email address of the contact person or employee of the Sponsor. We also collect the company they currently work for and their job title.  
+- **Identification data:** Name, surname(s), and images or videos of the contact person or employee of the Sponsor.
+- **Business contact data:** Corporate email address of the contact person or employee of the Sponsor. We also collect the company they currently work for and their job title.
 - **Health data:** Allergies and food intolerances.
 
 ## Purposes for processing your personal data
@@ -87,10 +89,10 @@ GPUL will process your personal data to manage the catering service because you 
 
 Your data may be shared with the following recipients for the reasons stated:
 
-- **Public Authorities:** To comply with legal obligations applicable to GPUL based on its activity.  
-- **Accounting audit firms:** To comply with legal audit obligations applicable to GPUL due to its activity.  
-- **Law enforcement agencies:** When our organization is legally required to provide information.  
-- **Service providers** that require access to your personal data to provide the services contracted by GPUL, and with whom GPUL has signed confidentiality and data processing agreements as required by privacy regulations.  
+- **Public Authorities:** To comply with legal obligations applicable to GPUL based on its activity.
+- **Accounting audit firms:** To comply with legal audit obligations applicable to GPUL due to its activity.
+- **Law enforcement agencies:** When our organization is legally required to provide information.
+- **Service providers** that require access to your personal data to provide the services contracted by GPUL, and with whom GPUL has signed confidentiality and data processing agreements as required by privacy regulations.
 - If you request it, we may share the personal data included in your CV with **Sponsors** participating in the specific event organized by GPUL in which you choose to participate. GPUL may transfer your data because you have given your consent.
 
 You will be informed if GPUL transfers personal data to other recipients in the future.
@@ -109,7 +111,7 @@ You are informed that you have the right to access your personal data, rectify i
 
 Furthermore, if you believe that the processing of your personal data violates the law or your privacy rights, you may file a complaint:
 
-- To **GPUL**, via the postal or email addresses indicated.  
+- To **GPUL**, via the postal or email addresses indicated.
 - To the **Spanish Data Protection Agency** through its postal or online channels.
 
 ## Changes

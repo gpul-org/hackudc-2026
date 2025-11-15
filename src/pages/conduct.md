@@ -1,6 +1,8 @@
 ---
 layout: ../layouts/MarkdownLayout.astro
 title: HackUDC 2026 — Code of Conduct
+alternates:
+  es: /es/conducta
 ---
 
 > Be respectful. Any form of harrassment will not be tolerated.

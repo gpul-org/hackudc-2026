@@ -1,6 +1,8 @@
 ---
 layout: ../../layouts/InfoLayout.astro
 title: Información general
+alternates:
+  en: /information
 ---
 
 Una _hackathon_ es un evento de corta duración en el que estudiantes de distintas disciplinas académicas colaboran para desarrollar un prototipo de software en un periodo limitado de tiempo, normalmente entre 24 y 48 horas.

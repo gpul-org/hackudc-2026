@@ -1,6 +1,8 @@
 ---
 layout: ../layouts/InfoLayout.astro
 title: Rules
+alternates:
+  es: /rules
 ---
 
 Some of the rules for **HackUDC** include:
