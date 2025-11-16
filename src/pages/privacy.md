@@ -25,7 +25,7 @@ GPUL will process the following personal data:
 
 ### Personal data collected when registering as a Participant:
 
-- **Identification data:** Name, surname(s), city of residence, images or videos of yourself, and a link to a personal website.
+- **Identification data:** Name, surname(s), Identification document number (from an ID card, residence permit, passport, or similar) , city of residence, images or videos of yourself, and a link to a personal website.
 - **Contact data:** Email address and phone number.
 - **Personal characteristics:** Date of birth and T-shirt size.
 - **Academic and professional data:** CV, proof of student status, graduation year, university/school, current studies, and links to online professional profiles (GitHub, LinkedIn, Devpost).
