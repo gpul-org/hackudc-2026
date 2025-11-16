@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 
 import FAQ from "../components/FAQ.astro";
 import Info from "../components/Info.astro";
+import ImpactNumbers from "../components/ImpactNumbers.astro";
+import About from "../components/About.astro";
 import ShowSponsors from "../components/ShowSponsors.astro";
 import ShowCollaborators from "../components/ShowCollaborators.astro";
 import ShowStart from "../components/ShowStart.astro";
@@ -21,16 +23,21 @@ import sponsorsAwardCeremonyImage from "../assets/sponsors/sponsors_award_ceremo
 
 import patternSvg from "../assets/pattern.svg";
 
-
 const galleryImages = [
   { src: participantsClassImage.src, alt: "Participants in a class session" },
   { src: networkingImage.src, alt: "Attendees networking during the event" },
   { src: panoramicImage.src, alt: "Panoramic view of HackUDC 2025" },
   { src: judgingMentoringImage.src, alt: "Judging and mentoring session" },
-  { src: sponsorParticipantHelpImage.src, alt: "Sponsor assisting participants" },
+  {
+    src: sponsorParticipantHelpImage.src,
+    alt: "Sponsor assisting participants",
+  },
   { src: workshopImage.src, alt: "Workshop in progress" },
   { src: sponsorBrandShowcaseImage.src, alt: "Sponsor brand showcase area" },
-  { src: sponsorsAwardCeremonyImage.src, alt: "Sponsors at the award ceremony" }
+  {
+    src: sponsorsAwardCeremonyImage.src,
+    alt: "Sponsors at the award ceremony",
+  },
 ];
 ---
 
@@ -43,8 +50,12 @@ const galleryImages = [
     >
     </div>
     <div class="absolute inset-0 bg-[#0a0011]/80 pointer-events-none z-0"></div>
-    <div class="absolute inset-0 pointer-events-none z-0" style="background: radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0.97) 100%);"></div>
-    
+    <div
+      class="absolute inset-0 pointer-events-none z-0"
+      style="background: radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0.97) 100%);"
+    >
+    </div>
+
     <!-- Page content with higher z-index to be above filters -->
     <div class="relative z-20">
       <ShowStart />
@@ -52,6 +63,10 @@ const galleryImages = [
         class="absolute top-[100vh] left-0 right-0 h-48 bg-gradient-to-b from-black via-black/30 to-transparent z-10"
       >
       </div>
+      <div class="pt-20 sm:pt-32">
+        <ImpactNumbers />
+      </div>
+      <About />
       <Info />
       <ShowSponsors />
       <ShowCollaborators />
