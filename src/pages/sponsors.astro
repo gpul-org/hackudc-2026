@@ -16,9 +16,9 @@ import sponsorsAwardCeremonyImage from "../assets/sponsors/sponsors_award_ceremo
 <Layout title="Sponsors — HackUDC">
   <main class="relative min-h-screen bg-[#0a0011] text-white overflow-hidden">
     <!-- Background effects matching the site aesthetic -->
-    <div class="absolute inset-0 bg-[#181818]/90"></div>
+    <div class="absolute inset-0 bg-[#181818]/90 z-0"></div>
     <div
-      class="absolute inset-0 opacity-40 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)_1px,transparent_1px,transparent_4px)] mix-blend-multiply"
+      class="absolute inset-0 opacity-40 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)_1px,transparent_1px,transparent_4px)] mix-blend-multiply z-0"
     >
     </div>
     <div
@@ -26,9 +26,17 @@ import sponsorsAwardCeremonyImage from "../assets/sponsors/sponsors_award_ceremo
     >
     </div>
 
-    <div class="relative z-10 container mx-auto px-6 py-16">
+    <div class="relative z-10 container mx-auto px-6 py-6">
       <!-- Header -->
-      <div class="text-center mb-20">
+      <div>
+        <a
+          href="/"
+          class="text-amber-300 gap-2 rounded-lg border-2 border-amber-200 px-6 py-3 font-bold uppercase tracking-[0.2em] text-amber-200 transition-all duration-300 hover:scale-105 hover:bg-amber-200 hover:text-black hover:shadow-[0_0_20px_rgba(251,191,36,0.3)]"
+        >
+          ← BACK
+        </a>
+      </div>
+      <div class="text-center mb-20 p-10">
         <h1
           class="text-4xl md:text-6xl lg:text-7xl font-black tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] mb-4"
         >
@@ -938,11 +946,11 @@ import sponsorsAwardCeremonyImage from "../assets/sponsors/sponsors_award_ceremo
           href="https://nocodb.gpul.org/dashboard/#/nc/form/a8cea75c-ba77-4a09-91ba-abd4530066ee"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block group relative px-12 py-6 bg-transparent border-2 border-amber-300 text-amber-300 font-bold tracking-[0.2em] uppercase text-lg hover:bg-amber-300 hover:text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:scale-105 mb-8"
+          class="inline-block group relative px-12 py-6 bg-transparent border-2 border-amber-300 text-amber-300 font-bold tracking-[0.2em] uppercase text-lg rounded-lg hover:bg-amber-300 hover:text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:scale-105 mb-8"
         >
           <span class="relative z-10">FILL SPONSORSHIP FORM</span>
           <div
-            class="absolute inset-0 bg-amber-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+            class="absolute inset-0 bg-amber-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"
           >
           </div>
         </a>

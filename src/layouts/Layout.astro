@@ -81,7 +81,21 @@ const { title, light = false } = Astro.props;
   <style is:global>
     body {
       font-family: "Roboto", sans-serif;
+      /* Improve rendering on iOS Safari */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
+    /* Fix iOS Safari viewport height issues */
+    html {
+      height: -webkit-fill-available;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+    }
+
     @supports (-webkit-appearance: none) and (-webkit-backdrop-filter: none) {
       select {
         -webkit-appearance: none;
@@ -89,6 +103,13 @@ const { title, light = false } = Astro.props;
       input[type="date"] {
         -webkit-appearance: none;
         height: 3rem;
+      }
+    }
+
+    @supports (-webkit-overflow-scrolling: touch) {
+      * {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
       }
     }
   </style>

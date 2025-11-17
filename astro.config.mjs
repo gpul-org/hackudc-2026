@@ -14,4 +14,17 @@ export default defineConfig({
   },
 
   integrations: [react()],
+  i18n: {
+    locales: ["en", "es"],
+    defaultLocale: "en",
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
+  redirects: {
+    "/terminos": "/es/terminos",
+    "/conducta": "/es/conducta",
+    "/privacidad": "/es/privacidad",
+    "/informacion": "/es/informacion",
+  },
 });

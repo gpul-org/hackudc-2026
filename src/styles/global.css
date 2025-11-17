@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+.link {
+	color: #fde68a; /* amber-200 */
+	text-decoration-line: underline;
+	text-underline-offset: 3px;
+	text-decoration-thickness: 2px;
+	text-decoration-color: rgba(253, 230, 138, 0.7);
+	transition: color 200ms ease, text-decoration-color 200ms ease,
+		outline-color 200ms ease, box-shadow 200ms ease;
+}
+
+.link:hover {
+	color: #fef3c7; /* amber-100 */
+	text-decoration-color: #fef3c7;
+}
+
+.link:focus-visible {
+	outline: 2px solid #fde68a; /* amber-200 */
+	outline-offset: 2px;
+	border-radius: 0.25rem;
+}
+
+/* Avoid purple visited defaults */
+.link:visited {
+	color: #fcd34d; /* amber-300 */
+	text-decoration-color: #fcd34d;
+}
+

@@ -1,0 +1,304 @@
+---
+export interface Props {
+  slides: string[];
+  autoPlayInterval?: number;
+  showNavButtons?: boolean;
+  minHeight?: string;
+}
+
+const {
+  slides,
+  autoPlayInterval = 10000,
+  showNavButtons = true,
+  minHeight = "min-h-[160px] sm:min-h-[180px] md:min-h-[200px] lg:min-h-[220px]",
+} = Astro.props;
+---
+
+<div class="carousel-container w-full max-w-4xl mx-auto">
+  <div class="relative px-12 sm:px-16 md:px-20 lg:px-24">
+    <div
+      id="info-carousel"
+      class:list={[
+        "relative overflow-hidden rounded-2xl border-2 border-amber-200 bg-gradient-to-br from-amber-300/5 via-transparent to-amber-300/10 backdrop-blur-sm",
+        minHeight,
+      ]}
+      data-carousel="info"
+    >
+      {
+        slides.map((slide, index) => (
+          <div
+            class:list={[
+              "carousel-slide absolute inset-0 transition-all duration-700 ease-in-out",
+              index === 0 ? "opacity-100 scale-100" : "opacity-0 scale-95",
+            ]}
+            data-carousel-item
+            data-index={index}
+          >
+            <div class="flex items-center justify-center h-full px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-10 md:py-14 lg:py-18">
+              <p
+                class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-center text-amber-200 leading-relaxed font-semibold max-w-3xl overflow-auto"
+                style="font-size: clamp(0.875rem, 2vw, 1.5rem);"
+              >
+                {slide}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    {
+      showNavButtons && (
+        <>
+          <button
+            type="button"
+            class="carousel-btn-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full border-2 border-amber-200 bg-amber-300/10 backdrop-blur-sm transition-all duration-300 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:opacity-30 disabled:cursor-not-allowed hover:bg-amber-300/30 hover:border-amber-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(252,211,77,0.3)]"
+            aria-label="Previous slide"
+            data-carousel-prev
+          >
+            <svg
+              class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-amber-200"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            class="carousel-btn-next absolute right-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full border-2 border-amber-200 bg-amber-300/10 backdrop-blur-sm transition-all duration-300 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:opacity-30 disabled:cursor-not-allowed hover:bg-amber-300/30 hover:border-amber-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(252,211,77,0.3)]"
+            aria-label="Next slide"
+            data-carousel-next
+          >
+            <svg
+              class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-amber-200"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </>
+      )
+    }
+  </div>
+
+  <div
+    class="flex items-center justify-center gap-2 sm:gap-3 mt-6 sm:mt-8"
+    role="tablist"
+    aria-label="Carousel navigation"
+  >
+    {
+      slides.map((_, index) => (
+        <button
+          type="button"
+          class:list={[
+            "carousel-indicator w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2",
+            index === 0
+              ? "bg-amber-300 scale-125 w-8 sm:w-10"
+              : "bg-amber-200/40 hover:bg-amber-200/60 hover:scale-110",
+          ]}
+          aria-label={`Go to slide ${index + 1}`}
+          data-carousel-slide-to={index}
+          role="tab"
+          aria-selected={index === 0}
+        />
+      ))
+    }
+  </div>
+</div>
+
+<script define:vars={{ autoPlayInterval }}>
+  document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.getElementById("info-carousel");
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll("[data-carousel-item]");
+    const prevButton = document.querySelector("[data-carousel-prev]");
+    const nextButton = document.querySelector("[data-carousel-next]");
+    const indicators = document.querySelectorAll("[data-carousel-slide-to]");
+
+    let currentIndex = 0;
+    let autoPlayTimer;
+    let isPaused = false;
+
+    function updateSlide(newIndex, direction = "next") {
+      if (
+        newIndex === currentIndex ||
+        newIndex < 0 ||
+        newIndex >= slides.length
+      )
+        return;
+
+      const currentSlide = slides[currentIndex];
+      const nextSlide = slides[newIndex];
+
+      // Animate out current slide
+      currentSlide.classList.remove("opacity-100", "scale-100");
+      currentSlide.classList.add("opacity-0", "scale-95");
+
+      // Animate in next slide
+      nextSlide.classList.remove("opacity-0", "scale-95");
+      nextSlide.classList.add("opacity-100", "scale-100");
+
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        if (index === newIndex) {
+          indicator.classList.remove(
+            "bg-amber-200/40",
+            "scale-100",
+            "w-2.5",
+            "sm:w-3"
+          );
+          indicator.classList.add(
+            "bg-amber-300",
+            "scale-125",
+            "w-8",
+            "sm:w-10"
+          );
+          indicator.setAttribute("aria-selected", "true");
+        } else {
+          indicator.classList.remove(
+            "bg-amber-300",
+            "scale-125",
+            "w-8",
+            "sm:w-10"
+          );
+          indicator.classList.add(
+            "bg-amber-200/40",
+            "scale-100",
+            "w-2.5",
+            "sm:w-3"
+          );
+          indicator.setAttribute("aria-selected", "false");
+        }
+      });
+
+      currentIndex = newIndex;
+    }
+
+    function nextSlide() {
+      const newIndex = (currentIndex + 1) % slides.length;
+      updateSlide(newIndex, "next");
+    }
+
+    function prevSlide() {
+      const newIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlide(newIndex, "prev");
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      if (!isPaused) {
+        autoPlayTimer = window.setInterval(nextSlide, autoPlayInterval);
+      }
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayTimer !== undefined) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = undefined;
+      }
+    }
+
+    function restartAutoPlay() {
+      stopAutoPlay();
+      startAutoPlay();
+    }
+
+    // Event listeners
+    if (prevButton) {
+      prevButton.addEventListener("click", () => {
+        prevSlide();
+        restartAutoPlay();
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", () => {
+        nextSlide();
+        restartAutoPlay();
+      });
+    }
+
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        updateSlide(index);
+        restartAutoPlay();
+      });
+    });
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      // Check if carousel is in viewport
+      const rect = carousel.getBoundingClientRect();
+      const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (!inViewport) return;
+
+      if (e.key === "ArrowLeft") {
+        prevSlide();
+        restartAutoPlay();
+      } else if (e.key === "ArrowRight") {
+        nextSlide();
+        restartAutoPlay();
+      }
+    });
+
+    // Pause on hover
+    carousel.addEventListener("mouseenter", () => {
+      isPaused = true;
+      stopAutoPlay();
+    });
+
+    carousel.addEventListener("mouseleave", () => {
+      isPaused = false;
+      startAutoPlay();
+    });
+
+    // Pause when page is not visible
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        stopAutoPlay();
+      } else if (!isPaused) {
+        startAutoPlay();
+      }
+    });
+
+    // Initialize
+    startAutoPlay();
+  });
+</script>
+
+<style>
+  .carousel-container {
+    /* Ensure proper stacking context */
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Smooth transition for slide changes */
+  .carousel-slide {
+    will-change: opacity, transform;
+  }
+
+  /* Smooth indicator animations */
+  .carousel-indicator {
+    will-change: transform, width, background-color;
+  }
+</style>

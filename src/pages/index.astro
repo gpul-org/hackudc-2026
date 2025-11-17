@@ -1,91 +1,78 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const videoId = "EDIGMHPDKsI";
+import FAQ from "../components/FAQ.astro";
+import Info from "../components/Info.astro";
+import ImpactNumbers from "../components/ImpactNumbers.astro";
+import About from "../components/About.astro";
+import ShowSponsors from "../components/ShowSponsors.astro";
+import ShowCollaborators from "../components/ShowCollaborators.astro";
+import ShowStart from "../components/ShowStart.astro";
+import Footer from "../components/Footer.astro";
+import ImageGallery from "../components/ImageGallery.astro";
+
+// Import images for the gallery
+import participantsClassImage from "../assets/sponsors/participants_class.jpg";
+import networkingImage from "../assets/sponsors/networking.jpg";
+import panoramicImage from "../assets/sponsors/panoramic_2025.jpg";
+import judgingMentoringImage from "../assets/sponsors/judging_mentoring.jpg";
+import sponsorParticipantHelpImage from "../assets/sponsors/sponsor_participant_help.jpg";
+import workshopImage from "../assets/sponsors/workshop.jpg";
+import sponsorBrandShowcaseImage from "../assets/sponsors/sponsor_brand_showcase.jpg";
+import sponsorsAwardCeremonyImage from "../assets/sponsors/sponsors_award_ceremony.jpg";
+
+import patternSvg from "../assets/pattern.svg";
+
+const galleryImages = [
+  { src: participantsClassImage.src, alt: "Participants in a class session" },
+  { src: networkingImage.src, alt: "Attendees networking during the event" },
+  { src: panoramicImage.src, alt: "Panoramic view of HackUDC 2025" },
+  { src: judgingMentoringImage.src, alt: "Judging and mentoring session" },
+  {
+    src: sponsorParticipantHelpImage.src,
+    alt: "Sponsor assisting participants",
+  },
+  { src: workshopImage.src, alt: "Workshop in progress" },
+  { src: sponsorBrandShowcaseImage.src, alt: "Sponsor brand showcase area" },
+  {
+    src: sponsorsAwardCeremonyImage.src,
+    alt: "Sponsors at the award ceremony",
+  },
+];
 ---
 
 <Layout title="HackUDC — Accept the Challenge">
   <main class="relative min-h-screen overflow-hidden">
-    <!-- Background YouTube video -->
-    <div class="absolute inset-0 -z-10 overflow-hidden">
-      <iframe
-        src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&modestbranding=1&showinfo=0&rel=0&playsinline=1`}
-        title="HackUDC background video"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[56.25vw] min-w-[177.78vh] min-h-screen pointer-events-none"
-      ></iframe>
-      <!-- Dark tint + scanlines + vignette for a retro CRT vibe -->
-      <div class="absolute inset-0 bg-[#0a0011]/50"></div>
-      <div
-        class="absolute inset-0 opacity-60 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)_1px,transparent_1px,transparent_4px)] mix-blend-multiply"
-      >
-      </div>
-      <div
-        class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,0.6)_60%,rgba(0,0,0,0.97)_100%)]"
-      >
-      </div>
-    </div>
-
-    <!-- HUD elements -->
+    <!-- Tiled SVG pattern background -->
     <div
-      class="absolute left-6 top-6 text-sm md:text-xl tracking-[0.3em] text-amber-300"
+      class="absolute inset-0 pointer-events-none z-0 opacity-80"
+      style={`background-image: url(${patternSvg.src}); background-repeat: repeat; background-size: 304px 304px;`}
     >
-      <div class="uppercase">Organized by</div>
-      <div class="text-amber-200">GPUL</div>
     </div>
+    <div class="absolute inset-0 bg-[#0a0011]/80 pointer-events-none z-0"></div>
     <div
-      class="absolute right-6 top-6 text-sm md:text-xl tracking-[0.3em] text-amber-300 text-right"
+      class="absolute inset-0 pointer-events-none z-0"
+      style="background: radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0.97) 100%);"
     >
-      OPEN SOURCE <br /> HACKATHON
     </div>
 
-    <!-- Centered content -->
-    <section
-      class="relative z-10 flex min-h-screen flex-col items-center justify-center text-center"
-    >
-      <h1
-        class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-[0.25em] text-amber-300 drop-shadow-[0_6px_0_#7c3f00]"
-      >
-        HACKUDC
-      </h1>
-      <p class="mt-4 text-xl sm:text-2xl tracking-[0.35em] text-amber-100">
-        27 FEB — 1 MAR
-      </p>
-
-      <!-- Action Buttons -->
+    <!-- Page content with higher z-index to be above filters -->
+    <div class="relative z-20">
+      <ShowStart />
       <div
-        class="mt-12 flex flex-col sm:flex-row gap-6 items-center justify-center"
+        class="absolute top-[100vh] left-0 right-0 h-48 bg-gradient-to-b from-black via-black/30 to-transparent z-10"
       >
-        <a
-          href="https://nocodb.gpul.org/dashboard/#/nc/form/17aaf374-49ef-4671-b7fb-681cd344c425"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group relative px-8 py-4 bg-transparent border-2 border-amber-200 text-amber-200 font-bold tracking-[0.2em] uppercase text-sm hover:bg-amber-200 hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:scale-105"
-          data-umami-event="waitlist-click"
-        >
-          <span class="relative z-10">ENTER WAITLIST</span>
-          <div
-            class="absolute inset-0 bg-amber-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-          >
-          </div>
-        </a>
-
-        <a
-          href="/sponsors"
-          class="group relative px-8 py-4 bg-transparent border-2 border-amber-100 text-amber-100 font-bold tracking-[0.2em] uppercase text-sm hover:bg-amber-100 hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.2)] hover:scale-105"
-        >
-        <div
-            class="absolute -top-3 -right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold tracking-wider animate-pulse z-20 transform rotate-12"
-          >
-            WE NEED YOU!
-          </div>
-          <span class="relative z-10">BECOME A SPONSOR</span>
-          <div
-            class="absolute inset-0 bg-amber-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-          >
-          </div>
-        </a>
       </div>
-    </section>
+      <div class="pt-20 sm:pt-32">
+        <ImpactNumbers />
+      </div>
+      <About />
+      <Info />
+      <ShowSponsors />
+      <ShowCollaborators />
+      <FAQ />
+      <ImageGallery images={galleryImages} />
+      <Footer />
+    </div>
   </main>
 </Layout>

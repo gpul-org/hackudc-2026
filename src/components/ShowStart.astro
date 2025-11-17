@@ -1,0 +1,154 @@
+---
+const videoId = "EDIGMHPDKsI";
+import logoSrc from "/public/logos/logo_h_accented.svg";
+import { Image } from "astro:assets";
+---
+
+<!-- Background YouTube video -->
+<section
+  class="h-screen overflow-hidden relative"
+  style="min-height: 100vh; min-height: 100dvh;"
+>
+  <div
+    class="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none overflow-hidden"
+  >
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <iframe
+        src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&modestbranding=1&showinfo=0&rel=0&playsinline=1`}
+        title="HackUDC background video"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[56.25vw] min-w-[177.78vh] min-h-screen pointer-events-none"
+        style="max-width: 100vw; max-height: 100vh; max-height: 100dvh; object-fit: cover; -webkit-transform: translateZ(0); transform: translateZ(0);"
+      ></iframe>
+      <!-- Dark tint + scanlines + vignette for a retro CRT vibe -->
+      <div class="absolute inset-0 bg-[#0a0011]/50"></div>
+      <div
+        class="absolute inset-0 opacity-60 mix-blend-multiply"
+        style="background: repeating-linear-gradient(0deg, rgba(0,0,0,0.7) 0px, rgba(0,0,0,0.7) 1px, transparent 1px, transparent 4px);"
+      >
+      </div>
+      <div
+        class="absolute inset-0 pointer-events-none"
+        style="background: radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.97) 100%);"
+      >
+      </div>
+    </div>
+
+    <!-- Dark tint + scanlines + vignette -->
+    <div class="absolute inset-0 bg-[#0a0011]/50"></div>
+    <div
+      class="absolute inset-0 opacity-60 mix-blend-multiply"
+      style="background: repeating-linear-gradient(0deg, rgba(0,0,0,0.7) 0px, rgba(0,0,0,0.7) 1px, transparent 1px, transparent 4px);"
+    >
+    </div>
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background: radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.97) 100%);"
+    >
+    </div>
+  </div>
+
+  <!-- HUD elements -->
+  <div
+    class="absolute left-6 top-6 text-sm md:text-xl tracking-[0.3em] text-amber-300"
+  >
+    <div class="uppercase">Organized by</div>
+    <div class="text-amber-200">GPUL</div>
+  </div>
+  <div
+    class="absolute right-6 top-6 text-sm md:text-xl tracking-[0.3em] text-amber-300 text-right"
+  >
+    OPEN SOURCE <br /> HACKATHON
+  </div>
+
+  <!-- Centered content -->
+  <section
+    class="relative z-10 flex min-h-screen flex-col items-center justify-center text-center"
+    style="min-height: 100vh; min-height: 100dvh;"
+  >
+    <!-- 
+    <h1
+      class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-[0.25em] text-amber-300 drop-shadow-[0_6px_0_#7c3f00]"
+    >
+      HACKUDC
+    </h1>
+-->
+    <Image
+      src={logoSrc}
+      alt={"HACKUDC"}
+      class="mx-auto max-w-[min(70vw,720px)] w-[80%] h-auto"
+    />
+    <p class="mt-4 text-xl sm:text-2xl tracking-[0.35em] text-amber-100">
+      27 FEB — 1 MAR
+    </p>
+
+    <!-- Action Buttons -->
+    <div
+      class="mt-12 flex flex-col sm:flex-row gap-6 items-center justify-center"
+    >
+      <a
+        href="https://registro.hackudc.gpul.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group relative px-8 py-4 bg-transparent border-2 border-amber-200 text-amber-200 font-bold tracking-[0.2em] uppercase text-sm rounded-lg hover:bg-amber-200 hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:scale-105"
+        data-umami-event="waitlist-click"
+      >
+        <span class="relative z-10">REGISTER NOW</span>
+        <div
+          class="absolute inset-0 bg-amber-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+        >
+        </div>
+      </a>
+
+      <a
+        href="/sponsors"
+        class="group relative px-8 py-4 bg-transparent border-2 border-amber-100 text-amber-100 font-bold tracking-[0.2em] uppercase text-sm rounded-lg hover:bg-amber-100 hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.2)] hover:scale-105"
+      >
+        <div
+          class="absolute -top-3 -right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold tracking-wider animate-pulse z-20 transform rotate-12"
+        >
+          WE NEED YOU!
+        </div>
+        <span class="relative z-10">BECOME A SPONSOR</span>
+        <div
+          class="absolute inset-0 bg-amber-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+        >
+        </div>
+      </a>
+    </div>
+
+    <!-- Animated Down Arrow -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="text-amber-300 opacity-70 hover:opacity-100 transition-opacity duration-300 arrow-float"
+      >
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </section>
+</section>
+
+<style>
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+  }
+
+  .arrow-float {
+    animation: float 2.5s ease-in-out infinite;
+  }
+</style>
