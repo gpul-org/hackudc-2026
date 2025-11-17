@@ -1,0 +1,102 @@
+---
+interface Props {
+  alternates?: Record<string, string>;
+}
+
+const { alternates = {} } = Astro.props;
+const currentPath = Astro.url.pathname.replace(/\/$/, "");
+const currentLocale = Astro.currentLocale || "en";
+
+// Build alternate URLs
+const alternateUrls: Record<string, string> = {
+  en:
+    currentPath.startsWith("/es/") || currentPath.startsWith("/gl/")
+      ? "/"
+      : currentPath,
+  es: "/", // fallback
+  gl: "/", // fallback
+  ...alternates,
+};
+
+// Ensure current locale points to current path
+if (
+  currentLocale === "en" &&
+  !currentPath.startsWith("/es/") &&
+  !currentPath.startsWith("/gl/")
+) {
+  alternateUrls.en = currentPath;
+} else if (currentLocale === "es") {
+  alternateUrls.es = currentPath;
+} else if (currentLocale === "gl") {
+  alternateUrls.gl = currentPath;
+}
+
+// Galician fallback: if no GL version exists, use Spanish version
+if (!alternates.gl && alternateUrls.es && alternateUrls.es !== "/") {
+  alternateUrls.gl = alternateUrls.es;
+}
+
+const languages = [
+  { code: "en", label: "EN" },
+  { code: "es", label: "ES" },
+  //{ code: "gl", label: "GL" },
+];
+---
+
+<div class="flex gap-2 items-center">
+  {
+    languages.map((lang) => (
+      <a
+        href={alternateUrls[lang.code as keyof typeof alternateUrls]}
+        class={`language-switch px-3 py-1 text-sm font-bold tracking-wider uppercase rounded transition-all duration-300 ${
+          currentLocale === lang.code
+            ? "bg-amber-300 text-black"
+            : "border border-amber-300 text-amber-300 hover:bg-amber-300 hover:text-black"
+        }`}
+        data-locale={lang.code}
+      >
+        {lang.label}
+      </a>
+    ))
+  }
+</div>
+
+<script>
+  // Save language preference when clicking a language switch
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    const langLink = target.closest(".language-switch") as HTMLAnchorElement;
+
+    if (langLink) {
+      const locale = langLink.dataset.locale;
+      if (locale) {
+        localStorage.setItem("preferredLocale", locale);
+      }
+    }
+  });
+
+  // Auto-redirect based on stored preference
+  const preferredLocale = localStorage.getItem("preferredLocale");
+  const currentPath = window.location.pathname;
+  const currentLocale = currentPath.startsWith("/es/")
+    ? "es"
+    : currentPath.startsWith("/gl/")
+      ? "gl"
+      : "en";
+
+  if (
+    preferredLocale &&
+    preferredLocale !== currentLocale &&
+    preferredLocale !== "en"
+  ) {
+    // Get the alternate URL for the preferred locale
+    const languageLinks = document.querySelectorAll(".language-switch");
+    const preferredLink = Array.from(languageLinks).find(
+      (link) => (link as HTMLElement).dataset.locale === preferredLocale
+    ) as HTMLAnchorElement;
+
+    if (preferredLink && preferredLink.href !== window.location.href) {
+      window.location.href = preferredLink.href;
+    }
+  }
+</script>

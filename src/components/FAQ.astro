@@ -1,0 +1,293 @@
+---
+const questions = [
+  {
+    title: "When does HackUDC take place?",
+    description:
+      "HackUDC will take place from February 27th to March 1st, 2026. The opening ceremony will be on Friday afternoon, February 27th. The event concludes on Sunday with an awards ceremony during the closing act.",
+  },
+  {
+    title: "Where does HackUDC take place?",
+    description:
+      "The event will take place at the Faculty of Computer Science (FIC) of the A Coruña University (UDC), on the Elviña Campus in A Coruña.",
+  },
+  {
+    title: "What does HackUDC include?",
+    description:
+      "HackUDC is completely free for participants. WiFi and workspaces are provided, as well as breakfasts, lunches, dinners, and snacks throughout the event. Don't forget to include any dietary restrictions when registering.",
+  },
+  {
+    title: "Where can I rest?",
+    description:
+      "If you don't have accommodation, rest areas will be available in classrooms. However, keep in mind that the Faculty is not a hotel, and these areas are meant to take quick naps so that you can get back to hacking.",
+  },
+  {
+    title: "Will I be able to take a shower during the event?",
+    description:
+      "Of course! The faculty will be open throughout the event, and there will be designated times for you to take a shower and stay fresh.",
+  },
+  {
+    title: "What can I create?",
+    description:
+      "You can create any project related to technology. We have no restrictions on the topic. The only requirement is that the project developed during the hackathon is published under a free license. Some examples could be web applications, mobile applications, hardware projects, games, APIs...",
+  },
+  {
+    title: "What do I need to bring?",
+    description:
+      "For admission, you will need to verify your identity with a valid government-issued ID. Other common things to bring to the hackathon are: laptop and charger (don't forget the charger!), comfortable clothing, and eagerness to create something awesome! If you have any specific hardware you want to use, feel free to bring it along.",
+  },
+  {
+    title: "Who can participate?",
+    description:
+      "Students or recent graduates (up to 1 year after graduation) from universities, vocational training programs, high schools, or other educational backgrounds are all welcome.",
+  },
+  {
+    title: "How can I register?",
+    description:
+      //"Registration is not yet open, but you can join the waitlist on our landing page to be the first to know when it becomes available. We'll also announce it on our website and social media channels once registration opens.",
+      "Registration is now open! To register, you will need to submit your application through the registration form found in the landing page of this website. We will send you a confirmation once your application is accepted.",
+  },
+  {
+    title: "What if I'm not a student?",
+    description:
+      "You can still participate as a mentor to enjoy the event and help participants with their projects. Mentor registration will open later.",
+  },
+  {
+    title: "What if I have no coding experience?",
+    description:
+      "HackUDC is a place to learn, so no prior programming experience is required. There are many other areas where you can contribute, such as design, testing, project management, and more.",
+  },
+  {
+    title: "What if I don't have a team?",
+    description:
+      "Part of the fun of a hackathon is meeting new people. We will have a team-building activity at the beginning of the event so that everyone can meet and form teams.",
+  },
+  {
+    title: "What is the maximum team size?",
+    description: "Teams can have up to 4 hackers.",
+  },
+  {
+    title: "Can I switch teams during the event?",
+    description:
+      "Yes! Only the final submission counts, so make sure your project is submitted correctly. Submission instructions will be provided during the event.",
+  },
+  {
+    title: "About ECTS credits",
+    description:
+      "If you are a UDC student, you can earn 1.5 ECTS credits by participating in HackUDC. Attendance will be monitored during the event. UDC students interested in receiving credits must request recognition through the VEE. More detailed information will be provided before, during, and after the event.",
+  },
+  {
+    title: "Will there be mentors?",
+    description:
+      "Yes. Mentors will be available throughout the event to answer any questions you may have. If you would like to participate as a mentor, you can fill out the form linked below the participant registration. For any questions, email us at hackudc@gpul.org!",
+  },
+];
+
+// Split point for two columns. Use ceil so left column gets the extra item when odd.
+const mid = Math.ceil(questions.length / 2);
+---
+
+<section class="px-4 sm:px-6 py-12 sm:py-20" aria-labelledby="faq-heading">
+  <div class="max-w-6xl mx-auto">
+    <h1
+      id="faq-heading"
+      class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-center tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] mb-4"
+    >
+      FAQs
+    </h1>
+
+    <h2
+      class="text-xl sm:text-2xl md:text-3xl font-bold uppercase text-center tracking-[0.2em] text-amber-300 mb-3"
+    >
+      Have questions? We've got answers.
+    </h2>
+    <p class="text-center text-amber-100 text-base sm:text-lg md:text-xl mb-12">
+      The most common questions grouped in our FAQ
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-x-12">
+      <div class="space-y-4">
+        {
+          questions.map((q, i) => {
+            // Left column: items [0, mid)
+            if (i >= mid) return null;
+            return (
+              <details class="faq-item group bg-transparent border-2 border-amber-200 rounded-lg p-4 transition-all duration-300">
+                <summary
+                  class="cursor-pointer text-base sm:text-lg font-bold text-amber-200 list-none flex items-start justify-between"
+                  aria-label={q.title}
+                >
+                  <span class="pr-4">{q.title}</span>
+                  <svg
+                    class="w-5 h-5 shrink-0 mt-0.5 transform transition-transform duration-300 group-open:rotate-180"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </summary>
+                <div class="faq-content overflow-hidden">
+                  <p class="mt-3 text-sm sm:text-base text-amber-100 leading-relaxed">
+                    {q.description}
+                  </p>
+                </div>
+              </details>
+            );
+          })
+        }
+      </div>
+      <div class="space-y-4">
+        {
+          questions.map((q, i) => {
+            // Right column: items [mid, end)
+            if (i < mid) return null;
+            return (
+              <details class="faq-item group bg-transparent border-2 border-amber-200 rounded-lg p-4 transition-all duration-300">
+                <summary
+                  class="cursor-pointer text-base sm:text-lg font-bold text-amber-200 list-none flex items-start justify-between"
+                  aria-label={q.title}
+                >
+                  <span class="pr-4">{q.title}</span>
+                  <svg
+                    class="w-5 h-5 shrink-0 mt-0.5 transform transition-transform duration-300 group-open:rotate-180"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </summary>
+                <div class="faq-content overflow-hidden">
+                  <p class="mt-3 text-sm sm:text-base text-amber-100 leading-relaxed">
+                    {q.description}
+                  </p>
+                </div>
+              </details>
+            );
+          })
+        }
+      </div>
+    </div>
+
+    <div class="mt-12 text-center max-w-3xl mx-auto">
+      <p class="text-base sm:text-lg md:text-xl text-amber-300 leading-relaxed">
+        If you have any other questions, feel free to contact us via social
+        media or at
+        <a href="mailto:hackudc@gpul.org" class="link">hackudc@gpul.org</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Auto-close other FAQ items when one is opened
+  document.addEventListener("DOMContentLoaded", () => {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const summary = item.querySelector("summary");
+      const content = item.querySelector(".faq-content") as HTMLElement;
+
+      // Set initial state
+      if (!item.hasAttribute("open") && content) {
+        content.style.maxHeight = "0px";
+        content.style.opacity = "0";
+      }
+
+      summary?.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if (!content) return;
+
+        const isOpen = item.hasAttribute("open");
+
+        // Close all other items
+        faqItems.forEach((otherItem) => {
+          if (otherItem !== item && otherItem.hasAttribute("open")) {
+            const otherContent = otherItem.querySelector(
+              ".faq-content"
+            ) as HTMLElement;
+            if (otherContent) {
+              otherContent.style.maxHeight = "0px";
+              otherContent.style.opacity = "0";
+            }
+            setTimeout(() => {
+              otherItem.removeAttribute("open");
+            }, 300);
+          }
+        });
+
+        // Toggle current item
+        if (isOpen) {
+          // Close
+          content.style.maxHeight = "0px";
+          content.style.opacity = "0";
+          setTimeout(() => {
+            item.removeAttribute("open");
+          }, 300);
+        } else {
+          // Open
+          item.setAttribute("open", "");
+          // Get the natural height
+          content.style.maxHeight = "none";
+          const height = content.scrollHeight;
+          content.style.maxHeight = "0px";
+
+          // Trigger reflow
+          setTimeout(() => {
+            content.style.maxHeight = height + "px";
+            content.style.opacity = "1";
+          }, 10);
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .faq-content {
+    transition:
+      max-height 300ms ease-in-out,
+      opacity 300ms ease-in-out;
+  }
+
+  /* Remove default marker on some browsers (obviamente safari) */
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::marker {
+    display: none;
+  }
+
+  /* Semi-transparent background for opened FAQ items */
+  .faq-item[open] {
+    background-color: rgba(245, 203, 46, 0.1);
+  }
+
+  /* Focus visible for keyboard navigation */
+  .faq-item summary:focus-visible {
+    outline: 2px solid rgb(253, 230, 138);
+    outline-offset: 2px;
+  }
+
+  /* Full background on hover (mouse only) */
+  @media (hover: hover) and (pointer: fine) {
+    .faq-item:hover {
+      background-color: rgb(253, 230, 138);
+    }
+
+    .faq-item:hover summary,
+    .faq-item:hover p {
+      color: black;
+    }
+  }
+</style>

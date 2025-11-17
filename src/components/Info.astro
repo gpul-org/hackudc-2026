@@ -1,0 +1,200 @@
+---
+import InfoCarousel from "./InfoCarousel.astro";
+
+const carouselSlides = [
+  "HackUDC is back and bigger than ever! Join 400+ participants for 36 hours of non-stop hacking, learning, and networking.",
+  "Grab your team of up to 4 people, pick a challenge and create innovative projects, with mentorship and workshops available throughout the event.",
+  "Open source only. Bring your laptop, your ideas, and your energy. Let's make something cool together.",
+  "Students and recent graduates are welcome - no prior coding experience required. There's a place for everyone!",
+];
+---
+
+<section
+  class="mt-4 sm:mt-6 mb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center"
+>
+  <!-- CAROUSEL  
+  <h1
+    id="info-heading"
+    class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-center tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] mb-8 sm:mb-12 md:mb-16"
+  >
+    About HackUDC
+  </h1>
+
+  <div class="w-full mb-16 sm:mb-20 md:mb-24">
+    <InfoCarousel slides={carouselSlides} autoPlayInterval={5000} />
+  </div>
+-->
+
+  <div class="w-full max-w-4xl mx-auto mt-35 sm:mt-16 md:mt-30">
+    <h1
+      id="sponsors-heading"
+      class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-center tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] mb-8 sm:mb-10 md:mb-12"
+    >
+      What you need to know
+    </h1>
+
+    <div class="mt-20 space-y-6 sm:space-y-8">
+      <!-- Step 1: Team -->
+      <div class="flex">
+        <div class="flex flex-col items-center mr-4 sm:mr-6">
+          <div class="flex justify-center items-center">
+            <svg
+              class="text-amber-300 border-2 border-amber-400 h-12 w-12 sm:h-14 sm:w-14 p-2 rounded-full bg-amber-950/50 backdrop-blur-sm transition-transform duration-300 hover:scale-110"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <path
+                d="M5 7a4 4 0 1 0 8 0a4 4 0 1 0-8 0M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2m1-17.87a4 4 0 0 1 0 7.75M21 21v-2a4 4 0 0 0-3-3.85"
+              ></path>
+            </svg>
+          </div>
+          <div class="bg-amber-400/30 h-full w-px mt-2"></div>
+        </div>
+        <div class="pt-1 pb-6 flex-1">
+          <p class="font-bold text-xl sm:text-2xl text-amber-100 mb-2">
+            Step 1: <span class="font-medium text-amber-200">The Team</span>
+          </p>
+          <p class="text-amber-100/80 text-base sm:text-lg mt-2">
+            Form your team of up to 4 members, have fun, and collaborate
+            effectively. You can bring your own team or join one at the event.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 2: Idea -->
+      <div class="flex">
+        <div class="flex flex-col items-center mr-4 sm:mr-6">
+          <div class="flex justify-center items-center">
+            <svg
+              class="text-amber-300 border-2 border-amber-400 h-12 w-12 sm:h-14 sm:w-14 p-2 rounded-full bg-amber-950/50 backdrop-blur-sm transition-transform duration-300 hover:scale-110"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <path
+                d="M9 21h6M12 3a6 6 0 0 0-6 6c0 2.5 1.5 4.5 3 6l-2 2h10l-2-2c1.5-1.5 3-3.5 3-6a6 6 0 0 0-6-6Z"
+              ></path>
+            </svg>
+          </div>
+          <div class="bg-amber-400/30 h-full w-px mt-2"></div>
+        </div>
+        <div class="pt-1 pb-6 flex-1">
+          <p class="font-bold text-xl sm:text-2xl text-amber-100 mb-2">
+            Step 2: <span class="font-medium text-amber-200">The Idea</span>
+          </p>
+          <p class="text-amber-100/80 text-base sm:text-lg mt-2">
+            Get inspired by the challenges proposed by sponsors and the
+            organization to create an original solution.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3: Code -->
+      <div class="flex">
+        <div class="flex flex-col items-center mr-4 sm:mr-6">
+          <div class="flex justify-center items-center">
+            <svg
+              class="text-amber-300 border-2 border-amber-400 h-12 w-12 sm:h-14 sm:w-14 p-2 rounded-full bg-amber-950/50 backdrop-blur-sm transition-transform duration-300 hover:scale-110"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <path d="m7 8l-4 4l4 4m10-8l4 4l-4 4M14 4l-4 16"></path>
+            </svg>
+          </div>
+          <div class="bg-amber-400/30 h-full w-px mt-2"></div>
+        </div>
+        <div class="pt-1 pb-6 flex-1">
+          <p class="font-bold text-xl sm:text-2xl text-amber-100 mb-2">
+            Step 3: <span class="font-medium text-amber-200">Code</span>
+          </p>
+          <p class="text-amber-100/80 text-base sm:text-lg mt-2">
+            You have 36h to bring your idea to life: Use your go-to programming
+            language, or try something new!
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 4: Submit -->
+      <div class="flex">
+        <div class="flex flex-col items-center mr-4 sm:mr-6">
+          <div class="flex justify-center items-center">
+            <svg
+              class="text-amber-300 border-2 border-amber-400 h-12 w-12 sm:h-14 sm:w-14 p-2 rounded-full bg-amber-950/50 backdrop-blur-sm transition-transform duration-300 hover:scale-110"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <path d="m16 12.5l-5-3l5-3l5 3V15l-5 3z"></path>
+              <path d="M11 9.5V15l5 3m0-5.455l5-3.03M7 9H2m5 3H4m3 3H6"></path>
+            </svg>
+          </div>
+          <div class="bg-amber-400/30 h-full w-px mt-2"></div>
+        </div>
+        <div class="pt-1 pb-6 flex-1">
+          <p class="font-bold text-xl sm:text-2xl text-amber-100 mb-2">
+            Step 4: <span class="font-medium text-amber-200">Submit</span>
+          </p>
+          <p class="text-amber-100/80 text-base sm:text-lg mt-2">
+            Include documentation and a compelling demo to showcase the
+            potential and applicability of your project. Don't forget that all
+            projects must be open source!
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 5: Prizes -->
+      <div class="flex">
+        <div class="flex flex-col items-center mr-4 sm:mr-6">
+          <div class="flex justify-center items-center">
+            <svg
+              class="text-amber-300 border-2 border-amber-400 h-12 w-12 sm:h-14 sm:w-14 p-2 rounded-full bg-amber-950/50 backdrop-blur-sm transition-transform duration-300 hover:scale-110"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <path
+                d="M8 21h8m-4-4v4M7 4h10m0 0v8a5 5 0 0 1-10 0V4M3 9a2 2 0 1 0 4 0a2 2 0 1 0-4 0m14 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div class="pt-1 flex-1">
+          <p class="font-bold text-xl sm:text-2xl text-amber-100 mb-2">
+            <span class="font-medium text-amber-200">The Prizes!</span>
+          </p>
+          <p class="text-amber-100/80 text-base sm:text-lg mt-2">
+            Compete for amazing prizes and recognition. Winners will be
+            announced at the closing ceremony.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

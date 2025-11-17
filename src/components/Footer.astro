@@ -1,0 +1,90 @@
+---
+import {
+  faInstagram,
+  faLinkedin,
+  faTelegram,
+  faTwitch,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { Image } from "astro:assets";
+
+//Images:
+import LogoGPUL from "../assets/collaborators/gpul-small.svg";
+
+const socials = [
+  {
+    title: "Instagram",
+    href: "https://www.instagram.com/gpul_",
+    icon: faInstagram,
+  },
+  {
+    title: "Twitter",
+    href: "https://x.com/gpul_",
+    icon: faTwitter,
+  },
+  {
+    title: "Twitch",
+    href: "https://www.twitch.tv/gpul_/",
+    icon: faTwitch,
+  },
+  {
+    title: "Telegram",
+    href: "https://t.me/+PrK44xhqJ9eP9ZUf",
+    icon: faTelegram,
+  },
+  {
+    title: "LinkedIn",
+    href: "https://www.linkedin.com/company/gpul/",
+    icon: faLinkedin,
+  },
+];
+---
+
+<footer class="pb-6">
+  <div
+    class="mx-auto flex w-full max-w-screen-lg flex-col items-center justify-between px-6 py-6 sm:flex-row sm:px-8"
+  >
+    <div class="flex items-center">
+      <Image src={LogoGPUL} alt="Logo GPUL" class="h-15 w-15 mr-4" />
+      <p class="text-sm">
+        Web page developed by
+        <a href="https://gpul.org" class="link">GPUL</a>
+      </p>
+    </div>
+    <div
+      class="mt-8 flex flex-col items-center gap-4 sm:mt-0 sm:flex-row sm:items-start"
+    >
+      <div class="flex gap-4">
+        {
+          socials.map((s) => (
+            <a
+              href={s.href}
+              title={s.title}
+              aria-label=title={s.title}
+              class="transition duration-150 hover:text-amber-300"
+            >
+              <FontAwesomeIcon icon={s.icon} className="h-5" />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex flex-col items-center justify-center gap-2 px-6 text-sm text-white/40 sm:flex-row sm:px-8"
+  >
+    <a href="/terms" class="hover:text-amber-300 hover:underline">
+      Terms and conditions
+    </a>
+    <span class="max-sm:hidden"> | </span>
+    <a href="/privacy" class="hover:text-amber-300 hover:underline">
+      Privacy policy
+    </a>
+    <span class="max-sm:hidden"> | </span>
+    <a href="/conduct" class="hover:text-amber-300 hover:underline">
+      Code of conduct
+    </a>
+  </div>
+</footer>

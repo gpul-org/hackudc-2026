@@ -1,0 +1,88 @@
+---
+import { Image } from "astro:assets";
+import hackImage from "../assets/sponsors/hacking.jpg";
+---
+
+<section class="w-full max-w-6xl mx-auto mt-20 sm:mt-28 px-4 sm:px-6 mb-4">
+  <h2
+    class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-[0.25em] text-amber-300 drop-shadow-[0_4px_0_#7c3f00] mb-12 text-center"
+  >
+    What is HackUDC?
+  </h2>
+
+  <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+    <!-- Image -->
+    <div class="w-full md:w-1/2 md:order-1 order-2">
+      <Image
+        src={hackImage}
+        alt="HackUDC participants collaborating"
+        class="rounded-xl shadow-xl shadow-black/30 border border-amber-400/40 grayscale-[30%] hover:grayscale-0 transition-all duration-500"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Text Content -->
+    <div class="w-full md:w-1/2 space-y-12 md:order-2 order-1">
+      <div class="about-copy space-y-12 text-center">
+        <!-- Section 1 -->
+        <section>
+          <h3
+            class="text-2xl sm:text-3xl font-black uppercase tracking-[0.2em] text-amber-300 mb-3"
+          >
+            Hack + Marathon
+          </h3>
+
+          <p class="text-amber-100/80 text-base sm:text-lg leading-relaxed">
+            <strong>HackUDC</strong> is an open-source hackathon organized by
+            <a
+              href="https://www.gpul.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link"
+            >
+              🔗 GPUL.
+            </a>
+            <br /><br />
+            Build a project in <strong>36 hours</strong> based on sponsored challenges,
+            or create something original with your team of up to <u>4 hackers</u
+            >.
+          </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section>
+          <h3
+            class="text-2xl sm:text-3xl font-black uppercase tracking-[0.2em] text-amber-300 mb-3"
+          >
+            When? Where?
+          </h3>
+
+          <p class="text-amber-100/80 text-base sm:text-lg leading-relaxed">
+            The event will take place from <u>February 27th to March 1st</u>
+            at the Faculty of Computer Science of the University of A Coruña. <br />
+            <a
+              href="https://www.openstreetmap.org/way/17539083"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link"
+              >🔗 View in map.</a
+            >
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .about-copy strong {
+      color: #fef3c7; /* amber-100 */
+      font-weight: 700;
+    }
+
+    .about-copy u {
+      text-decoration-color: #fcd34d; /* amber-300 */
+      text-underline-offset: 3px;
+      text-decoration-thickness: 2px;
+    }
+  </style>
+</section>
