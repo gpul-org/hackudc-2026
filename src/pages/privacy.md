@@ -25,7 +25,7 @@ GPUL will process the following personal data:
 
 ### Personal data collected when registering as a Participant:
 
-- **Identification data:** Name, surname(s), Identification document number (from an ID card, residence permit, passport, or similar) , city of residence, images or videos of yourself, and a link to a personal website.
+- **Identification data:** Name, surname(s), Identification document number (from an ID card, residence permit, passport, or similar), city of residence, images or videos of yourself, and a link to a personal website.
 - **Contact data:** Email address and phone number.
 - **Personal characteristics:** Date of birth and T-shirt size.
 - **Academic and professional data:** CV, proof of student status, graduation year, university/school, current studies, and links to online professional profiles (GitHub, LinkedIn, Devpost).
@@ -43,13 +43,13 @@ GPUL will process the following personal data:
 
 GPUL will process your personal data to manage and handle your requests, providing services before and during the event, whether for information, registration, participation in promotions, or the provision of services.
 
-Additionally, your personal data will be used to send, including by electronic means, commercial communications about activities, services, or products offered by GPUL that are of a similar nature to those previously requested by you.
+Additionally, your personal data will be processed to send, including by electronic means, commercial communications about activities, services, or products offered by GPUL that are of a similar nature to those previously requested by you.
 
 ### When you register as a Sponsor:
 
 Your business contact data will be processed solely for the purpose of maintaining the commercial, contractual, or collaborative relationship that GPUL has with the company, entity, or organization for which you work or collaborate.
 
-Additionally, your business contact data will be used to send, including by electronic means, commercial communications about activities, services, or products offered by GPUL that are of a similar nature to those that give rise to the existing relationship between our organization and the company, entity, or organization for which you work or collaborate, or to provide services before and during the event.
+Additionally, your business contact data will be processed to send, including by electronic means, commercial communications about activities, services, or products offered by GPUL that are of a similar nature to those that give rise to the existing relationship between our organization and the company, entity, or organization for which you work or collaborate, as well as to provide services before and during the event.
 
 ### Regarding images and videos of yourself:
 
@@ -63,7 +63,7 @@ GPUL will process your personal data solely to manage the catering service.
 
 ### When you register as a Participant:
 
-GPUL has the legal right to process personal data to handle and manage your requests, as this is required for GPUL to fulfill its contractual obligations regarding such requests.
+GPUL has the legal right to process personal data to handle and handle your requests, as this is required for GPUL to fulfill its contractual obligations regarding such requests.
 
 With respect to commercial communications sent about activities, services, or products offered by GPUL that are of a similar nature to those previously requested or acquired by you, the processing of your personal data is based on GPUL’s legitimate interest, expressly recognized by data protection regulations as well as by regulations on information society services.
 
