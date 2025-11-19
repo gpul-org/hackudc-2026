@@ -9,15 +9,15 @@ En cumplimiento con la normativa vigente sobre protección de datos personales, 
 
 ## Responsable del tratamiento
 
-La Asociación Grupo de Programadores y Usuarios de Linux (en adelante, "GPUL") con NIF G15659220 y dirección en la _Facultad de Informática, Campus de Elviña S/N, 15007, A Coruña_ es la Responsable del tratamiento de sus datos personales.
+La Asociación Grupo de Programadores y Usuarios de Linux (en adelante, "GPUL") con NIF G15659220 y dirección en la _Facultad de Informática, Campus de Elviña S/N, 15007, A Coruña_ es la responsable del tratamiento de sus datos personales.
 
 Puede contactar a GPUL en la dirección postal anteriormente indicada o en la siguiente dirección de correo electrónico para cualquier consulta, solicitud o aclaración relacionada con el tratamiento de sus datos personales: **hackudc@gpul.org**.
 
-## Qué datos personales tratamos y como los hemos obtenido
+## Qué datos personales tratamos y cómo los hemos obtenido
 
 GPUL tratará los siguientes datos personales:
 
-- Cualquier dato inicial que usted proporcione voluntariamente relacionado con una solicitud de registro como participante, solicitudes de información a nuestra empresa, solicitudes de participación en promociones o solicitudes de recepción de cualquiera de los servicios ofrecidos por GPUL (Daremos instrucciones claras y precisas de los datos obligatorios que debe proporcionar en cada formulario).
+- Cualquier dato inicial que usted proporcione voluntariamente relacionado con una solicitud de registro como participante, solicitudes de información a nuestra entidad, solicitudes de participación en promociones o solicitudes de recepción de cualquiera de los servicios ofrecidos por GPUL (Se darán instrucciones claras y precisas de los datos obligatorios que debe proporcionar en cada formulario).
 
 - Cualquier dato que se genere o intercambie posteriormente con los Usuarios para que GPUL cumpla con su solicitud inicial.
 
@@ -25,10 +25,10 @@ GPUL tratará los siguientes datos personales:
 
 ### Qué datos personales se recopilan cuando se registra como Participante:
 
-- **Datos identificativos:** Nombre, apellidos, número del documento de identificación (DNI, NIE, pasaporte o similar), ciudad de residencia, imágenes o videos de sí mismo y un enlace a un sitio web personal.
+- **Datos identificativos:** Nombre, apellidos, número del documento de identificación (DNI, NIE, pasaporte o similar), ciudad de residencia, imágenes o videos de usted mismo y un enlace a un sitio web personal.
 - **Datos de contacto:** Correo electrónico y número de teléfono.
 - **Datos sobre características personales:** Fecha de nacimiento y talla de camiseta.
-- **Datos académicos y profesionales:** CV, justificación de la condición de estudiante, año de graduación, universidad/escuela, estudios actuales y un enlace a perfiles profesionales en línea (github, linkedin, devpost).
+- **Datos académicos y profesionales:** CV, justificación de la condición de estudiante, año de graduación, universidad/escuela, estudios actuales y enlaces a perfiles profesionales en línea (GitHub, LinkedIn, Devpost).
 - **Datos de salud:** Alergias e intolerancias alimentarias.
 
 ### Qué datos personales se recopilan cuando se registra como Patrocinador:
@@ -47,68 +47,68 @@ Además, sus datos personales se tratarán para enviar, incluidos medios electr�
 
 ### Cuándo se registra como Patrocinador:
 
-Sus datos de contacto empresariales se procesarán con el único propósito de mantener las relaciones comerciales, contractuales o de colaboración que GPUL tiene con la empresa, entidad u organización para la que trabaja o colabora.
-Además, sus datos de contacto empresariales se tratarán para enviar, incluidos medios electrónicos, comunicaciones comerciales sobre actividades, servicios o productos ofrecidos por GPUL que sean de naturaleza similar a los que motivan la relación existente entre nuestra entidad y la empresa, entidad u organización para la que trabaja o colabora o proporcionando servicios antes y durante el evento.
+Sus datos de contacto empresariales se procesarán con el único propósito de mantener las relaciones comerciales, contractuales o de colaboración que GPUL tiene con la empresa, entidad u organización para la cual usted trabaja o colabora.
+Además, sus datos de contacto empresariales se tratarán para enviar, incluidos medios electrónicos, comunicaciones comerciales sobre actividades, servicios o productos ofrecidos por GPUL que sean de naturaleza similar a los que motivan la relación existente entre nuestra entidad y la empresa, entidad u organización para la cual usted trabaja o colabora o para proporcionar servicios antes y durante el evento.
 
-### Con respecto a las imágenes y videos de usted mismo:
+### Respecto a las imágenes y videos de usted mismo:
 
 GPUL está legalmente autorizado para procesar sus datos personales para mostrar, transmitir y/o publicarlos porque usted ha dado su consentimiento expreso.
 
 ### Respecto a alergias e intolerancias alimentarias:
 
-GPUL procesará tus datos personales únicamente para gestionar el servicio de catering.
+GPUL procesará sus datos personales únicamente para gestionar el servicio de catering.
 
-## Por qué podríamos procesar tus datos personales
+## Por qué podríamos procesar sus datos personales
 
-### Cuando te registras como Participante:
+### Cuando se registra como Participante:
 
-GPUL tiene derecho legal para procesar datos personales para manejar y procesar solicitudes de tu parte, ya que esto es requerido para que GPUL cumpla con sus obligaciones contractuales en cuanto a dichas solicitudes.
+GPUL tiene derecho legal para procesar datos personales para manejar y procesar solicitudes de su parte, ya que esto es requerido para que GPUL cumpla con sus obligaciones contractuales en cuanto a dichas solicitudes.
 
-Con respecto a las comunicaciones comerciales enviadas sobre actividades, servicios o productos ofrecidos por GPUL de naturaleza similar a los previamente solicitados o adquiridos por ti, el procesamiento de tus datos personales responde a un interés legítimo de GPUL, expresamente reconocido por la regulación de protección de datos, así como por las regulaciones de servicios en la sociedad de la información.
+Con respecto a las comunicaciones comerciales enviadas sobre actividades, servicios o productos ofrecidos por GPUL de naturaleza similar a los previamente solicitados o adquiridos por usted, el procesamiento de sus datos personales responde a un interés legítimo de GPUL, expresamente reconocido por la regulación de protección de datos, así como por las regulaciones de servicios en la sociedad de la información.
 
-Puedes ahora o en cualquier momento en el futuro oponerte a recibir comunicaciones comerciales sobre actividades, servicios o productos ofrecidos por GPUL enviando un correo electrónico a **info@gpul.org**.
+Puede ahora o en cualquier momento en el futuro oponerse a recibir comunicaciones comerciales sobre actividades, servicios o productos ofrecidos por GPUL enviando un correo electrónico a [**info@gpul.org**](mailto:info@gpul.org).
 
-### Cuando te registras como Patrocinador:
+### Cuando se registra como Patrocinador:
 
-El procesamiento de tus datos de contacto empresarial relacionados con el mantenimiento de la relación entre GPUL y la compañía, entidad u organización para la cual trabajas o colaboras responde a un interés legítimo de nuestra organización, específicamente reconocido en la regulación de privacidad.
+El procesamiento de sus datos de contacto empresarial relacionados con el mantenimiento de la relación entre GPUL y la compañía, entidad u organización para la cual usted trabaja o colabora responde a un interés legítimo de nuestra organización, específicamente reconocido en la regulación de privacidad.
 
-Con respecto a las comunicaciones comerciales enviadas sobre actividades, servicios o productos ofrecidos por GPUL de naturaleza similar a los que motivan la relación existente entre nuestra entidad y la compañía, entidad u organización para la cual trabajas o colaboras, el procesamiento de tus datos personales responde a un interés legítimo de GPUL, expresamente reconocido por la regulación de protección de datos, así como por las regulaciones de servicios en la sociedad de la información.
+Con respecto a las comunicaciones comerciales enviadas sobre actividades, servicios o productos ofrecidos por GPUL de naturaleza similar a los que motivan la relación existente entre nuestra entidad y la compañía, entidad u organización para la cual usted trabaja o colabora, el procesamiento de sus datos personales responde a un interés legítimo de GPUL, expresamente reconocido por la regulación de protección de datos, así como por las regulaciones de servicios en la sociedad de la información.
 
-Puedes ahora o en cualquier momento en el futuro oponerte a recibir comunicaciones comerciales sobre actividades, servicios o productos ofrecidos por GPUL enviando un correo electrónico a **info@gpul.org**.
+Puede ahora o en cualquier momento en el futuro oponerse a recibir comunicaciones comerciales sobre actividades, servicios o productos ofrecidos por GPUL enviando un correo electrónico a [**info@gpul.org**](mailto:info@gpul.org).
 
-### Respecto a las imágenes y videos de ti mismo:
+### Respecto a las imágenes y videos de usted mismo:
 
-GPUL tiene derecho legal para procesar tus datos personales para mostrar, transmitir y/o publicarlos porque has dado tu consentimiento expreso.
+GPUL tiene derecho legal para procesar sus datos personales para mostrar, transmitir y/o publicarlos porque ha dado su consentimiento expreso.
 
 ### Respecto a alergias e intolerancias alimentarias:
 
-GPUL procesará tus datos personales para gestionar el servicio de catering porque has dado tu consentimiento expreso.
+GPUL procesará sus datos personales para gestionar el servicio de catering porque ha dado su consentimiento expreso.
 
-## Cuándo y por qué podremos transmitir tus datos a terceros
+## Cuándo y por qué podremos transmitir sus datos a terceros
 
-Tus datos pueden ser transferidos a los siguientes destinatarios por estas razones:
+Sus datos pueden ser transferidos a los siguientes destinatarios por estas razones:
 
-- **Administraciones Públicas:** para cumplir con obligaciones legales a las que está sujeto GPUL basado en su actividad.
+- **Administraciones Públicas:** para cumplir con obligaciones legales a las que está sujeto GPUL según su actividad.
 - **Firmas de auditoría contable:** para cumplir con las obligaciones legales de auditoría de cuentas a las que está sujeto GPUL debido a su actividad.
-- **Fuerzas del Orden:** cuando nuestra organización está obligada a proporcionar información en cumplimiento de una obligación legal.
-- **Proveedores** que requieren acceso a tus datos personales para proporcionar los servicios que GPUL les ha contratado, y con quienes GPUL ha suscrito acuerdos de confidencialidad y procesamiento de datos que son necesarios y obligatorios por la regulación de protección de privacidad.
-- En el caso de que lo solicites, compartiremos los datos personales en tu CV, con los **Patrocinadores** participantes en el evento específico organizado por GPUL en el que solicites participar. GPUL podrá transferir tus datos debido a que has dado tu consentimiento.
+- **Fuerzas del Orden:** cuando nuestra organización esté obligada a proporcionar información en cumplimiento de una obligación legal.
+- **Proveedores** que requieren acceso a sus datos personales para proporcionar los servicios que GPUL les ha contratado, y con quienes GPUL ha suscrito acuerdos de confidencialidad y procesamiento de datos que son necesarios y obligatorios por la regulación de protección de privacidad.
+- En el caso de que lo solicite, compartiremos los datos personales en su CV, con los **Patrocinadores** participantes en el evento específico organizado por GPUL en el que solicite participar. GPUL podrá transferir sus datos debido a que ha dado su consentimiento.
 
-Se te informará debidamente si GPUL transfiere datos personales a otros destinatarios en el futuro.
+Se le informará debidamente si GPUL transfiere datos personales a otros destinatarios en el futuro.
 
 ## Transferencias internacionales de datos
 
-GPUL no ha contratado proveedores de servicios tecnológicos ubicados en países que no tienen una regulación de protección de datos equivalente a la Europea ("Terceros Países").
+GPUL no ha contratado proveedores de servicios tecnológicos ubicados en países que no tienen una regulación de protección de datos equivalente a la europea ("Terceros Países").
 
-## Cuánto tiempo almacenaremos tus datos
+## Cuánto tiempo almacenaremos sus datos
 
-Tus datos personales serán almacenados mientras tu relación con GPUL esté en curso y, una vez dicha relación termine por cualquier causa, por los términos legales aplicables. Una vez finalizada la relación, tus datos serán procesados únicamente a los efectos de demostrar el cumplimiento de las obligaciones legales o contractuales de la Asociación. Una vez cumplidos dichos términos legales, tus datos serán eliminados o, alternativamente, anonimizados.
+Sus datos personales serán almacenados mientras su relación con GPUL esté en curso y, una vez dicha relación termine por cualquier causa, por los plazos legales aplicables. Una vez finalizada la relación, sus datos serán procesados únicamente a los efectos de demostrar el cumplimiento de las obligaciones legales o contractuales de la Asociación. Una vez cumplidos dichos términos legales, sus datos serán eliminados o, alternativamente, anonimizados.
 
-## Cuáles son tus derechos
+## Cuáles son sus derechos
 
-Te informamos que tienes derecho a acceder a tus datos personales, rectificar datos inexactos, solicitar su supresión cuando ya no sean necesarios, oponerte o limitar el procesamiento o solicitar la portabilidad de los datos, a través de las direcciones postales y electrónicas indicadas.
+Le informamos que tiene derecho a acceder a sus datos personales, rectificar datos inexactos, solicitar su supresión cuando ya no sean necesarios, oponerse o limitar el procesamiento o solicitar la portabilidad de los datos, a través de las direcciones postales y electrónicas indicadas.
 
-Además, si consideras que el procesamiento de tus datos personales viola la regulación o tus derechos a la privacidad, puedes presentar una queja:
+Además, si considera que el procesamiento de sus datos personales viola la regulación o sus derechos a la privacidad, puede presentar una queja:
 
 - A GPUL, a través de las direcciones electrónicas y postales indicadas.
 - A la Agencia Española de Protección de Datos a través de sus direcciones electrónicas o postales.
@@ -119,6 +119,6 @@ Nuestra política de privacidad puede cambiar. Informaremos de cualquier cambio 
 
 ## Contacto
 
-Si tienes alguna pregunta sobre la política de privacidad, contáctanos:
+Si tiene alguna pregunta sobre la política de privacidad, contáctenos:
 
 - Por correo: **hackudc@gpul.org**

@@ -72,7 +72,7 @@ Se espera que todos los Participantes actúen con respeto y profesionalidad dura
 
 ---
 
-## **7. Protección de Datos y Derechos de Imagen**
+## 7. Protección de Datos y Derechos de Imagen
 
 Véase [política de privacidad](/es/privacidad).
 
