@@ -11,18 +11,22 @@ import sponsorParticipantHelpImage from "../assets/sponsors/sponsor_participant_
 import workshopImage from "../assets/sponsors/workshop.jpg";
 import sponsorBrandShowcaseImage from "../assets/sponsors/sponsor_brand_showcase.jpg";
 import sponsorsAwardCeremonyImage from "../assets/sponsors/sponsors_award_ceremony.jpg";
+import patternSvg from "../assets/pattern.svg";
+
 ---
 
 <Layout title="Sponsors — HackUDC">
   <main class="relative min-h-screen bg-[#0a0011] text-white overflow-hidden">
-    <!-- Background effects matching the site aesthetic -->
-    <div class="absolute inset-0 bg-[#181818]/90 z-0"></div>
+    <!-- Tiled SVG pattern background -->
     <div
-      class="absolute inset-0 opacity-40 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)_1px,transparent_1px,transparent_4px)] mix-blend-multiply z-0"
+      class="absolute inset-0 pointer-events-none z-0 opacity-80"
+      style={`background-image: url(${patternSvg.src}); background-repeat: repeat; background-size: 304px 304px;`}
     >
     </div>
+    <div class="absolute inset-0 bg-[#0a0011]/80 pointer-events-none z-0"></div>
     <div
-      class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,0.6)_60%,rgba(0,0,0,0.97)_100%)]"
+      class="absolute inset-0 pointer-events-none z-0"
+      style="background: radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0.97) 100%);"
     >
     </div>
 
