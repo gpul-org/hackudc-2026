@@ -28,8 +28,18 @@ const { title, light = false } = Astro.props;
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/android-chrome-512x512.png"
+    />
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/site.webmanifest" />
@@ -60,9 +70,15 @@ const { title, light = false } = Astro.props;
       property="og:description"
       content="Coming soon — February 2026. HackUDC is an open-source student hackathon by GPUL at the University of A Coruña."
     />
-    <meta property="og:image" content="https://hackudc.gpul.org/meta.png" />
+    <meta
+      property="og:image"
+      content="https://hackudc.gpul.org/meta-optimized.jpg?v=2"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+    <meta property="og:image:type" content="image/jpeg" />
 
-    <!-- Twitter -->
+    <!-- Twitter / Discord -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://hackudc.gpul.org/" />
     <meta property="twitter:title" content={title} />
@@ -72,7 +88,7 @@ const { title, light = false } = Astro.props;
     />
     <meta
       property="twitter:image"
-      content="https://hackudc.gpul.org/meta.png"
+      content="https://hackudc.gpul.org/meta-optimized.jpg?v=2"
     />
   </head>
   <body class={light ? "bg-white" : "bg-[#181818] text-white/80"}>
