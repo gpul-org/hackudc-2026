@@ -93,6 +93,11 @@ import { Image } from "astro:assets";
         class="group relative px-8 py-4 bg-transparent border-2 border-amber-200 text-amber-200 font-bold tracking-[0.2em] uppercase text-sm rounded-lg hover:bg-amber-200 hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:scale-105"
         data-umami-event="register-click"
       >
+        <div
+          class="absolute -top-3 -right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold tracking-wider animate-pulse z-20 transform rotate-12"
+        >
+          LAST CALL!
+        </div>
         <span class="relative z-10">REGISTER NOW</span>
         <div
           class="absolute inset-0 bg-amber-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
@@ -104,12 +109,7 @@ import { Image } from "astro:assets";
         href="/sponsors"
         class="group relative px-8 py-4 bg-transparent border-2 border-amber-100 text-amber-100 font-bold tracking-[0.2em] uppercase text-sm rounded-lg hover:bg-amber-100 hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.2)] hover:scale-105"
       >
-        <div
-          class="absolute -top-3 -right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold tracking-wider animate-pulse z-20 transform rotate-12"
-        >
-          WE NEED YOU!
-        </div>
-        <span class="relative z-10">BECOME A SPONSOR</span>
+        <span class="relative z-10">SPONSOR</span>
         <div
           class="absolute inset-0 bg-amber-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
         >
@@ -118,18 +118,18 @@ import { Image } from "astro:assets";
 
       <!-- MENTORES -->
       <a
-      href="/mentors"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="group relative px-8 py-4 bg-transparent border-2 border-amber-200 text-amber-200 font-bold tracking-[0.2em] uppercase text-sm rounded-lg hover:bg-amber-200 hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:scale-105"
-      data-umami-event="register-click"
-    >
-      <span class="relative z-10">MENTORS</span>
-      <div
-        class="absolute inset-0 bg-amber-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+        href="/mentors"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group relative px-8 py-4 bg-transparent border-2 border-amber-200 text-amber-200 font-bold tracking-[0.2em] uppercase text-sm rounded-lg hover:bg-amber-200 hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:scale-105"
+        data-umami-event="register-click"
       >
-      </div>
-    </a>
+        <span class="relative z-10">JOIN AS A MENTOR</span>
+        <div
+          class="absolute inset-0 bg-amber-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+        >
+        </div>
+      </a>
     </div>
 
     <!-- Animated Down Arrow -->
