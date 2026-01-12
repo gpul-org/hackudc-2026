@@ -39,7 +39,7 @@ GPUL will process the following personal data:
 
 ## Purposes for processing your personal data
 
-### When you register as a Participant:
+### When you register as a Participant or Mentor:
 
 GPUL will process your personal data to manage and handle your requests, providing services before and during the event, whether for information, registration, participation in promotions, or the provision of services.
 
