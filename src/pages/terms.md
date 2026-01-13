@@ -16,7 +16,8 @@ By registering for and participating in the Event, participants accept these T&C
 ## 2. Definitions
 
 - **Organizer**: Asociación Universitaria GPUL, based at Facultade de Informática, Campus de Elviña S/N, 15071 A Coruña, NIF G15659220, email hackudc@gpul.org, and phone number +34 981 167 000 ext. 1369.
-- **Participant**: Any person who, upon accepting these T&C, registers for and takes part in the Event in any of the established modalities.
+- **Participant**: Any person who, upon accepting these T&C, registers for and takes part in the Event to compete and develop projects in any of the established modalities.
+- **Mentor**: Any person who, upon accepting these T&C, registers for and takes part in the Event as an advisor and facilitator to support the Participants and the Organization.
 - **Sponsor**: A collaborating entity that, depending on its sponsorship tier, may propose challenges and/or grant specific prizes to Participants.
 - **Challenges**: Technical projects or tasks set by the Organizer and/or Sponsors, to be developed exclusively during the Event.
 - **General Prize**: A prize awarded by the Organizer to the best free software project, based on the criteria detailed in [Premio GPUL](http://premio.gpul.org).
