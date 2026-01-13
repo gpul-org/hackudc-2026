@@ -17,13 +17,13 @@ You may contact GPUL at the postal address indicated above or via the following 
 
 GPUL will process the following personal data:
 
-- Any initial data you voluntarily provide related to an application for registration as a participant, information requests to our organization, applications for participation in promotions, or requests to receive any of the services offered by GPUL (we will provide clear and precise instructions on which data are mandatory in each form).
+- Any initial data you voluntarily provide related to an application for registration as a participant or mentor, information requests to our organization, applications for participation in promotions, or requests to receive any of the services offered by GPUL (we will provide clear and precise instructions on which data are mandatory in each form).
 
 - Any data generated or exchanged later with Users for GPUL to fulfill your initial request.
 
-- Any personal data you provide through social networks in order to manage your requests. These data will depend on each participant’s privacy settings, their use of social media, and the privacy policies of the social networks in question.
+- Any personal data you provide through social networks in order to manage your requests. These data will depend on each participants or mentors privacy settings, their use of social media, and the privacy policies of the social networks in question.
 
-### Personal data collected when registering as a Participant:
+### Personal data collected when registering as a Participant or Mentor:
 
 - **Identification data:** Name, surname(s), Identification document number (from an ID card, residence permit, passport, or similar), city of residence, images or videos of yourself, and a link to a personal website.
 - **Contact data:** Email address and phone number.
@@ -61,7 +61,7 @@ GPUL will process your personal data solely to manage the catering service.
 
 ## Why we may process your personal data
 
-### When you register as a Participant:
+### When you register as a Participant or Mentor:
 
 GPUL has the legal right to process personal data to handle and handle your requests, as this is required for GPUL to fulfill its contractual obligations regarding such requests.
 
