@@ -1,4 +1,5 @@
 ---
+import kelea from "../assets/logos/kelea.svg";
 // base styles
 const cardBase =
   "relative mx-auto flex flex-col items-center justify-center overflow-hidden text-center text-amber-300 rounded-lg bg-amber-300/20 backdrop-blur-sm border-2 border-white hover:scale-105 sm:hover:scale-110 hover:bg-yellow-300 hover:text-black hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.8)] transition-all duration-300";
@@ -59,15 +60,20 @@ const tierHeading =
   <div
     class="mt-4 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 px-3 w-full max-w-4xl"
   >
-    <a href="#" class="w-full">
+  <a
+      href="https://www.kelea.es/"
+      target="_blank"
+      class="w-full [--tx:5px] [--ty:0px] [--mx:0px] [--my:0px] [--px:15px] [--py:0px] [--logo-scale:1] [--logo-maxw:100%]"
+    >
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[320px] p-3 sm:p-4 text-base sm:text-lg md:text-xl`}
       >
-        <span class={srOnlyText}>Coming soon</span>
-        <span aria-hidden="true" class={cautionTape}> </span>
-        <span aria-hidden="true" class={comingSoonOverlay}>
-          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
-        </span>
+        <img
+          src={kelea.src}
+          alt="Kelea"
+          class="mx-auto max-h-[80px] sm:max-h-[100px] object-contain will-change-transform"
+          style={"transform:translate(var(--tx),var(--ty)) scale(var(--logo-scale)); margin:var(--my) var(--mx); padding:var(--py) var(--px); max-width:var(--logo-maxw); width:auto; display:block;"}
+        />
       </div>
     </a>
     <a href="#" class="w-full">
