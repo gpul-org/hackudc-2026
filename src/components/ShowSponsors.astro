@@ -1,5 +1,9 @@
 ---
 import kelea from "../assets/logos/kelea.svg";
+import merlin from "../assets/logos/merlin.svg";
+import alen from "../assets/logos/alen.png";
+import denodo from "../assets/logos/denodo.svg";
+
 // base styles
 const cardBase =
   "relative mx-auto flex flex-col items-center justify-center overflow-hidden text-center text-amber-300 rounded-lg bg-amber-300/20 backdrop-blur-sm border-2 border-white hover:scale-105 sm:hover:scale-110 hover:bg-yellow-300 hover:text-black hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.8)] transition-all duration-300";
@@ -76,37 +80,52 @@ const tierHeading =
         />
       </div>
     </a>
-    <a href="#" class="w-full">
+    <a
+      href="https://www.merlinsoftware.es/"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:10px] [--py:0px] [--logo-scale:1] [--logo-maxw:100%]"
+    >
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[320px] p-3 sm:p-4 text-base sm:text-lg md:text-xl`}
       >
-        <span class={srOnlyText}>Coming soon</span>
-        <span aria-hidden="true" class={cautionTape}> </span>
-        <span aria-hidden="true" class={comingSoonOverlay}>
-          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
-        </span>
+        <img
+          src={merlin.src}
+          alt="Merlin Software"
+          class="mx-auto max-h-[80px] sm:max-h-[100px] object-contain will-change-transform"
+          style={"transform:translate(var(--tx),var(--ty)) scale(var(--logo-scale)); margin:var(--my) var(--mx); padding:var(--py) var(--px); max-width:var(--logo-maxw); width:auto; display:block;"}
+        />
       </div>
     </a>
-    <a href="#" class="w-full">
+<a
+      href="https://www.alen.space/"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:0px] [--mx:10px] [--my:0px] [--px:0px] [--py:0px] [--logo-scale:1.2] [--logo-maxw:110%]"
+    >
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[320px] p-3 sm:p-4 text-base sm:text-lg md:text-xl`}
       >
-        <span class={srOnlyText}>Coming soon</span>
-        <span aria-hidden="true" class={cautionTape}> </span>
-        <span aria-hidden="true" class={comingSoonOverlay}>
-          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
-        </span>
+        <img
+          src={alen.src}
+          alt="Alen"
+          class="mx-auto max-h-[80px] sm:max-h-[100px] object-contain will-change-transform"
+          style={"transform:translate(var(--tx),var(--ty)) scale(var(--logo-scale)); margin:var(--my) var(--mx); padding:var(--py) var(--px); max-width:var(--logo-maxw); width:auto; display:block;"}
+        />
       </div>
     </a>
-    <a href="#" class="w-full">
+    <a
+      href="https://www.denodo.com/"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:-5px] [--mx:0px] [--my:0px] [--px:15px] [--py:0px] [--logo-scale:1] [--logo-maxw:100%]"
+    >
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[320px] p-3 sm:p-4 text-base sm:text-lg md:text-xl`}
       >
-        <span class={srOnlyText}>Coming soon</span>
-        <span aria-hidden="true" class={cautionTape}> </span>
-        <span aria-hidden="true" class={comingSoonOverlay}>
-          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
-        </span>
+        <img
+          src={denodo.src}
+          alt="Denodo"
+          class="mx-auto max-h-[80px] sm:max-h-[100px] object-contain will-change-transform"
+          style={"transform:translate(var(--tx),var(--ty)) scale(var(--logo-scale)); margin:var(--my) var(--mx); padding:var(--py) var(--px); max-width:var(--logo-maxw); width:auto; display:block;"}
+        />
       </div>
     </a>
         <a href="#" class="w-full">
