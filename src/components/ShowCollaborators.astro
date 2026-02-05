@@ -6,6 +6,8 @@ import logoAMTEGA from "../assets/collaborators/amtega.svg";
 import logoFIC from "../assets/collaborators/fic.svg";
 import logoUDC from "../assets/collaborators/udc.svg";
 
+import billingham from "../assets/logos/billingham.png";
+
 // Base styles
 const cardBase =
   "mx-auto flex flex-col justify-center overflow-hidden rounded-lg transition-transform duration-300 hover:scale-105";
@@ -43,11 +45,21 @@ const cardBase =
       </div>
     </a>
     <a href="https://amtega.xunta.gal/" target="_blank" class="w-full">
-      <div class={`${cardBase} sm:p-2 aspect-[5/3] w-full max-w-[240px]`}>
+      <div class={`${cardBase} aspect-[5/3] w-full max-w-[240px]`}>
         <Image
           src={logoAMTEGA}
           alt="Logo AMTEGA"
           class="mx-auto max-h-[80px] sm:max-h-[100px] object-contain"
+        />
+      </div>
+    </a>
+
+    <a href="https://www.grupobillingham.com" target="_blank" class="w-full">
+      <div class={`${cardBase} aspect-[5/3] w-full max-w-[240px]`}>
+        <Image
+          src={billingham}
+          alt="Billingham"
+          class="mx-auto max-h-[160px] sm:max-h-[260px] object-contain"
         />
       </div>
     </a>
