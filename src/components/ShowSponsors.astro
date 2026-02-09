@@ -4,6 +4,9 @@ import merlin from "../assets/logos/merlin.svg";
 import alen from "../assets/logos/alen.png";
 import denodo from "../assets/logos/denodo.svg";
 
+import gradiant from "../assets/logos/gradiant.svg";
+import grafana from "../assets/logos/grafana.svg";
+
 // base styles
 const cardBase =
   "relative mx-auto flex flex-col items-center justify-center overflow-hidden text-center text-amber-300 rounded-lg bg-amber-300/20 backdrop-blur-sm border-2 border-white hover:scale-105 sm:hover:scale-110 hover:bg-yellow-300 hover:text-black hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.8)] transition-all duration-300";
@@ -128,26 +131,36 @@ const tierHeading =
         />
       </div>
     </a>
-        <a href="#" class="w-full">
+    <a
+      href="https://www.grafana.com/"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:10px] [--py:0px] [--logo-scale:1] [--logo-maxw:100%]"
+    >
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[320px] p-3 sm:p-4 text-base sm:text-lg md:text-xl`}
       >
-        <span class={srOnlyText}>Coming soon</span>
-        <span aria-hidden="true" class={cautionTape}> </span>
-        <span aria-hidden="true" class={comingSoonOverlay}>
-          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
-        </span>
+        <img
+          src={grafana.src}
+          alt="Grafana"
+          class="mx-auto max-h-[80px] sm:max-h-[100px] object-contain will-change-transform"
+          style={"transform:translate(var(--tx),var(--ty)) scale(var(--logo-scale)); margin:var(--my) var(--mx); padding:var(--py) var(--px); max-width:var(--logo-maxw); width:auto; display:block;"}
+        />
       </div>
     </a>
-    <a href="#" class="w-full">
+    <a
+      href="https://www.gradiant.org/"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:-10px] [--mx:55px] [--my:0px] [--px:0px] [--py:0px] [--logo-scale:1.4] [--logo-maxw:100%]"
+    >
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[320px] p-3 sm:p-4 text-base sm:text-lg md:text-xl`}
       >
-        <span class={srOnlyText}>Coming soon</span>
-        <span aria-hidden="true" class={cautionTape}> </span>
-        <span aria-hidden="true" class={comingSoonOverlay}>
-          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
-        </span>
+        <img
+          src={gradiant.src}
+          alt="Gradiant"
+          class="mx-auto max-h-[80px] sm:max-h-[100px] object-contain will-change-transform"
+          style={"transform:translate(var(--tx),var(--ty)) scale(var(--logo-scale)); margin:var(--my) var(--mx); padding:var(--py) var(--px); max-width:var(--logo-maxw); width:auto; display:block;"}
+        />
       </div>
     </a>
   </div>

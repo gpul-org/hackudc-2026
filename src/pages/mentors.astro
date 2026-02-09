@@ -153,19 +153,25 @@ import patternSvg from "../assets/pattern.svg";
       <div
         class="mt-12 flex flex-col sm:flex-row gap-6 items-center justify-center"
       >
-        <a
-          href="https://registro.hackudc.gpul.org/mentores"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group relative mt-5 px-8 sm:px-10 py-4 sm:py-5 bg-transparent border-2 border-amber-200 text-amber-200 font-bold tracking-[0.12em] sm:tracking-[0.2em] uppercase text-sm sm:text-base rounded-xl hover:bg-amber-200 hover:text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:scale-110"
-          data-umami-event="register-click"
+        <div
+          role="button"
+          aria-disabled="true"
+          class="group relative mt-5 px-8 sm:px-10 py-4 sm:py-5 bg-transparent border-2 border-amber-100/30 text-amber-100/60 font-bold tracking-[0.12em] sm:tracking-[0.2em] uppercase text-sm sm:text-base rounded-lg opacity-60 cursor-not-allowed select-none transition-all duration-300"
         >
-          <span class="relative z-10">Register as a mentor</span>
+          <span
+            class="relative z-10 line-through decoration-2 decoration-current"
+            >Register as a mentor</span
+          >
           <div
-            class="absolute inset-0 bg-amber-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"
+            class="absolute inset-0 bg-amber-100 transform scale-x-0 transition-transform duration-300 origin-left rounded-lg opacity-20"
           >
           </div>
-        </a>
+          <span
+            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 text-white font-bold px-4 py-1 rounded-full text-xs shadow-[0_6px_20px_rgba(220,38,38,0.18)]"
+          >
+            Full house
+          </span>
+        </div>
       </div>
 
       <div class="mt-20 text-center">
