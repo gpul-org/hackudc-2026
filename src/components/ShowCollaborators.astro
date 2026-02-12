@@ -6,6 +6,7 @@ import logoAMTEGA from "../assets/collaborators/amtega.svg";
 import logoFIC from "../assets/collaborators/fic.svg";
 import logoUDC from "../assets/collaborators/udc.svg";
 
+import startup from "../assets/logos/startupgalicia.png";
 import billingham from "../assets/logos/billingham.png";
 
 // Base styles
@@ -59,6 +60,15 @@ const cardBase =
         <Image
           src={billingham}
           alt="Billingham"
+          class="mx-auto max-h-[160px] sm:max-h-[260px] object-contain"
+        />
+      </div>
+    </a>
+    <a href="https://www.startup.gal" target="_blank" class="w-full">
+      <div class={`${cardBase} aspect-[5/3] w-full max-w-[240px]`}>
+        <Image
+          src={startup}
+          alt="Startup Galicia"
           class="mx-auto max-h-[160px] sm:max-h-[260px] object-contain"
         />
       </div>
