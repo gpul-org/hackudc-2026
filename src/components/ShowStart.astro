@@ -1,6 +1,7 @@
 ---
 const videoId = "EDIGMHPDKsI";
 import logoSrc from "/public/logos/logo_h_accented.svg";
+import inditex from "../assets/logos/sponsor.svg";
 import { Image } from "astro:assets";
 ---
 
@@ -60,6 +61,11 @@ import { Image } from "astro:assets";
   >
     OPEN SOURCE <br /> HACKATHON
   </div>
+  <div
+    class="absolute left-6 bottom-6 text-sm md:text-xl tracking-[0.3em] text-amber-300 text-right"
+  >
+    <Image src={inditex} alt={"HACKUDC"} class="w-40 md:w-52 h-auto" />
+  </div>
 
   <!-- Centered content -->
   <section
@@ -96,17 +102,6 @@ import { Image } from "astro:assets";
         <span class="relative z-10">EVENT INFO</span>
         <div
           class="absolute inset-0 bg-amber-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-        >
-        </div>
-      </a>
-
-      <a
-        href="/sponsors"
-        class="group relative px-8 py-4 bg-transparent border-2 border-amber-100 text-amber-100 font-bold tracking-[0.2em] uppercase text-sm rounded-lg hover:bg-amber-100 hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.2)] hover:scale-105"
-      >
-        <span class="relative z-10">SPONSOR</span>
-        <div
-          class="absolute inset-0 bg-amber-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
         >
         </div>
       </a>

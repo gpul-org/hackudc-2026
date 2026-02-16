@@ -7,6 +7,8 @@ import denodo from "../assets/logos/denodo.svg";
 import gradiant from "../assets/logos/gradiant.svg";
 import grafana from "../assets/logos/grafana.svg";
 
+import inditex from "../assets/logos/inditexTech.svg";
+
 // base styles
 const cardBase =
   "relative mx-auto flex flex-col items-center justify-center overflow-hidden text-center text-amber-300 rounded-lg bg-amber-300/20 backdrop-blur-sm border-2 border-white hover:scale-105 sm:hover:scale-110 hover:bg-yellow-300 hover:text-black hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.8)] transition-all duration-300";
@@ -48,17 +50,20 @@ const tierHeading =
 
   <!-- Root -->
   <h3 id="sponsors-root" class={tierHeading}>root</h3>
-  <a href="#" class="w-full max-w-md">
+  <a
+    href="https://www.zaratalent.com/es/tech/"
+    target="_blank"
+    class="w-full max-w-md [--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:10px] [--py:0px] [--logo-scale:1] [--logo-maxw:100%]"
+  >
     <div
       class={`${cardBase} aspect-[5/3] w-full max-w-[400px] mt-4 sm:mt-6 p-3 sm:p-4 text-lg sm:text-xl`}
     >
-      <span class={srOnlyText}></span>
-      <span aria-hidden="true" class={cautionTape}>
-        <span class={cautionTapeText}> </span>
-      </span>
-      <span aria-hidden="true" class={comingSoonOverlay}>
-        <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
-      </span>
+      <img
+        src={inditex.src}
+        alt="Inditex Tech"
+        class="mx-auto max-h-[80px] sm:max-h-[100px] object-contain will-change-transform"
+        style={"transform:translate(var(--tx),var(--ty)) scale(var(--logo-scale)); margin:var(--my) var(--mx); padding:var(--py) var(--px); max-width:var(--logo-maxw); width:auto; display:block;"}
+      />
     </div>
   </a>
 
@@ -168,31 +173,9 @@ const tierHeading =
   <!-- User -->
   <h3 id="sponsors-user" class={tierHeading}>user</h3>
   <div
-    class="mt-4 sm:mt-6 flex flex-col gap-3 sm:grid sm:grid-cols-3 sm:gap-4 md:gap-6 lg:gap-8 px-3 w-full max-w-5xl"
+    class="mt-4 sm:mt-6 flex flex-col gap-3 sm:grid sm:grid-cols-3 sm:gap-4 md:gap-6 lg:gap-8 px-3 w-full max-w-5xl place-items-center"
   >
-    <a href="#" class="w-full">
-      <div
-        class={`${cardBase} aspect-[5/3] w-full max-w-[240px] p-2 sm:p-3 text-sm sm:text-base md:text-lg lg:text-xl`}
-      >
-        <span class={srOnlyText}>Coming soon</span>
-        <span aria-hidden="true" class={cautionTape}> </span>
-        <span aria-hidden="true" class={comingSoonOverlay}>
-          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
-        </span>
-      </div>
-    </a>
-    <a href="#" class="w-full">
-      <div
-        class={`${cardBase} aspect-[5/3] w-full max-w-[240px] p-2 sm:p-3 text-sm sm:text-base md:text-lg lg:text-xl`}
-      >
-        <span class={srOnlyText}>Coming soon</span>
-        <span aria-hidden="true" class={cautionTape}> </span>
-        <span aria-hidden="true" class={comingSoonOverlay}>
-          <span class={comingSoonOverlayText}>COMING&nbsp;SOON</span>
-        </span>
-      </div>
-    </a>
-    <a href="#" class="w-full">
+    <a href="#" class="w-full col-span-3">
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[240px] p-2 sm:p-3 text-sm sm:text-base md:text-lg lg:text-xl`}
       >
