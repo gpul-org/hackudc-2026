@@ -2,17 +2,34 @@
 import { Image } from "astro:assets";
 
 // Images:
+import SmallSponsors from "../components/SmallSponsors.astro";
+
 import logoAMTEGA from "../assets/collaborators/amtega.svg";
 import logoFIC from "../assets/collaborators/fic.svg";
 import logoUDC from "../assets/collaborators/udc.svg";
+import zerolatency from "../assets/logos/zerolatency.svg";
+import gadis from "../assets/collaborators/gadis.jpg";
+import veracruz from "../assets/logos/veracruz.svg";
+import habaziro from "../assets/logos/habaziro.svg";
 
 import startup from "../assets/logos/startupgalicia.png";
 import billingham from "../assets/logos/billingham.png";
 import stickermule from "../assets/logos/stickermule.svg";
+import citic from "../assets/logos/citic.svg";
+
 
 // Base styles
 const cardBase =
   "mx-auto flex flex-col justify-center overflow-hidden rounded-lg transition-transform duration-300 hover:scale-105";
+
+const logoClass =
+  "mx-auto max-h-[80px] sm:max-h-[100px] object-contain will-change-transform";
+
+const citicLogoClass =
+  "mx-auto h-[95px] sm:h-[130px] w-auto object-contain will-change-transform";
+
+const logoStyle =
+  "transform:translate(var(--tx),var(--ty)) scale(var(--logo-scale)); margin:var(--my) var(--mx); padding:var(--py) var(--px); max-width:var(--logo-maxw); width:auto; display:block;";
 ---
 
 <section
@@ -25,73 +42,175 @@ const cardBase =
     Collaborators
   </h1>
 
+  {/* Large CITIC logo at the top */}
+  <div class="relative z-20 flex flex-col items-center mb-6 sm:mb-8">
+    <a
+      href="https://citic.udc.es/"
+      target="_blank"
+      class="[--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:0px] [--py:0px] [--logo-scale:1.05] [--logo-maxw:100%]"
+    >
+      <div
+        class="pt-2 sm:pt-3 pb-0 px-2 sm:px-3 flex items-center justify-center max-w-[260px] w-full transition-transform duration-300 hover:scale-105"
+      >
+        <Image
+          src={citic}
+          alt="Logo CITIC"
+          class={citicLogoClass}
+          style={logoStyle}
+        />
+      </div>
+    </a>
+  </div>
+
+  <SmallSponsors />
+
+  {/* Other collaborators below CITIC */}
   <div
-    class="mt-4 sm:mt-6 flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 px-3 max-w-5xl mx-auto"
+    class="mt-4 sm:mt-6 grid grid-cols-3 md:grid-cols-4 justify-items-center items-center gap-3 sm:gap-4 md:gap-6 px-3 max-w-5xl mx-auto"
   >
-    <a href="https://udc.gal" target="_blank">
+    <a
+      href="https://udc.gal"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:8px] [--py:0px] [--logo-scale:1.15] [--logo-maxw:110%]"
+    >
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[240px] flex items-center justify-center`}
       >
         <Image
           src={logoUDC}
           alt="Logo UDC"
-          class="mx-auto max-h-[120px] sm:max-h-[100px] object-contain"
+          class={logoClass}
+          style={logoStyle}
         />
       </div>
     </a>
-    <a href="https://fic.udc.es" target="_blank">
+    <a
+      href="https://fic.udc.es"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:10px] [--py:0px] [--logo-scale:1] [--logo-maxw:100%]"
+    >
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[240px] flex items-center justify-center`}
       >
         <Image
           src={logoFIC}
           alt="Logo FIC"
-          class="mx-auto max-h-[120px] sm:max-h-[90px] object-contain"
+          class={logoClass}
+          style={logoStyle}
         />
       </div>
     </a>
-    <a href="https://amtega.xunta.gal/" target="_blank">
+    <a
+      href="https://amtega.xunta.gal/"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:14px] [--py:0px] [--logo-scale:1] [--logo-maxw:100%]"
+    >
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[240px] flex items-center justify-center`}
       >
         <Image
           src={logoAMTEGA}
           alt="Logo AMTEGA"
-          class="mx-auto max-h-[80px] sm:max-h-[100px] object-contain"
+          class={logoClass}
+          style={logoStyle}
         />
       </div>
     </a>
-    <a href="https://www.grupobillingham.com" target="_blank">
+    <a
+      href="https://www.grupobillingham.com"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:2px] [--py:0px] [--logo-scale:1.8] [--logo-maxw:140%]"
+    >
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[240px] flex items-center justify-center`}
       >
         <Image
           src={billingham}
           alt="Billingham"
-          class="mx-auto max-h-[160px] sm:max-h-[260px] object-contain"
+          class={logoClass}
+          style={logoStyle}
         />
       </div>
     </a>
-    <a href="https://www.startup.gal" target="_blank">
+    <a
+      href="https://www.startup.gal"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:8px] [--py:0px] [--logo-scale:0.9] [--logo-maxw:95%]"
+    >
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[240px] flex items-center justify-center`}
       >
         <Image
           src={startup}
           alt="Startup Galicia"
-          class="mx-auto max-h-[160px] sm:max-h-[260px] object-contain"
+          class={logoClass}
+          style={logoStyle}
         />
       </div>
     </a>
-    <a href="https://www.stickermule.com/es" target="_blank">
+    <a
+      href="https://www.stickermule.com/es"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:4px] [--py:0px] [--logo-scale:1.2] [--logo-maxw:110%]"
+    >
       <div
         class={`${cardBase} aspect-[5/3] w-full max-w-[240px] flex items-center justify-center`}
       >
         <Image
           src={stickermule}
           alt="Sticker Mule"
-          class="mx-auto max-h-[160px] sm:max-h-[260px] object-contain"
+          class={logoClass}
+          style={logoStyle}
         />
+      </div>
+    </a>
+    <a
+      href="https://www.zerolatencyvr.com"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:0px] [--py:0px] [--logo-scale:1.4] [--logo-maxw:125%]"
+    >
+      <div
+        class={`${cardBase} aspect-[5/3] w-full max-w-[240px] flex items-center justify-center`}
+      >
+        <Image
+          src={zerolatency}
+          alt="Zero Latency"
+          class={logoClass}
+          style={logoStyle}
+        />
+      </div>
+    </a>
+    <a
+      href="https://www.gadis.es"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:10px] [--py:0px] [--logo-scale:1] [--logo-maxw:90%]"
+    >
+      <div
+        class={`${cardBase} aspect-[5/3] w-full max-w-[240px] flex items-center justify-center`}
+      >
+        <Image src={gadis} alt="Gadis" class={logoClass} style={logoStyle} />
+      </div>
+    </a>
+    <a
+      href="https://www.habaziro.com"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:10px] [--py:0px] [--logo-scale:1] [--logo-maxw:90%]"
+    >
+      <div
+        class={`${cardBase} aspect-[5/3] w-full max-w-[240px] flex items-center justify-center`}
+      >
+        <Image src={habaziro} alt="Habaziro" class={logoClass} style={logoStyle} />
+      </div>
+    </a>
+        <a
+      href="https://www.cafeveracruz.com"
+      target="_blank"
+      class="w-full [--tx:0px] [--ty:0px] [--mx:0px] [--my:0px] [--px:10px] [--py:0px] [--logo-scale:1] [--logo-maxw:90%]"
+    >
+      <div
+        class={`${cardBase} aspect-[5/3] w-full max-w-[240px] flex items-center justify-center`}
+      >
+        <Image src={veracruz} alt="Cafe Veracruz" class={logoClass} style={logoStyle} />
       </div>
     </a>
   </div>
