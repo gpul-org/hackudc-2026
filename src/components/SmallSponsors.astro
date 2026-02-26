@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+
+import eu from "../assets/logos/eu.png";
+import cigus from "../assets/logos/cigus.svg";
+import fondosEuropeos from "../assets/logos/fondos_europeos.svg";
+---
+
+<section class="mt-8 mb-4 w-full px-4">
+  <div class="flex justify-center items-center gap-4 sm:gap-6 flex-nowrap">
+    <a href="https://cigus.gal" target="_blank">
+      <img
+        src={cigus.src}
+        alt="Cigus"
+        class="h-8 sm:h-10 object-contain opacity-100"
+      />
+    </a>
+    <a href="https://european-union.europa.eu/" target="_blank">
+      <img
+        src={eu.src}
+        alt="Unión europea"
+        class="h-8 sm:h-10 object-contain opacity-100"
+      />
+    </a>
+    <a href="https://fondoseuropeos.gob.es/" target="_blank">
+      <img
+        src={fondosEuropeos.src}
+        alt="Fondos Europeos"
+        class="h-8 sm:h-10 object-contain opacity-100"
+      />
+    </a>
+  </div>
+</section>
